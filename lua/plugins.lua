@@ -7,9 +7,6 @@ return function()
         use 'junegunn/fzf'
         use 'junegunn/fzf.vim'
         use 'tpope/vim-fugitive'
-        use 'hrsh7th/nvim-cmp'
-        use 'hrsh7th/cmp-buffer'
-        use 'hrsh7th/cmp-nvim-lsp'
         use {
             'nvim-telescope/telescope.nvim', tag = '0.1.4',
             requires = { {'nvim-lua/plenary.nvim'} }
@@ -22,5 +19,12 @@ return function()
         })
         use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
         use 'xiyaowong/transparent.nvim'
+        use 'nvim-neo-tree/neo-tree.nvim'
+        -- Code Snippet
+        use 'onsails/lspkind-nvim'
+        use 'L3MON4D3/LuaSnip'
+        use 'hrsh7th/cmp-nvim-lsp'
+        use 'hrsh7th/cmp-buffer'
+        use 'hrsh7th/nvim-cmp'
     end)
 end
