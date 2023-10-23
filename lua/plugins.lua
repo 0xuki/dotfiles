@@ -11,5 +11,9 @@ return function()
         use 'hrsh7th/nvim-cmp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/cmp-nvim-lsp'
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.4',
+            requires = { {'nvim-lua/plenary.nvim'} }
+        }
     end)
-  end
+end
