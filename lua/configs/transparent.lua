@@ -9,3 +9,4 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
   exclude_groups = {}, -- table: groups you don't want to clear
 })
 require('transparent').clear_prefix('NeoTree')
+require('transparent').clear_prefix('bufferline')
