@@ -37,5 +37,7 @@ return function()
         use 'windwp/nvim-autopairs'
         -- bufferline
         use 'akinsho/bufferline.nvim'
+        -- alpha-nvim
+        use 'goolord/alpha-nvim'
     end)
 end

@@ -1,6 +1,7 @@
 -- プラグインの読み込み
 require'plugins'()
 require'transparent'
+require'configs.alpha'
 require'configs.bufferline'
 require("neo-tree").setup({
     filesystem = {
