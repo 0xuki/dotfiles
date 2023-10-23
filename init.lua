@@ -2,12 +2,20 @@
 require'plugins'()
 
 -- 補完の設定
-require'completion'
+require'configs.completion'
 
 -- keymap
 vim.g.mapleader = " "
-require'mappings'
+require'maps'
 
 require'settings'
 
-require'lualine_config'
+require'configs.lualine_config'
+
+require("neo-tree").setup({
+    filesystem = {
+        filtered_items = {
+            visible = true,
+        },
+    },
+})
