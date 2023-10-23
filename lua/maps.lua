@@ -20,3 +20,7 @@ end
 -- NeoTree
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
 map("n", "<leader>o", "<CMD>Neotree focus<CR>")
+
+-- buffer line
+map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
+map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")

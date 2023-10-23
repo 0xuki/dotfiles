@@ -1,5 +1,6 @@
 -- プラグインの読み込み
 require'plugins'()
+require'configs.bufferline'
 require("neo-tree").setup({
     filesystem = {
         filtered_items = {
@@ -24,4 +25,4 @@ require'configs.colour_scheme'
 
 require'colorizer'.setup()
 
-require'config.autotag'
+require'configs.autotag'
