@@ -12,3 +12,5 @@ vim.g.mapleader = " "
 require'mappings'
 
 require'settings'
+
+require'lualine_config'
