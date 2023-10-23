@@ -1,17 +1,18 @@
 local custom_horizon = require'lualine.themes.horizon'
 -- Git Branch
+custom_horizon.normal.a.bg = '#F43F5E'
 custom_horizon.normal.b.bg = '#27272d' -- 背景色
-custom_horizon.normal.b.fg = '#F43F5E' -- 文字色
+custom_horizon.normal.b.fg = '#FFFB38' -- 文字色
 custom_horizon.insert.b.bg = '#27272d' -- 背景色
-custom_horizon.insert.b.fg = '#F43F5E' -- 文字色
+custom_horizon.insert.b.fg = '#FFFB38' -- 文字色
 custom_horizon.visual.b.bg = '#27272d' -- 背景色
-custom_horizon.visual.b.fg = '#F43F5E' -- 文字色
+custom_horizon.visual.b.fg = '#FFFB38' -- 文字色
 custom_horizon.replace.b.bg = '#27272d' -- 背景色
-custom_horizon.replace.b.fg = '#F43F5E' -- 文字色
+custom_horizon.replace.b.fg = '#FFFB38' -- 文字色
 custom_horizon.command.b.bg = '#27272d' -- 背景色
-custom_horizon.command.b.fg = '#F43F5E' -- 文字色
+custom_horizon.command.b.fg = '#FFFB38' -- 文字色
 custom_horizon.inactive.b.bg = '#27272d' -- 背景色
-custom_horizon.inactive.b.fg = '#F43F5E' -- 文字色
+custom_horizon.inactive.b.fg = '#FFFB38' -- 文字色
 
 require('lualine').setup {
     options = {

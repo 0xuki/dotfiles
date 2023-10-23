@@ -12,6 +12,8 @@ require'settings'
 
 require'configs.lualine_config'
 
+require'configs.colour_scheme'
+
 require("neo-tree").setup({
     filesystem = {
         filtered_items = {

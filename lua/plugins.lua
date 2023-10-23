@@ -323,5 +323,6 @@ return function()
             'nvim-telescope/telescope.nvim', tag = '0.1.4',
             requires = { {'nvim-lua/plenary.nvim'} }
         }
+        use 'folke/tokyonight.nvim'
     end)
 end
