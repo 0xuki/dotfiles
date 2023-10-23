@@ -14,6 +14,8 @@ require'configs.completion'
 vim.g.mapleader = " "
 require'maps'
 
+require'configs.transparent'
+
 require'settings'
 
 require'configs.lualine_config'
