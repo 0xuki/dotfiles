@@ -1,36 +1,14 @@
--- Packerの設定
-require'packer'.startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'hoob3rt/lualine.nvim'
-    use 'npxbr/gruvbox.nvim'
-    use 'hrsh7th/nvim-compe'
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
-    use 'tpope/vim-fugitive'
-    -- Pluginsを追加
-    end
-)
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- プラグインの読み込み
+require'plugins'()
 
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
+-- 補完の設定
+require'completion'
 
--- empty setup using defaults
-require("nvim-tree").setup()
+-- nvim-treeの設定
+require'nvimtree'
 
--- OR setup with some options
-require("nvim-tree").setup({
-  sort_by = "case_sensitive",
-  view = {
-    width = 30,
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
+-- keymap
+vim.g.mapleader = " "
+require'mappings'
+
+require'settings'
