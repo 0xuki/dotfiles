@@ -324,5 +324,6 @@ return function()
             requires = { {'nvim-lua/plenary.nvim'} }
         }
         use 'folke/tokyonight.nvim'
+        use 'norcalli/nvim-colorizer.lua'
     end)
 end

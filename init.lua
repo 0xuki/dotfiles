@@ -1,6 +1,12 @@
 -- プラグインの読み込み
 require'plugins'()
-
+require("neo-tree").setup({
+    filesystem = {
+        filtered_items = {
+            visible = true,
+        },
+    },
+})
 -- 補完の設定
 require'configs.completion'
 
@@ -14,10 +20,4 @@ require'configs.lualine_config'
 
 require'configs.colour_scheme'
 
-require("neo-tree").setup({
-    filesystem = {
-        filtered_items = {
-            visible = true,
-        },
-    },
-})
+require'colorizer'.setup()
