@@ -26,5 +26,8 @@ return function()
         use 'hrsh7th/cmp-nvim-lsp'
         use 'hrsh7th/cmp-buffer'
         use 'hrsh7th/nvim-cmp'
+        -- tag snippet
+        use 'windwp/nvim-ts-autotag'
+        use 'windwp/nvim-autopairs'
     end)
 end

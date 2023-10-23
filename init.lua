@@ -23,3 +23,5 @@ require'configs.lualine_config'
 require'configs.colour_scheme'
 
 require'colorizer'.setup()
+
+require'config.autotag'
