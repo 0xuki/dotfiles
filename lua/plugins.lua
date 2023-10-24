@@ -2,6 +2,7 @@ return {
     {
         'MunifTanjim/nui.nvim'
     },
+    {'andweeb/presence.nvim'},
     {'hoob3rt/lualine.nvim'},
     {'npxbr/gruvbox.nvim'},
     {'hrsh7th/nvim-compe'},
