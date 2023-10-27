@@ -51,5 +51,7 @@ return {
     -- bufferline
     {'akinsho/bufferline.nvim'},
     -- alpha-nvim
-    {'goolord/alpha-nvim'}
+    {'goolord/alpha-nvim'},
+    -- indent
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
 }

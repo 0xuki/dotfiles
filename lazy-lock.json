@@ -7,6 +7,7 @@
   "fzf": { "branch": "master", "commit": "b1a0ab8086f061640948299b9ed90a6b0c61c143" },
   "fzf.vim": { "branch": "master", "commit": "d1016dbd7cec2d2a3bb5863776c84b4034e4b85e" },
   "gruvbox.nvim": { "branch": "main", "commit": "477c62493c82684ed510c4f70eaf83802e398898" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "046e2cf04e08ece927bacbfb87c5b35c0b636546" },
   "lazy.nvim": { "branch": "main", "commit": "4c75c8eeb957a99aa44ce8e526c04340ab358c5e" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lualine.nvim": { "branch": "master", "commit": "2248ef254d0a1488a72041cfb45ca9caada6d994" },
