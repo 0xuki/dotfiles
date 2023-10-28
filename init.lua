@@ -16,7 +16,8 @@ plugins = require('plugins')
 require('lazy').setup(plugins)
 
 -- プラグインの読み込み
-require'transparent'
+require'configs.colour_scheme'
+require'configs.transparent'
 require'configs.alpha'
 require'configs.bufferline'
 require("neo-tree").setup({
@@ -40,7 +41,5 @@ require'settings'
 require'configs.lualine_config'
 
 require'configs.colorizer'
-
-require'configs.colour_scheme'
 
 require'configs.autotag'

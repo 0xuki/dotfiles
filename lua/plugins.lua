@@ -14,7 +14,10 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.4',
         requires = { {'nvim-lua/plenary.nvim'} }
     },
+    --theme
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'folke/tokyonight.nvim'},
+    {'rebelot/kanagawa.nvim'},
     -- install without yarn or npm
     {
         "iamcco/markdown-preview.nvim",
