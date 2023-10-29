@@ -37,7 +37,8 @@ return {
     },
     {'xiyaowong/transparent.nvim'},
     -- neo tree
-    {'nvim-neo-tree/neo-tree.nvim'},
+    --{'nvim-neo-tree/neo-tree.nvim'},
+    {'nvim-tree/nvim-tree.lua'},
     {'nvim-lua/plenary.nvim'},
     {'nvim-tree/nvim-web-devicons'},
     {'MunifTanjim/nui.nvim'},

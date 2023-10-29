@@ -20,21 +20,20 @@ require'configs.colour_scheme'
 require'configs.transparent'
 require'configs.alpha'
 require'configs.bufferline'
-require("neo-tree").setup({
-    filesystem = {
-        filtered_items = {
-            visible = true,
-        },
-    },
-})
+require'configs.nvim-tree'
+-- require("neo-tree").setup({
+--     filesystem = {
+--         filtered_items = {
+--             visible = true,
+--         },
+--     },
+-- })
 -- 補完の設定
 require'configs.completion'
 
 -- keymap
 vim.g.mapleader = " "
 require'maps'
-
-require'configs.transparent'
 
 require'settings'
 
