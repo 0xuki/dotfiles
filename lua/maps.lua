@@ -14,9 +14,10 @@ if status then
 else
 	print("Telescope not found")
 end
-
--- <leader> = the space key
-
+-- "jj"でインサートモードからノーマルモードに戻る
+map("i","jj", "<Esc>")
+-- 全選択
+map("n", "<leader>a", "ggVG")
 -- NeoTree
 --map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
 --map("n", "<leader>o", "<CMD>Neotree focus<CR>")
@@ -25,3 +26,14 @@ map('n', '<leader>o', ":NvimTreeFocus<CR>")
 -- buffer line
 map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
+-- インデントの動作設定
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+-- VisualModeのインデントの動作設定
+map('v', '<Tab>', '>')        -- 選択範囲を右にシフト
+map('v', '<S-Tab>', '<')      -- 選択範囲を左にシフト
+-- クリップボードにコピー＆ペーストのキー設定
+map("v", "<C-c>", '"+y')  -- Visual modeでCtrl+cを押すと外部のクリップボードにコピー
+map("n", "<C-v>", '"+p')  -- Normal modeでCtrl+vを押すと外部のクリップボードからペースト
+map("i", "<C-v>", '"+p')  -- Insert modeでCtrl+vを押すと外部のクリップボードからペースト
