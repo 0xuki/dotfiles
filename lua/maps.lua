@@ -37,3 +37,4 @@ map('v', '<S-Tab>', '<')      -- 選択範囲を左にシフト
 map("v", "<C-c>", '"+y')  -- Visual modeでCtrl+cを押すと外部のクリップボードにコピー
 map("n", "<C-v>", '"+p')  -- Normal modeでCtrl+vを押すと外部のクリップボードからペースト
 map("i", "<C-v>", '"+p')  -- Insert modeでCtrl+vを押すと外部のクリップボードからペースト
+vim.opt.guicursor = ""
