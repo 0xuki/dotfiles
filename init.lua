@@ -16,6 +16,7 @@ plugins = require('plugins')
 require('lazy').setup(plugins)
 
 -- プラグインの読み込み
+--require'configs.presence'
 require'configs.colour_scheme'
 require'configs.transparent'
 require'configs.alpha'
@@ -42,3 +43,5 @@ require'configs.lualine_config'
 require'configs.colorizer'
 
 require'configs.autotag'
+-- Rust 設定の読み込み
+require'configs.rust_config'.setup()

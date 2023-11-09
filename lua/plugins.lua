@@ -2,7 +2,7 @@ return {
     {
         'MunifTanjim/nui.nvim'
     },
-    {'andweeb/presence.nvim'},
+    --{'andweeb/presence.nvim'},
     {'hoob3rt/lualine.nvim'},
     {'npxbr/gruvbox.nvim'},
     {'hrsh7th/nvim-compe'},
@@ -57,5 +57,12 @@ return {
     -- alpha-nvim
     {'goolord/alpha-nvim'},
     -- indent
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} }
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    -- rust-analyzer
+	{
+		'neovim/nvim-lspconfig',
+		config = function()
+		require('lspconfig').rust_analyzer.setup{}
+		end
+	}
 }
