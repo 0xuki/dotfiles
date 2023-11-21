@@ -3,7 +3,7 @@ if (not status) then return end
 
 require'bufferline'.setup{
     options = {
-    buffer_close_icon= "",
+    buffer_close_icon= "×",
     modified_icon = "●",
     -- バッファの番号を表示するかどうか "both", "none", "ordinal"
     numbers = "ordinal",
@@ -21,7 +21,7 @@ require'bufferline'.setup{
     middle_mouse_command = nil,
 
     -- タブのセパレータースタイル "slant","thick","thin".....
-    separator_style = "thick",
+    separator_style = "thin",
 
     -- LSPプロバイダからの診断を表示するか "nvim_lsp", "coc"....
     diagnostics = "nvim_lsp",
