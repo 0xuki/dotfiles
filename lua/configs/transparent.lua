@@ -10,3 +10,4 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
 })
 require('transparent').clear_prefix('NeoTree')
 require('transparent').clear_prefix('bufferline')
+require('transparent').clear_prefix('nvimtree')
