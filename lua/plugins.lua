@@ -4,7 +4,6 @@ return {
     },
     --{'andweeb/presence.nvim'},
     {'hoob3rt/lualine.nvim'},
-    {'npxbr/gruvbox.nvim'},
     {'hrsh7th/nvim-compe'},
     {'junegunn/fzf'},
     {'junegunn/fzf.vim'},
@@ -15,6 +14,13 @@ return {
         requires = { {'nvim-lua/plenary.nvim'} }
     },
     --theme
+	{
+		"craftzdog/solarized-osaka.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+	{'npxbr/gruvbox.nvim'},
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'folke/tokyonight.nvim'},
     {'rebelot/kanagawa.nvim'},
