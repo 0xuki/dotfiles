@@ -18,7 +18,8 @@ require('lazy').setup(plugins)
 -- プラグインの読み込み
 --require'configs.presence'
 --require'configs.kanagawa'
-require'configs.solarized'
+--require'configs.solarized'
+require'configs.tokyonight'
 require'configs.transparent'
 require'configs.alpha'
 require'configs.bufferline'
