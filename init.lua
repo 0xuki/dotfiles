@@ -24,6 +24,7 @@ require'configs.transparent'
 require'configs.alpha'
 require'configs.bufferline'
 require'configs.nvim-tree'
+require'configs.noice'
 -- require("neo-tree").setup({
 --     filesystem = {
 --         filtered_items = {
