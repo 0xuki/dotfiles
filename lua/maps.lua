@@ -30,6 +30,9 @@ map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smartindent = true
 -- VisualModeのインデントの動作設定
 map('v', '<Tab>', '>')        -- 選択範囲を右にシフト
 map('v', '<S-Tab>', '<')      -- 選択範囲を左にシフト
