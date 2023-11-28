@@ -55,6 +55,12 @@ let g:clipboard = {
 ]], false)
 vim.opt.guicursor = ""
 
+function open_zsh()
+  vim.api.nvim_command('vsplit term://zsh')
+end
+
+vim.api.nvim_set_keymap('n', '<leader>z', ':lua open_zsh()<CR>', { noremap = true, silent = true })
+
 -- rust-analyzer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
