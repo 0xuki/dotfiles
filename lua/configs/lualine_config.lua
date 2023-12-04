@@ -1,18 +1,42 @@
 local custom_horizon = require'lualine.themes.horizon'
+
+-- NORMAL mode setting
+custom_horizon.normal.a.bg = '#5E81AC' -- 背景色
+custom_horizon.normal.a.fg = '#ECEFF4' -- 文字色
+
+-- INSERT mode setting
+custom_horizon.insert.a.bg = '#88C0D0' -- 背景色
+custom_horizon.insert.a.fg = '#272746' -- 文字色
+
+-- COMMAND mode setting
+custom_horizon.command.a.bg = '#81A1C1' -- 背景色
+custom_horizon.command.a.fg = '#ECEFF4' -- 文字色
+
 -- Git Branch
-custom_horizon.normal.a.bg = '#F43F5E'
-custom_horizon.normal.b.bg = '#272746' -- 背景色
+custom_horizon.normal.b.bg = '#3B4252' -- 背景色
 custom_horizon.normal.b.fg = '#F43F5E' -- 文字色
-custom_horizon.insert.b.bg = '#272746' -- 背景色
+custom_horizon.insert.b.bg = '#3B4252' -- 背景色
 custom_horizon.insert.b.fg = '#F43F5E' -- 文字色
-custom_horizon.visual.b.bg = '#272746' -- 背景色
+custom_horizon.visual.b.bg = '#3B4252' -- 背景色
 custom_horizon.visual.b.fg = '#F43F5E' -- 文字色
-custom_horizon.replace.b.bg = '#272746' -- 背景色
+custom_horizon.replace.b.bg = '#3B4252' -- 背景色
 custom_horizon.replace.b.fg = '#F43F5E' -- 文字色
-custom_horizon.command.b.bg = '#272746' -- 背景色
+custom_horizon.command.b.bg = '#3B4252' -- 背景色
 custom_horizon.command.b.fg = '#F43F5E' -- 文字色
-custom_horizon.inactive.b.bg = '#272746' -- 背景色
+custom_horizon.inactive.b.bg = '#3B4252' -- 背景色
 custom_horizon.inactive.b.fg = '#F43F5E' -- 文字色
+
+-- NORMALモードでのファイル名セクションの設定
+custom_horizon.normal.c.bg = '#2E3440' -- 背景色
+custom_horizon.normal.c.fg = '#D8DEE9' -- 文字色
+
+-- INSERTモードでのファイル名セクションの設定
+custom_horizon.insert.c.bg = '#2E3440' -- 背景色
+custom_horizon.insert.c.fg = '#D8DEE9' -- 文字色
+
+-- COMMANDモードでのファイル名セクションの設定
+custom_horizon.command.c.bg = '#2E3440' -- 背景色
+custom_horizon.command.c.fg = '#D8DEE9' -- 文字色
 
 require('lualine').setup {
     options = {
