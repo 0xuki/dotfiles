@@ -14,29 +14,29 @@ custom_horizon.command.a.fg = '#ECEFF4' -- 文字色
 
 -- Git Branch
 custom_horizon.normal.b.bg = '#3B4252' -- 背景色
-custom_horizon.normal.b.fg = '#F43F5E' -- 文字色
+custom_horizon.normal.b.fg = '#5E81AC' -- 文字色
 custom_horizon.insert.b.bg = '#3B4252' -- 背景色
-custom_horizon.insert.b.fg = '#F43F5E' -- 文字色
+custom_horizon.insert.b.fg = '#88C0D0' -- 文字色
 custom_horizon.visual.b.bg = '#3B4252' -- 背景色
 custom_horizon.visual.b.fg = '#F43F5E' -- 文字色
 custom_horizon.replace.b.bg = '#3B4252' -- 背景色
 custom_horizon.replace.b.fg = '#F43F5E' -- 文字色
 custom_horizon.command.b.bg = '#3B4252' -- 背景色
-custom_horizon.command.b.fg = '#F43F5E' -- 文字色
+custom_horizon.command.b.fg = '#81A1C1' -- 文字色
 custom_horizon.inactive.b.bg = '#3B4252' -- 背景色
 custom_horizon.inactive.b.fg = '#F43F5E' -- 文字色
 
--- NORMALモードでのファイル名セクションの設定
-custom_horizon.normal.c.bg = '#2E3440' -- 背景色
-custom_horizon.normal.c.fg = '#D8DEE9' -- 文字色
+-- Setting the filename section in NORMAL mode
+custom_horizon.normal.c.bg = '#2E3440' -- bg
+custom_horizon.normal.c.fg = '#D8DEE9' -- fg
 
--- INSERTモードでのファイル名セクションの設定
-custom_horizon.insert.c.bg = '#2E3440' -- 背景色
-custom_horizon.insert.c.fg = '#D8DEE9' -- 文字色
+-- Setting the filename section in INSERT mode
+custom_horizon.insert.c.bg = '#2E3440' -- bg
+custom_horizon.insert.c.fg = '#D8DEE9' -- fg
 
--- COMMANDモードでのファイル名セクションの設定
-custom_horizon.command.c.bg = '#2E3440' -- 背景色
-custom_horizon.command.c.fg = '#D8DEE9' -- 文字色
+-- Setting the filename section in COMMAND mode
+custom_horizon.command.c.bg = '#2E3440' -- bg
+custom_horizon.command.c.fg = '#D8DEE9' -- fg
 
 require('lualine').setup {
     options = {
