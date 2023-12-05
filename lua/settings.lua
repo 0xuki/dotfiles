@@ -5,4 +5,39 @@ vim.opt.fileencoding = "utf-8"
 -- 行番号を表示
 vim.wo.number = true
 
+-- WSL環境をチェックする関数
+local function is_wsl()
+  local output = vim.fn.systemlist("uname -r")
+  return not not string.find(output[1] or "", "Microsoft")
+end
+
+-- クリップボード設定を適用する
+if is_wsl() then
+  -- WSLの場合のクリップボード設定
+  vim.g.clipboard = {
+    name = 'WSLClipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -c [Console] :: Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console] :: Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+  }
+else
+  -- Windowsの場合のクリップボード設定（デフォルト設定を使用）
+  vim.g.clipboard = {
+    name = 'win32yank',
+    copy = {
+      ['+'] = 'win32yank.exe -i --crlf',
+      ['*'] = 'win32yank.exe -i --crlf',
+    },
+    paste = {
+      ['+'] = 'win32yank.exe -o --lf',
+      ['*'] = 'win32yank.exe -o --lf',
+    },
+  }
+end
+
 return {}

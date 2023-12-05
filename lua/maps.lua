@@ -40,19 +40,7 @@ map('v', '<S-Tab>', '<')      -- 選択範囲を左にシフト
 map("v", "<C-c>", '"+y')  -- Visual modeでCtrl+cを押すと外部のクリップボードにコピー
 map("n", "<C-v>", '"+p')  -- Normal modeでCtrl+vを押すと外部のクリップボードからペースト
 map("i", "<C-v>", '"+p')  -- Insert modeでCtrl+vを押すと外部のクリップボードからペースト
-vim.api.nvim_exec([[
-let g:clipboard = {
-    \ 'name': 'WslClipboard',
-    \ 'copy': {
-    \   '+': 'clip.exe',
-    \   '*': 'clip.exe',
-    \ },
-    \ 'paste': {
-    \   '+': 'powershell.exe -c [Console] :: Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    \   '*': 'powershell.exe -c [Console] :: Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    \ },
-\ }
-]], false)
+
 vim.opt.guicursor = ""
 
 function open_zsh()
