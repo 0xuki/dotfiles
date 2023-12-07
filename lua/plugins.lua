@@ -14,6 +14,9 @@ return {
         requires = { {'nvim-lua/plenary.nvim'} }
     },
     --theme
+    {
+        'shaunsingh/nord.nvim'
+    },
 	{
 		"craftzdog/solarized-osaka.nvim",
 		lazy = false,
