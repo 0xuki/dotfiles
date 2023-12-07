@@ -15,7 +15,7 @@ return {
     },
     --theme
     {
-        'shaunsingh/nord.nvim'
+        'gbprod/nord.nvim'
     },
 	{
 		"craftzdog/solarized-osaka.nvim",
@@ -53,7 +53,6 @@ return {
     {'MunifTanjim/nui.nvim'},
     -- Code Snippet
     {'onsails/lspkind-nvim'},
-    {'L3MON4D3/LuaSnip'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/nvim-cmp'},
