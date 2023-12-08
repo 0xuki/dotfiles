@@ -15,11 +15,17 @@ plugins = require('plugins')
 
 require('lazy').setup(plugins)
 
+-- tree-sitter
+require'configs.treesitter'
+
+-- theme
 --require'configs.presence'
 --require'configs.kanagawa'
 --require'configs.solarized'
 --require'configs.tokyonight'
 require'configs.nord'
+
+
 require'configs.transparent'
 require'configs.alpha'
 require'configs.bufferline'
