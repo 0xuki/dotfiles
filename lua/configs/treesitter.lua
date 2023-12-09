@@ -8,16 +8,17 @@ treesitter.setup {
     additional_vim_regex_highlighting = false,
   },
   indent = {
-    enable = true
+    enable = false
   },
   incremental_selection = {
+    enable = false 
+  },
+  textobjects = {
     enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
+  },
+  -- nvim-ts-autotag
+  autotag = {
+    enable = true,
   },
 }
 
