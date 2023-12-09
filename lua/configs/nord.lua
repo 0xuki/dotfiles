@@ -12,7 +12,7 @@ require("nord").setup({
     styles = {
       -- Style to be applied to different syntax groups
       -- Value is any valid attr-list value for `:help nvim_set_hl`
-      comments = { italic = false, fg = "#666A9C" },
+      comments = { italic = false, fg = "#848D97" },
       keywords = {},
       functions = {},
       variables = {},
