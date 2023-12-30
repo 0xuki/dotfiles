@@ -95,5 +95,10 @@ return {
         opts = {
 			    timeout = 5000,
 		    },
-    }
+    },
+    -- copilot
+    {
+      "github/copilot.vim",
+      lazy = false,
+    }, 
 }
