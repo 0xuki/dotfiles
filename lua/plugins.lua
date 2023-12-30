@@ -17,13 +17,13 @@ return {
     {
         'gbprod/nord.nvim'
     },
-	{
-		"craftzdog/solarized-osaka.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-	},
-	{'npxbr/gruvbox.nvim'},
+    {
+      "craftzdog/solarized-osaka.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+    },
+    {'npxbr/gruvbox.nvim'},
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {'folke/tokyonight.nvim'},
     {'rebelot/kanagawa.nvim'},
@@ -67,12 +67,12 @@ return {
     -- indent
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     -- rust-analyzer
-	{
-		'neovim/nvim-lspconfig',
-		config = function()
-		require('lspconfig').rust_analyzer.setup{}
-		end
-	},
+    {
+      'neovim/nvim-lspconfig',
+      config = function()
+      require('lspconfig').rust_analyzer.setup{}
+      end
+    },
     -- noice.nvim
     {
         "folke/noice.nvim",
@@ -93,7 +93,7 @@ return {
     { 
         'rcarriga/nvim-notify',
         opts = {
-			timeout = 5000,
-		},
+			    timeout = 5000,
+		    },
     }
 }
