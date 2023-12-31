@@ -1,58 +1,76 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-    lazypath,
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
 plugins = require('plugins')
-
 require('lazy').setup(plugins)
 
-require'configs.lightline'
+vim.api.nvim_create_autocmd("VimEnter", {
+    pattern = "*",
+    callback = function()
+        local script_path = vim.fn.expand('~/.config/nvim/checkUpdates.js')
+        local handle = io.popen('node ' .. script_path)
+        local result = handle:read("*a")
+        handle:close()
 
-require'configs.lsp'
+        local plugin = "Neovim Config Updater"
 
--- tree-sitter
-require'configs.treesitter'
-
--- theme
---require'configs.presence'
---require'configs.kanagawa'
---require'configs.solarized'
---require'configs.tokyonight'
-require'configs.nord'
-
-require'configs.transparent'
-require'configs.alpha'
---require'configs.bufferline'
-
-require'configs.nvim-tree'
-require'configs.noice'
--- require("neo-tree").setup({
---     filesystem = {
---         filtered_items = {
---             visible = true,
---         },
---     },
--- })
+        if result:match("not up to date") then
+            vim.notify("Your Neovim configuration is not up to date!", "error", {
+              title = plugin,
+              on_open = function()
+                -- ここに適切な回復処理や追加の通知を設定
+              end,
+            })
+        else
+            vim.notify("Your Neovim configuration is up to date.", "info", {
+              title = plugin
+            })
+        end
+    end
+})
 
 
--- keymap
+
+-- LSP
+require'configs.lsp.lsp'
+
+-- Treesitter
+require'configs.lsp.treesitter'
+
+-- Appearance
+require'configs.appearance.alpha'
+require'configs.appearance.lightline'
+require'configs.appearance.lualine'
+require'configs.appearance.transparent'
+require'configs.appearance.colorizer'
+require'configs.appearance.indent'
+require'configs.appearance.noice'
+
+-- Theme
+require'configs.appearance.theme.nord'
+
+-- Navigation
+require'configs.navigation.nvim-tree'
+
+-- Integrations
+--require'configs.integrations.presence'
+
+-- Utilities
+require'configs.utils.autotag'
+
+-- Keymappings
 vim.g.mapleader = " "
 require'maps'
 
+-- Settings
 require'settings'
-
-require'configs.lualine'
-
-require'configs.colorizer'
-
-require'configs.autotag'
-
