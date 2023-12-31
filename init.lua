@@ -17,6 +17,8 @@ require('lazy').setup(plugins)
 
 require'configs.lightline'
 
+require'configs.lsp'
+
 -- tree-sitter
 require'configs.treesitter'
 
@@ -40,8 +42,7 @@ require'configs.noice'
 --         },
 --     },
 -- })
--- 補完の設定
-require'configs.completion'
+
 
 -- keymap
 vim.g.mapleader = " "
@@ -54,5 +55,4 @@ require'configs.lualine_config'
 require'configs.colorizer'
 
 require'configs.autotag'
--- Rust 設定の読み込み
-require'configs.rust_config'.setup()
+

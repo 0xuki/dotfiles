@@ -51,12 +51,23 @@ return {
     {'nvim-lua/plenary.nvim'},
     {'nvim-tree/nvim-web-devicons'},
     {'MunifTanjim/nui.nvim'},
-    -- Code Snippet
+    -- lsp
+    {
+      "williamboman/mason.nvim", -- LSP Installer
+      dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        "nvim-lua/plenary.nvim",
+      }
+    },
     {'onsails/lspkind-nvim'},
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/cmp-buffer'},
     {'hrsh7th/nvim-cmp'},
-    {'nvim-treesitter/nvim-treesitter'},
+    {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+    },
     -- tag snippet
     {'windwp/nvim-ts-autotag'},
     {'windwp/nvim-autopairs'},
