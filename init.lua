@@ -15,6 +15,8 @@ plugins = require('plugins')
 
 require('lazy').setup(plugins)
 
+require'configs.lightline'
+
 -- tree-sitter
 require'configs.treesitter'
 
@@ -25,10 +27,10 @@ require'configs.treesitter'
 --require'configs.tokyonight'
 require'configs.nord'
 
-
 require'configs.transparent'
 require'configs.alpha'
-require'configs.bufferline'
+--require'configs.bufferline'
+
 require'configs.nvim-tree'
 require'configs.noice'
 -- require("neo-tree").setup({

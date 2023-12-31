@@ -5,6 +5,8 @@ vim.opt.fileencoding = "utf-8"
 -- 行番号を表示
 vim.wo.number = true
 
+vim.o.showtabline = 2
+
 vim.opt.cursorline = true
 vim.cmd [[highlight CursorLine guibg=#4C566A]]
 

@@ -24,8 +24,12 @@ map("n", "<leader>a", "ggVG")
 map('n', '<leader>e', ":NvimTreeToggle<CR>")
 map('n', '<leader>o', ":NvimTreeFocus<CR>")
 -- buffer line
-map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
-map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
+--map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
+--map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
+-- lightline-bufferline
+map("n", "<Tab>", ":bnext<CR>")
+
+map("n", "<S-Tab>", ":bprev<CR>")
 -- インデントの動作設定
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2

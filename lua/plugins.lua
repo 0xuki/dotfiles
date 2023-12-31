@@ -101,4 +101,13 @@ return {
       "github/copilot.vim",
       lazy = false,
     }, 
+    -- lightline
+    {
+      "itchyny/lightline.vim",
+      lazy = false,
+    },
+    {
+      'mengelbrecht/lightline-bufferline',
+      lazy = false,
+    }
 }
