@@ -5,6 +5,9 @@ vim.opt.fileencoding = "utf-8"
 -- 行番号を表示
 vim.wo.number = true
 
+vim.opt.cursorline = true
+vim.cmd [[highlight CursorLine guibg=#4C566A]]
+
 -- WSL環境をチェックする関数
 local function is_wsl()
   local output = vim.fn.systemlist("uname -r")
