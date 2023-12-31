@@ -17,8 +17,8 @@ require('lazy').setup(plugins)
 vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
-        local script_path = vim.fn.expand('~/.config/nvim/checkUpdates.js')
-        local handle = io.popen('node ' .. script_path)
+        local script_path = vim.fn.expand('~/.config/nvim/target/debug/nvim')
+        local handle = io.popen(script_path)
         local result = handle:read("*a")
         handle:close()
 
@@ -26,10 +26,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
         if result:match("not up to date") then
             vim.notify("Your Neovim configuration is not up to date!", "error", {
-              title = plugin,
-              on_open = function()
-                -- ここに適切な回復処理や追加の通知を設定
-              end,
+              title = plugin
             })
         else
             vim.notify("Your Neovim configuration is up to date.", "info", {
@@ -38,8 +35,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end
     end
 })
-
-
 
 -- LSP
 require'configs.lsp.lsp'
