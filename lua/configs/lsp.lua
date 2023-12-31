@@ -1,14 +1,25 @@
--- 必要なプラグインとモジュールをロードする
+-- load plugins
 local nvim_lsp = require('lspconfig')
 local mason = require("mason")
 local mason_lspconfig = require('mason-lspconfig')
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
--- masonをセットアップする
-mason.setup()
+-- setup mason
+require("mason").setup({
+  ui = {
+    icons = {
+      server_installed = "✓",
+      server_pending = "➜",
+      server_uninstalled = "✗",
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
+    },
+  },
+})
 
--- mason_lspconfigをセットアップする
+-- setup mason_lspconfig
 mason_lspconfig.setup({
   ensure_installed = { "rust_analyzer", "lua_ls" }, -- LSP Server to install
 })
