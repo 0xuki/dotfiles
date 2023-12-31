@@ -50,7 +50,7 @@ require'maps'
 
 require'settings'
 
-require'configs.lualine_config'
+require'configs.lualine'
 
 require'configs.colorizer'
 
