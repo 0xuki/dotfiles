@@ -4,21 +4,21 @@ DOTFILES_DIR=~/dotfiles
 # Name of backup directory
 BACKUP_DIR=~/dotfiles_backup_$(date +%Y%m%d_%H%M%S)
 
-# .zshrc
-ZSHRC_SOURCE="$DOTFILES_DIR/zsh/.zshrc"
+# Paths for various configurations
+ZSHRC_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.zshrc"
 ZSHRC_TARGET=~/.zshrc
 
-# .vifm
-VIFM_SOURCE="$DOTFILES_DIR/.config/.vifm"
+VIFM_SOURCE="$DOTFILES_DIR/common/.config/.vifm"
 VIFM_TARGET=~/.vifm
 
-# .p10k.zsh
-THEME_SOURCE="$DOTFILES_DIR/zsh/.p10k.zsh"
+THEME_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.p10k.zsh"
 THEME_TARGET=~/.p10k.zsh
 
-# .tmux.conf
-TMUX_CONF_SOURCE="$DOTFILES_DIR/.config/tmux/.tmux.conf"
+TMUX_CONF_SOURCE="$DOTFILES_DIR/ubuntu/.config/tmux/.tmux.conf"
 TMUX_CONF_TARGET=~/.tmux.conf
+
+NVIM_SOURCE="$DOTFILES_DIR/common/.config/nvim"
+NVIM_TARGET="$HOME/.config/nvim"
 
 # backup function
 backup_config() {
@@ -64,6 +64,11 @@ main() {
     echo "Creating symbolic link for .tmux.conf"
     ln -s "$TMUX_CONF_SOURCE" "$TMUX_CONF_TARGET"
 
+    # Backup and create symbolic link for Neovim
+    backup_config "$NVIM_TARGET"
+    echo "Create symbolic link: $NVIM_SOURCE -> $NVIM_TARGET"
+    ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
+
     # Install TPM
     install_tpm
 
@@ -72,4 +77,3 @@ main() {
 
 # boot
 main
-
