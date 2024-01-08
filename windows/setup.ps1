@@ -5,38 +5,74 @@ function Create-SymbolicLink {
         [string]$LinkPath,
         [string]$TargetPath
     )
-    
-    if (Test-Path $LinkPath) {
-        $backupPath = "$LinkPath.backup"
-        Write-Host "Creating backup: $LinkPath -> $backupPath"
-        Move-Item -Path $LinkPath -Destination $backupPath
+    # Ensure target directory exists
+    $targetDir = Split-Path -Path $LinkPath -Parent
+    if (-not (Test-Path $targetDir)) {
+        New-Item -Path $targetDir -ItemType Directory -Force
     }
 
     Write-Host "Creating symbolic link: $LinkPath -> $TargetPath"
     sudo New-Item -ItemType SymbolicLink -Path $LinkPath -Target $TargetPath
 }
-#
+
 $repoPath = Split-Path $PSScriptRoot -Parent # Path to the root of the repository
 $userProfile = $Env:USERPROFILE
-$tempConfigPath = Join-Path $userProfile ".config_temp"
 
-# Create a temporary directory to hold the merged configuration
-New-Item -Path $tempConfigPath -ItemType Directory -Force
+# Specific target locations
+$nvimTarget = Join-Path $userProfile "AppData\Local\nvim"
+$vifmTarget = Join-Path $userProfile ".vifm"
+$windowsTerminalTarget = Join-Path $userProfile "AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
-# Copy common and windows specific configurations into the temporary directory
-Copy-Item -Path "$repoPath\common\.config\*" -Destination $tempConfigPath -Recurse -Force
-Copy-Item -Path "$repoPath\windows\.config\*" -Destination $tempConfigPath -Recurse -Force
+# Create symbolic links for specific configurations
+Create-SymbolicLink -LinkPath $nvimTarget -Target "$repoPath\common\.config\nvim"
+Create-SymbolicLink -LinkPath $vifmTarget -Target "$repoPath\common\.config\.vifm"
+Create-SymbolicLink -LinkPath $windowsTerminalTarget -Target "$repoPath\windows\.config\windowsterminal\settings.json"
 
-# Create symbolic link for the merged configuration
-Create-SymbolicLink -LinkPath "$userProfile\.config" -Target $tempConfigPath
+# Exclude directory paths from general linking
+$excludedDirPaths = @(
+    (Resolve-Path "$repoPath\common\.config\nvim").Path.ToLower(),
+    (Resolve-Path "$repoPath\common\.config\.vifm").Path.ToLower(),
+    (Resolve-Path "$repoPath\windows\.config\windowsterminal").Path.ToLower()
+)
 
-# Create additional symbolic links as needed
-Create-SymbolicLink -LinkPath "$userProfile\.vifm" -Target "$repoPath\common\.config\.vifm"
-Create-SymbolicLink -LinkPath "$userProfile\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$repoPath\windows\.config\windowsterminal\settings.json"
-Create-SymbolicLink -LinkPath "$userProfile\AppData\Local\nvim" -Target "$repoPath\common\.config\nvim"
+# Function to recursively check if a path is under any of the excluded directories
+function IsUnderExcludedPath {
+    param (
+        [string]$Path,
+        [array]$ExcludedPaths
+    )
+    foreach ($excludedPath in $ExcludedPaths) {
+        if ($Path.StartsWith($excludedPath)) {
+            return $true
+        }
+    }
+    return $false
+}
+
+# Function to create links for all files within a specific configuration directory
+function CreateLinksForConfig {
+    param (
+        [string]$SourceRoot,
+        [string]$TargetRoot,
+        [array]$ExcludeDirPaths
+    )
+    $configFiles = Get-ChildItem -Path $SourceRoot -Recurse -File
+    foreach ($file in $configFiles) {
+        $fileDirLower = (Resolve-Path $file.Directory.FullName).Path.ToLower()
+        if (-not (IsUnderExcludedPath $fileDirLower $ExcludeDirPaths)) {
+            $relativePath = $file.FullName.Substring($SourceRoot.Length + 1)
+            $target = Join-Path $TargetRoot $relativePath
+            Write-Host "Linking $file.FullName to $target"
+            Create-SymbolicLink -LinkPath $target -Target $file.FullName
+        } else {
+            Write-Host "Skipping excluded path: $file.FullName"
+        }
+    }
+}
+
+# Create symbolic links for Windows and Common configurations in the user's .config directory
+$userConfigDir = Join-Path $userProfile ".config"
+CreateLinksForConfig -SourceRoot "$repoPath\windows\.config" -TargetRoot $userConfigDir -ExcludeDirPaths $excludedDirPaths
+CreateLinksForConfig -SourceRoot "$repoPath\common\.config" -TargetRoot $userConfigDir -ExcludeDirPaths $excludedDirPaths
 
 Write-Host "All symbolic links have been created."
-
-# Clean up temporary directory
-#Remove-Item -Path $tempConfigPath -Recurse -Force
-
