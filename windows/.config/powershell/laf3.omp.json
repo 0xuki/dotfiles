@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#15C2CB",
+          "foreground": "#89B4FA",
           "properties": {
             "style": "folder"
           },
@@ -14,18 +14,18 @@
           "type": "path"
         },
         {
-          "foreground": "#F141A8",
+          "foreground": "#89B4FA",
           "properties": {
             "branch_icon": "\ue0a0 "
           },
           "style": "plain",
-          "template": "<#F3EFF5>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "template": "<#89B4FA>on</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
           "type": "git"
         },
         {
-          "foreground": "#5EADF2",
+          "foreground": "#89B4FA",
           "style": "plain",
-          "template": "{{if .Version}}<#F3EFF5>is</> \uf487 {{.Version}} {{end}}",
+          "template": "{{if .Version}}<#89B4FA>is</> \uf487 {{.Version}} {{end}}",
           "type": "project"
         },
         {
@@ -48,7 +48,6 @@
     },
     {
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
           "foreground": "#5E81AC",
