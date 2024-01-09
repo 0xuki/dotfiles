@@ -5,26 +5,29 @@ DOTFILES_DIR=~/dotfiles
 BACKUP_DIR=~/dotfiles_backup_$(date +%Y%m%d_%H%M%S)
 
 # Paths for various configurations
-ZSHRC_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.zshrc"
+ZSHRC_SOURCE="$DOTFILES_DIR/arch/zsh/.zshrc"
 ZSHRC_TARGET=~/.zshrc
 
-ZSHENV_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.zshenv"
+ZSHENV_SOURCE="$DOTFILES_DIR/arch/zsh/.zshenv"
 ZSHENV_TARGET=~/.zshenv
 
 VIFM_SOURCE="$DOTFILES_DIR/common/.config/.vifm"
 VIFM_TARGET=~/.vifm
 
-THEME_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.p10k.zsh"
+THEME_SOURCE="$DOTFILES_DIR/arch/zsh/.p10k.zsh"
 THEME_TARGET=~/.p10k.zsh
 
-TMUX_CONF_SOURCE="$DOTFILES_DIR/ubuntu/.config/tmux/.tmux.conf"
+TMUX_CONF_SOURCE="$DOTFILES_DIR/arch/.config/tmux/.tmux.conf"
 TMUX_CONF_TARGET=~/.tmux.conf
 
 NVIM_SOURCE="$DOTFILES_DIR/common/.config/nvim"
 NVIM_TARGET="$HOME/.config/nvim"
 
-ZENO_SOURCE="$DOTFILES_DIR/ubuntu/.config/zeno"
+ZENO_SOURCE="$DOTFILES_DIR/arch/.config/zeno"
 ZENO_TARGET="$HOME/.config/zeno"
+
+EMACS_SOURCE="$DOTFILES_DIR/common/.config/.emacs.d"
+EMACS_TARGET="$HOME/.config/.emacs.d"
 
 # backup function
 backup_config() {
@@ -84,6 +87,11 @@ main() {
     backup_config "$ZENO_TARGET"
     echo "Create symbolic link: $ZENO_SOURCE -> $ZENO_TARGET"
     ln -s "$ZENO_SOURCE" "$ZENO_TARGET"
+
+    # Backup and create symbolic link for emacs
+    backup_config "$EMACS_TARGET"
+    echo "Create symbolic link: $EMACS_SOURCE -> $EMACS_TARGET"
+    ln -s "$EMACS_SOURCE" "$EMACS_TARGET"
 
     # Install TPM
     install_tpm

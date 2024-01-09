@@ -26,6 +26,9 @@ NVIM_TARGET="$HOME/.config/nvim"
 ZENO_SOURCE="$DOTFILES_DIR/ubuntu/.config/zeno"
 ZENO_TARGET="$HOME/.config/zeno"
 
+EMACS_SOURCE="$DOTFILES_DIR/common/.config/.emacs.d"
+EMACS_TARGET="$HOME/.config/.emacs.d"
+
 # backup function
 backup_config() {
     local config_path=$1
@@ -84,6 +87,11 @@ main() {
     backup_config "$ZENO_TARGET"
     echo "Create symbolic link: $ZENO_SOURCE -> $ZENO_TARGET"
     ln -s "$ZENO_SOURCE" "$ZENO_TARGET"
+    
+    # Backup and create symbolic link for emacs
+    backup_config "$EMACS_TARGET"
+    echo "Create symbolic link: $EMACS_SOURCE -> $EMACS_TARGET"
+    ln -s "$EMACS_SOURCE" "$EMACS_TARGET"
 
     # Install TPM
     install_tpm
