@@ -8,6 +8,9 @@ BACKUP_DIR=~/dotfiles_backup_$(date +%Y%m%d_%H%M%S)
 ZSHRC_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.zshrc"
 ZSHRC_TARGET=~/.zshrc
 
+ZSHENV_SOURCE="$DOTFILES_DIR/ubuntu/zsh/.zshenv"
+ZSHENV_TARGET=~/.zshenv
+
 VIFM_SOURCE="$DOTFILES_DIR/common/.config/.vifm"
 VIFM_TARGET=~/.vifm
 
@@ -19,6 +22,9 @@ TMUX_CONF_TARGET=~/.tmux.conf
 
 NVIM_SOURCE="$DOTFILES_DIR/common/.config/nvim"
 NVIM_TARGET="$HOME/.config/nvim"
+
+ZENO_SOURCE="$DOTFILES_DIR/ubuntu/.config/zeno"
+ZENO_TARGET="$HOME/.config/zeno"
 
 # backup function
 backup_config() {
@@ -48,6 +54,11 @@ main() {
     backup_config "$ZSHRC_TARGET"
     echo "Create symbolic link: $ZSHRC_SOURCE -> $ZSHRC_TARGET"
     ln -s "$ZSHRC_SOURCE" "$ZSHRC_TARGET"
+    
+    # Backup and create symbolic link for .zshenv
+    backup_config "$ZSHENV_TARGET"
+    echo "Create symbolic link: $ZSHENV_SOURCE -> $ZSHENV_TARGET"
+    ln -s "$ZSHENV_SOURCE" "$ZSHENV_TARGET"
 
     # Backup and create symbolic link for .vifm
     backup_config "$VIFM_TARGET"
@@ -68,6 +79,11 @@ main() {
     backup_config "$NVIM_TARGET"
     echo "Create symbolic link: $NVIM_SOURCE -> $NVIM_TARGET"
     ln -s "$NVIM_SOURCE" "$NVIM_TARGET"
+
+    # Backup and create symbolic link for zeno
+    backup_config "$ZENO_TARGET"
+    echo "Create symbolic link: $ZENO_SOURCE -> $ZENO_TARGET"
+    ln -s "$ZENO_SOURCE" "$ZENO_TARGET"
 
     # Install TPM
     install_tpm
