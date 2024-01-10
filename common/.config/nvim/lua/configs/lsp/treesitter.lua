@@ -1,7 +1,7 @@
 local treesitter = require'nvim-treesitter.configs'
 
 treesitter.setup {
-  ensure_installed = {"rust", "typescript", "tsx", "c_sharp", "lua", "haskell", "python"},
+  ensure_installed = {"rust", "typescript", "tsx", "c_sharp", "lua", "haskell", "python", "c"},
 
   highlight = {
     enable = true,
