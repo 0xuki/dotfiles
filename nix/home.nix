@@ -6,20 +6,13 @@ let
 in
 {
   imports = [
-    ./zsh.nix
-    ./starship.nix
-    ./neovim.nix
-    ./direnv.nix
-    ./development.nix
-    ./wezterm.nix
-    ./browser.nix
-    ./apps.nix
+    ./cli/default.nix
+    ./gui/default.nix
+    ./desktop/default.nix
   ];
 
-  # home-manager を有効にする
   programs.home-manager.enable = true;
 
-  # ユーザー固有の設定
   home.username = username;
   home.homeDirectory = homeDirectory;
   home.stateVersion = stateVersion;

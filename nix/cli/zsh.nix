@@ -1,10 +1,15 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
-    autocd = true; # cdなしでファイルパスだけで移動
-    enableCompletion = true; # 自動補完
-    enableAutosuggestions = true; # 入力サジェスト
-    syntaxHighlighting.enable = true; # シンタックスハイライト
+    autocd = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    syntaxHighlighting.enable = true;
+
+    interactiveShellInit = ''
+      export XDG_CONFIG_HOME="$HOME/dotfiles/nix"
+    '';
+
     shellAliases = {
       cat = "bat";
       grep = "rg";
@@ -15,3 +20,4 @@
     };
   };
 }
+
