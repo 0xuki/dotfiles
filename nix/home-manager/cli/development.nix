@@ -8,6 +8,6 @@
     nodePackages.wrangler
     python312
     supabase-cli
-    rust-bin.stable.latest.default
+    rustup
   ];
 }

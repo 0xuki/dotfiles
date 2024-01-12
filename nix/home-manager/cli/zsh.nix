@@ -6,10 +6,6 @@
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
 
-    interactiveShellInit = ''
-      export XDG_CONFIG_HOME="$HOME/dotfiles/nix"
-    '';
-
     shellAliases = {
       cat = "bat";
       grep = "rg";

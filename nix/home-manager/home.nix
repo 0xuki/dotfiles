@@ -16,6 +16,14 @@ in
   home.username = username;
   home.homeDirectory = homeDirectory;
   home.stateVersion = stateVersion;
+  
+  home.sessionVariables = {
+    XDG_CONFIG_HOME = "$HOME/dotfiles/nix/home-manager";
+  };
+  
+  home.enableNixpkgsReleaseCheck = false;  #Home ManagerとNixpkgsのバージョン不一致の警告を無視
+
+  nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
     bat
