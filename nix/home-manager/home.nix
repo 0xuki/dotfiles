@@ -18,7 +18,7 @@ in
   home.stateVersion = stateVersion;
   
   home.sessionVariables = {
-    XDG_CONFIG_HOME = "$HOME/dotfiles/nix/home-manager";
+    XDG_CONFIG_HOME = "${homeDirectory}/.config";
   };
   
   home.enableNixpkgsReleaseCheck = false;  #Home ManagerとNixpkgsのバージョン不一致の警告を無視
