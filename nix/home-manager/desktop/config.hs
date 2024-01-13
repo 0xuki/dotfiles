@@ -60,7 +60,7 @@ main = do
 -- Startup
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "feh --bg-scale ~/.hm_desktop/wallpaper.jpg"
+    spawnOnce "feh --bg-scale ~/wallpaper2.png"
     spawnOnce "fcitx5 -D"
     spawnOnce "discord --start-minimized"
     spawnOnce "slack -u"

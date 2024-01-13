@@ -6,6 +6,7 @@
     ./wezterm.nix
     ./alacritty.nix
     ./tmux.nix
+    ./rofi/default.nix
   ];
 }
 
