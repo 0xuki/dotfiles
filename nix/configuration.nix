@@ -15,8 +15,6 @@
     ./modules/polybar.nix
     ./modules/gtk.nix
     ./modules/xmonad.nix
-    #./modules/gnome.nix
-    ./modules/fcitx.nix
   ];
 }
 

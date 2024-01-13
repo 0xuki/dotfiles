@@ -11,7 +11,7 @@
 
     xserver = {
       enable = true;
-      layout = "us";
+      layout = "jp";
       libinput = {
         enable = true;
         touchpad = {
@@ -20,6 +20,14 @@
       };
 
       displayManager.defaultSession = "none+xmonad";
+      # Enable touchpad support.
+      libinput.enable = true;
+
+      # Enable the Gnome3 desktop manager
+      displayManager.gdm.enable    = true;
+      displayManager.gdm.wayland   = false; # screen-sharing is broken
+      desktopManager.gnome3.enable = true;
+
       windowManager.xmonad = {
         enable = true;
         enableContribAndExtras = true;
