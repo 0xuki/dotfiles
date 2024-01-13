@@ -12,7 +12,7 @@
     ./modules/users.nix
     ./modules/virtualisation.nix
     ./modules/xremap.nix
-    ./modules/polybar.nix
+    #./modules/polybar.nix
     ./modules/gtk.nix
     ./modules/xmonad.nix
   ];

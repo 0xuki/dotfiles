@@ -64,6 +64,7 @@ myStartupHook = do
     spawnOnce "fcitx5 -D"
     spawnOnce "discord --start-minimized"
     spawnOnce "slack -u"
+    spawnOnce "polybar mybar"
 
 -- Keybind
 myKeys :: XConfig Layout -> [(String, X ())]
