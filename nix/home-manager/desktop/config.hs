@@ -23,6 +23,8 @@ import XMonad.Actions.PhysicalScreens (viewScreen)
 
 import XMonad.Hooks.ManageDocks (avoidStruts)
 
+import XMonad.Hooks.DynamicLog
+
 import XMonad.Layout.IndependentScreens (
     countScreens,
     onCurrentScreen,
@@ -40,10 +42,38 @@ import XMonad.Layout.NoBorders (
 import XMonad.Layout.Spacing (smartSpacingWithEdge)
 import XMonad.Layout.Spiral (spiral)
 import XMonad.Layout.ToggleLayouts (ToggleLayout (ToggleLayout), toggleLayouts)
+import DBus
+import DBus.Client
+import qualified Data.ByteString.UTF8 as UTF8
+
+myPolybarLogHook :: Client -> X ()
+myPolybarLogHook dbus = dynamicLogWithPP (polybarPP dbus)
+
+polybarPP :: Client -> PP
+polybarPP dbus = def { ppOutput = dbusOutput dbus }
+
+-- Emit a DBus signal on log updates
+dbusOutput :: Client -> String -> IO ()
+dbusOutput dbus str =
+  let opath  = objectPath_ "/org/xmonad/Log"
+      iname  = interfaceName_ "org.xmonad.Log"
+      mname  = memberName_ "Update"
+      sig    = signal opath iname mname
+      body   = [toVariant $ UTF8.fromString str]
+  in emit dbus $ sig { signalBody = body }
+
+mkDbusClient :: IO Client
+mkDbusClient = do
+  dbus <- connectSession
+  requestName dbus (busName_ "org.xmonad.log") opts
+  return dbus
+ where
+  opts = [nameAllowReplacement, nameReplaceExisting, nameDoNotQueue]
 
 main :: IO ()
 main = do
     n <- countScreens
+    dbus <- mkDbusClient
     xmonad $
         def
             { terminal = "alacritty"
@@ -55,6 +85,7 @@ main = do
             , workspaces = withScreens n (map show [1 .. 9 :: Int])
             , keys = \c -> mkKeymap c $ myKeys c
             , layoutHook = myLayoutHook
+            , logHook = myPolybarLogHook dbus
             }
 
 -- Startup
