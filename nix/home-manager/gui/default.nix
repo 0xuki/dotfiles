@@ -7,7 +7,7 @@
     ./alacritty.nix
     ./tmux.nix
     ./rofi/default.nix
-    #./polybar/default.nix
+    ./polybar/default.nix
   ];
 }
 
