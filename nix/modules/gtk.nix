@@ -10,5 +10,11 @@
   environment.systemPackages = with pkgs; [
     gtk3
   ];
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    gtk = {
+      theme.name = "Tokyo-Night-GTK-"; # GTKテーマ
+    };
+  };
 }
 
