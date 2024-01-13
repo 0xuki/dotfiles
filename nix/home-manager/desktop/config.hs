@@ -98,6 +98,8 @@ import qualified Codec.Binary.UTF8.String              as UTF8
 import qualified DBus                                  as D
 import qualified DBus.Client                           as D
 import           XMonad.Hooks.DynamicLog
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
 import System.Process (spawnCommand)
 import Control.Monad (void)
 
@@ -126,10 +128,10 @@ main' dbus = xmonad . docks . ewmh . ewmhFullscreen . dynProjects . keybindings 
   keybindings = addDescrKeys' ((myModMask, xK_F1), showKeybindings) myKeys
   urgencyHook = withUrgencyHook LibNotifyUrgencyHook
 
-launchPolybar :: IO ()
-launchPolybar = do
-void $ spawnCommand "killall polybar" -- 既存のPolybarを終了する
-void $ spawnCommand "polybar top &" -- 新しいPolybarインスタンスを起動する
+--launchPolybar :: IO ()
+--launchPolybar = do
+--void $ spawnCommand "killall polybar" -- 既存のPolybarを終了する
+--void $ spawnCommand "polybar top &" -- 新しいPolybarインスタンスを起動する
 
 
 
@@ -138,7 +140,7 @@ void $ spawnCommand "polybar top &" -- 新しいPolybarインスタンスを起�
 -- per-workspace layout choices.
 --myStartupHook = startupHook def
 myStartupHook = do
-  startupHook def -- 既存のスタートアップフックを実行
+  sbStartupHook def -- 既存のスタートアップフックを実行
   spawn "killall polybar; polybar top &" 
 
 -- original idea: https://pbrisbin.com/posts/using_notify_osd_for_xmonad_notifications/
