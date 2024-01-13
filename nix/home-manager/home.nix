@@ -9,6 +9,7 @@ in
     ./cli/default.nix
     ./gui/default.nix
     ./desktop/default.nix
+    #./gui/polybar/default.nix
   ];
 
   programs.home-manager.enable = true;

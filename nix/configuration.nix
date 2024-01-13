@@ -12,9 +12,11 @@
     ./modules/users.nix
     ./modules/virtualisation.nix
     ./modules/xremap.nix
-    ./modules/xmonad.nix
     ./modules/polybar.nix
     ./modules/gtk.nix
+    ./modules/xmonad.nix
+    #./modules/gnome.nix
+    ./modules/fcitx.nix
   ];
 }
 

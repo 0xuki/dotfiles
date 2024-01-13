@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # ハードウェア設定のコレクション
     xremap.url = "github:xremap/nix-flake"; # キー設定ツール
     home-manager = {

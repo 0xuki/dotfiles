@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-   imports = [
-   ];
+  imports = [
+    ./xmonad.nix
+  ];
 }
+
 
