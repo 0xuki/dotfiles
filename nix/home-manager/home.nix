@@ -6,10 +6,11 @@ let
 in
 {
   imports = [
-    ./cli/default.nix
+    ./programs/default.nix
     ./gui/default.nix
     ./desktop/default.nix
     #./gui/polybar/default.nix
+    ./themes/default.nix
   ];
 
   programs.home-manager.enable = true;
@@ -42,6 +43,7 @@ in
     pingu
     ripgrep
     xclip
+    dconf
   ];
 }
 
