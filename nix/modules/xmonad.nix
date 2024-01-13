@@ -21,10 +21,6 @@
 
       displayManager.defaultSession = "none+xmonad";
 
-      # Enable the Gnome3 desktop manager
-      displayManager.gdm.enable    = true;
-      displayManager.gdm.wayland   = false; # screen-sharing is broken
-      desktopManager.gnome3.enable = true;
 
       windowManager.xmonad = {
         enable = true;
