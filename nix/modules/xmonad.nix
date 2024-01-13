@@ -20,8 +20,6 @@
       };
 
       displayManager.defaultSession = "none+xmonad";
-      # Enable touchpad support.
-      libinput.enable = true;
 
       # Enable the Gnome3 desktop manager
       displayManager.gdm.enable    = true;
