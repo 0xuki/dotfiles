@@ -25,6 +25,14 @@ in
   home.enableNixpkgsReleaseCheck = false;  #Home ManagerとNixpkgsのバージョン不一致の警告を無視
 
   nixpkgs.config.allowUnfree = true;
+  
+  # GHCの設定
+  nixpkgs.config.packageOverrides = pkgs: {
+    ghc = pkgs.ghc.withPackages (ps: with ps; [
+      # Haskellパッケージ
+      utf8-string
+    ]);
+  };
 
   home.packages = with pkgs; [
     bat
