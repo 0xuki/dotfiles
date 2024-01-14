@@ -5,6 +5,11 @@ in
 {
   programs = {
     dconf.enable = true;
+    #hyprland = {
+      #enbale = true;
+      #nvidiaPatches = true;
+      #xwayland.enable = true;
+    #};
   };
 
   programs.nm-applet = {
@@ -40,12 +45,28 @@ in
     LC_TELEPHONE = "ja_JP.UTF-8";
     LC_TIME = "ja_JP.UTF-8";
   };
+  
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   environment = {
+    sessionVariables = {
+      WLR_NO_HARDWARE_CURSORS = "1";
+      NIXOS_OZONE_WL = "1";
+    };
     systemPackages = with pkgs; [
+      mesa
+      mesa_glu
+      mesa-demos
       libnotify
       wl-clipboard
       wlr-randr
+      hyprpaper
+      swaybg
+      wpaperd
+      mpvpaper
+      swww
       wayland
       wayland-scanner
       wayland-utils
@@ -71,11 +92,12 @@ in
       slurp
       linux-wifi-hotspot
     ];
-    variables.NIXOS_OZONE_WL = "1";
+    #variables.NIXOS_OZONE_WL = "1";
   };
 
   services.xserver = {
     xkbOptions = "caps:escape";
+    videoDrivers = [ "nvidia" ];
   };
   console.useXkbConfig = true;
 
@@ -109,5 +131,10 @@ in
         TimeoutStopSec = 10;
       };
     };
+  };
+
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
   };
 }
