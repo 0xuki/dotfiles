@@ -141,7 +141,7 @@ main' dbus = xmonad . docks . ewmh . ewmhFullscreen . dynProjects . keybindings 
 --myStartupHook = startupHook def
 myStartupHook = do
   sbStartupHook def -- 既存のスタートアップフックを実行
-  spawn "killall polybar; polybar top &" 
+  spawn "killall polybar; polybar main &" 
 
 -- original idea: https://pbrisbin.com/posts/using_notify_osd_for_xmonad_notifications/
 data LibNotifyUrgencyHook = LibNotifyUrgencyHook deriving (Read, Show)
