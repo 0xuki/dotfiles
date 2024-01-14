@@ -14,8 +14,8 @@
   home.file.".config/polybar/modules/modules".source = ./modules/modules;
   home.file.".config/polybar/modules/monitoringModules".source = ./modules/monitoringModules;
   home.file.".config/polybar/modules/separatorsModules".source = ./modules/separatorsModules;
-  home.file.".config/polybar/scripts/cava".source = ./scripts/heatSensors;
-  home.file.".config/polybar/scripts/pipewire-microphone.sh".source = ./scripts/network.sh; 
+  home.file.".config/polybar/scripts/heatSensors".source = ./scripts/heatSensors;
+  home.file.".config/polybar/scripts/network.sh".source = ./scripts/network.sh; 
 
 }
 

@@ -1,7 +1,3 @@
-#!/bin/sh
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-
 # Select the right temperature file. # 
 for temp_dir in /sys/class/hwmon/*; do
     [[ "$(< "${temp_dir}/name")" =~ (coretemp|fam15h_power|k10temp) ]] && {

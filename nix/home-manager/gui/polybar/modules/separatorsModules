@@ -15,8 +15,8 @@ content-font = 0
 type = custom/text
 content = |
 
-content-background = ${color.BACKGROUND}
-content-foreground = ${color.RED}
+content-background = ${color.bg}
+content-foreground = ${color.red}
 content-padding = 1
 content-font = 5
 
@@ -26,8 +26,8 @@ content-font = 5
 type = custom/text
 content = "<|"
 
-content-background = ${color.BACKGROUND}
-content-foreground = ${color.RED}
+content-background = ${color.bg}
+content-foreground = ${color.red}
 content-padding = 1
 content-font = 5
 
@@ -37,8 +37,8 @@ content-font = 5
 type = custom/text
 content = "|>"
 
-content-background = ${color.BACKGROUND}
-content-foreground = ${color.RED}
+content-background = ${color.bg}
+content-foreground = ${color.red}
 content-padding = 1
 content-font = 5
 
@@ -48,14 +48,14 @@ content-font = 5
 [module/space]
 type = custom/text
 content = " "
-content-background = ${color.background}
+content-background = ${color.bg}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 [module/Dspace]
 type = custom/text
 content = "  "
-content-background = ${color.background}
+content-background = ${color.bg}
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -64,7 +64,7 @@ type = custom/text
 ;content = ◆
 content = 
 content-font = 6
-content-background = ${color.BACKGROUND}
+content-background = ${color.bg}
 content-foreground = ${color.teal}
 content-padding = 2
 

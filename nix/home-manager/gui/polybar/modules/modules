@@ -73,13 +73,13 @@ format-background = ${color.mb}
 ; formatting
 format = <label-state>
 format-font = 2
-label-active = "  "
+label-active = "  "
 label-active-foreground = #E3DF7A
-label-occupied = "  "
+label-occupied = "  "
 label-occupied-foreground = #0A9CF5
-label-urgent = "  "
+label-urgent = "  "
 label-urgent-foreground = #5F74D6
-label-empty = "  "
+label-empty = "  "
 label-empty-foreground = #FFFFFF
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -138,13 +138,13 @@ accumulate-stats = true
 unknown-as-up = true
 
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = "   "
 format-connected-prefix-font = 3
 format-connected-prefix-foreground =  ${color.green}
 format-connected-prefix-background = ${color.mb}
 
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
+format-disconnected-prefix = "   "
 format-disconnected-prefix-font = 3
 format-disconnected-prefix-foreground = ${color.green}
 format-disconnected-prefix-background = ${color.mb}
@@ -163,7 +163,7 @@ label-disconnected-foreground = ${color.green}
 [module/network]
 type = custom/script
 exec = ~/.config/polybar/scripts/network.sh icon
-format = "<label>"
+format = "<label> "
 format-background = ${color.mb}
 format-foreground = #86AAEA
 format-font = 2
@@ -213,7 +213,7 @@ type = custom/text
 
 ; content = ""
 ; content = ""
-content = ""
+content = ""
 content-font = 3
 
 ;content-font = 3
@@ -227,7 +227,7 @@ click-left = ~/.config/rofi/bin/launcher
 [module/xdomenu]
 type = custom/text
 interval = 1
-content = ""
+content = ""
 content-font = 3
 content-foreground = ${color.blue-arch}
 content-padding = 0
