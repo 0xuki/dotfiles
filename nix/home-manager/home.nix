@@ -11,7 +11,6 @@ in
     #./desktop/default.nix
     ./wm/hyprland/default.nix
     ./wm/sway/default.nix
-    ./themes/default.nix
     ./wm/hyprland/default.nix
   ];
 
