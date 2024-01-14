@@ -4,7 +4,6 @@
     ./modules/boot.nix
     ./modules/fonts.nix
     ./modules/hardware.nix
-    ./modules/i18n.nix
     ./modules/network.nix
     ./modules/services.nix
     ./modules/system.nix
@@ -12,9 +11,7 @@
     ./modules/users.nix
     ./modules/virtualisation.nix
     ./modules/xremap.nix
-    #./modules/polybar.nix
-    #./modules/gtk.nix
-    ./modules/xmonad.nix
+    ./modules/desktop
   ];
 }
 

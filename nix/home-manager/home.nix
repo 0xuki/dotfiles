@@ -8,9 +8,11 @@ in
   imports = [
     ./programs/default.nix
     ./gui/default.nix
-    ./desktop/default.nix
-    #./gui/polybar/default.nix
+    #./desktop/default.nix
+    ./wm/hyprland/default.nix
+    ./wm/sway/default.nix
     ./themes/default.nix
+    ./wm/hyprland/default.nix
   ];
 
   programs.home-manager.enable = true;

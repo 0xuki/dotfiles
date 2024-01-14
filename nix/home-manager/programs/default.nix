@@ -8,6 +8,11 @@
     ./starship.nix
     ./zsh.nix
     ./dconf.nix
+    ./gtk/default.nix
+    ./lazygit/default.nix
+    ./music/default.nix
+    ./neofetch/default.nix
+    ./waybar/hyprland_waybar.nix
   ];
 }
 
