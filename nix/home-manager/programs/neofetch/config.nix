@@ -1,9 +1,4 @@
 { pkgs, ... }:
-let
-  nixgirl = pkgs.fetchurl {
-    url = "https://raw.githubusercontent.com/Ruixi-rebirth/someSource/main/neofetch/nixgirl.png";
-  };
-in
 {
   neofetch = ''
     print_info()
@@ -72,7 +67,7 @@ in
     battery_display="off"
     disk_display="off"
     image_backend="kitty"
-    image_source="${nixgirl}"
+    image_source="/home/az/Pictures/nixgirl.png"
     ascii_distro="auto"
     ascii_colors=(distro)
     ascii_bold="on"
