@@ -12,6 +12,8 @@ in
     ./wm/hyprland/default.nix
     ./wm/sway/default.nix
     ./wm/hyprland/default.nix
+    ./shell
+    ./terminals
   ];
 
   programs.home-manager.enable = true;
