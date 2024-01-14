@@ -17,6 +17,10 @@
     };
     hyprpicker.url = "github:hyprwm/hyprpicker";
     hypr-contrib.url = "github:hyprwm/contrib";
+    hycov={
+      url = "github:DreamMaoMao/hycov";
+      inputs.hyprland.follows = "hyprland";
+    };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
