@@ -7,17 +7,13 @@ in
   imports = [ ./config.nix ];
 
   wayland.windowManager.hyprland = {
-    enable = true;
-    plugins = with inputs; with pkgs; [
-      #hycov.packages.${pkgs.system}.hycov
-    ];
+    enable = true; 
     systemd.enable = true;
   };
 
   home.packages = with pkgs;[
     grimblast
     hyprpicker
-    hycov.packages.${pkgs.system}.hycov
     swaylock-effects
     swayidle
     pamixer
