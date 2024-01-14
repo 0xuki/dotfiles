@@ -1,4 +1,7 @@
 { pkgs, user, ... }:
+let
+  user = "az";
+in
 {
   programs = {
     dconf.enable = true;
