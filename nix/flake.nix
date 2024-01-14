@@ -6,15 +6,15 @@
     xremap.url = "github:xremap/nix-flake"; # キー設定ツール
     home-manager = {
 
-     url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager";
 
-     inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
 
     };
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
     hyprpicker.url = "github:hyprwm/hyprpicker";
     hypr-contrib.url = "github:hyprwm/contrib";
     rust-overlay.url = "github:oxalica/rust-overlay";
@@ -36,39 +36,40 @@
     };
     homeConfigurations = {
 
-     myHome = inputs.home-manager.lib.homeManagerConfiguration {
+       myHome = inputs.home-manager.lib.homeManagerConfiguration {
 
-       pkgs = import inputs.nixpkgs {
+         pkgs = import inputs.nixpkgs {
 
-         system = "x86_64-linux";
+           system = "x86_64-linux";
 
-         config.allowUnfree = true; # プロプライエタリなパッケージを許可
-	 overlays = [(import inputs.rust-overlay)];
+           config.allowUnfree = true; # プロプライエタリなパッケージを許可
+           overlays = [(import inputs.rust-overlay)];
+
+         };
+
+         extraSpecialArgs = {
+
+           inherit inputs;
+
+         };
+
+         modules = [
+
+           ./home-manager/home.nix
+
+         ];
 
        };
-
-       extraSpecialArgs = {
-
-         inherit inputs;
-
+       nixConfig = {
+          extra-substituters = [
+            "https://nix-community.cachix.org"
+            "https://hyprland.cachix.org"
+          ];
+          extra-trusted-public-keys = [
+            "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+            "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          ];
        };
-
-       modules = [
-
-         ./home-manager/home.nix
-
-       ];
-
-     };
-     nixConfig = {
-        extra-substituters = [
-          "https://nix-community.cachix.org"
-          "https://hyprland.cachix.org"
-        ];
-        extra-trusted-public-keys = [
-          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        ];
-     };
+    };
   };
 }
