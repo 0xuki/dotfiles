@@ -1,18 +1,18 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 {
   imports = [ ./config.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     plugins = [
-      inputs.hycov.packages.${pkgs.system}.hycov
+      #inputs.hycov.packages.${pkgs.system}.hycov
     ];
     systemd.enable = true;
   };
 
   home.packages = with pkgs;[
-    inputs.hypr-contrib.packages.${pkgs.system}.grimblast
-    inputs.hyprpicker.packages.${pkgs.system}.hyprpicker
+    grimblast
+    hyprpicker
     swaylock-effects
     swayidle
     pamixer
@@ -21,7 +21,7 @@
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
 
   home = {
-    sessionVariables = {
+    sessionVariables = lib.mkForce {
       QT_SCALE_FACTOR = "1";
       SDL_VIDEODRIVER = "wayland";
       _JAVA_AWT_WM_NONREPARENTING = "1";
