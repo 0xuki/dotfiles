@@ -1,14 +1,6 @@
 { pkgs, ... }:
 let
-  wallpapers = {
-    nord = {
-      url = "https://raw.githubusercontent.com/Ruixi-rebirth/wallpaper/main/22.png";
-    };
-  };
-  default_wall = wallpapers.nord or (throw "Unknown theme");
-  wallpaper = pkgs.fetchurl {
-    inherit (default_wall) url sha256;
-  };
+  wallpaperPath = "~/Pictures/wallpaper/wallpaper2.png";
 in
 {
   cava-internal = pkgs.writeShellScriptBin "cava-internal" ''
@@ -32,6 +24,6 @@ in
   '';
   default_wall = pkgs.writeShellScriptBin "default_wall" ''
     killall dynamic_wallpaper
-    ${pkgs.swww}/bin/swww img "${wallpaper}" --transition-type random
+    ${pkgs.swww}/bin/swww img "${wallpaperPath}" --transition-type random
   '';
 }
