@@ -10,7 +10,13 @@
 
      inputs.nixpkgs.follows = "nixpkgs";
 
-   };
+    };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
+    hyprpicker.url = "github:hyprwm/hyprpicker";
+    hypr-contrib.url = "github:hyprwm/contrib";
    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
@@ -21,7 +27,7 @@
         modules = [
           ./configuration.nix
         ];
-	specialArgs = {
+	      specialArgs = {
 
            inherit inputs; # `inputs = inputs;`と等しい
 
@@ -54,7 +60,17 @@
        ];
 
      };
-
-   };
+     nixConfig = {
+        extra-substituters = [
+          "https://nix-community.cachix.org"
+          "https://hyprland.cachix.org"
+          "https://ruixi-rebirth.cachix.org"
+        ];
+        extra-trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "ruixi-rebirth.cachix.org-1:sWs3V+BlPi67MpNmP8K4zlA3jhPCAvsnLKi4uXsiLI4="
+        ];
+     };
   };
 }
