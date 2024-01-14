@@ -11,7 +11,7 @@
     ./modules/users.nix
     ./modules/virtualisation.nix
     ./modules/xremap.nix
-    ./modules/desktop
+    ./modules/desktop.nix
   ];
 }
 
