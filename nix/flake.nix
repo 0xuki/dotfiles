@@ -49,25 +49,14 @@
 
          };
 
-         #extraSpecialArgs = {
+         extraSpecialArgs = {
 
            inherit inputs;
 
-         #};
+         };
 
-         modules = [
-           hyprland.homeManagerModules.default
-           {
-              import = [ ./home-manager/wm/hyprland/default.nix ];
-              wayland.windowManager.hyprland = {
-                plugins = with inputs; with pkgs; [
-                  hycov.packages.${pkgs.system}.hycov
-                ];
-              };
-           };
-
+         modules = [ 
            ./home-manager/home.nix
-
          ];
 
        };
