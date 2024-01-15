@@ -158,7 +158,7 @@ in
       #---------#
       # plugins #
       #---------#
-      bind = CTRL_ALT,space,hycov:toggleoverview
+      bind = ALT,tab,hycov:toggleoverview
       plugin {
           hycov {
             overview_gappo = 24 # gas width from screen

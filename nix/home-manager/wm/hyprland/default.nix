@@ -1,13 +1,12 @@
 { inputs, pkgs, lib, ... }:
-
-let
-  hycov = inputs.hycov;
-in
 {
   imports = [ ./config.nix ];
 
   wayland.windowManager.hyprland = {
     enable = true; 
+    plugins = [
+      inputs.hycov.packages.${pkgs.system}.hycov
+    ];
     systemd.enable = true;
   };
 
