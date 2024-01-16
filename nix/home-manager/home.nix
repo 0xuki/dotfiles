@@ -2,7 +2,7 @@
 let
   username = "az";
   homeDirectory = "/home/${username}";
-  stateVersion = "22.11";
+  stateVersion = "23.11";
 in
 {
   imports = [
@@ -13,6 +13,7 @@ in
     #./wm/sway/default.nix
     ./shell
     ./terminals
+    ./wall
   ];
 
   programs.home-manager.enable = true;
