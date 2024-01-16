@@ -16,7 +16,7 @@ in
     policies = {
       DisplayBookmarksToolbar = true;
       Preferences = {
-        "browser.toolbars.bookmarks.visibility" = "never";
+        "browser.toolbars.bookmarks.visibility" = "always";
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "media.ffmpeg.vaapi.enabled" = true;
       };
@@ -75,17 +75,17 @@ in
 
               /* #nav-bar { visibility: collapse !important; } */
                 /* hide horizontal tabs at the top of the window */
-                #TabsToolbar > * {
+                /* #TabsToolbar > * {
                   visibility: collapse;
-                }
+                } */
 
                 /* hide navigation bar when it is not focused; use Ctrl+L to get focus */
-                #main-window:not([customizing]) #navigator-toolbox:not(:focus-within):not(:hover) {
+                /* #main-window:not([customizing]) #navigator-toolbox:not(:focus-within):not(:hover) {
                   margin-top: -45px;
                 }
                 #navigator-toolbox {
                   transition: 0.2s margin-top ease-out;
-                }
+                } */
       '';
       userContent = ''
                 /*hide all scroll bars*/
