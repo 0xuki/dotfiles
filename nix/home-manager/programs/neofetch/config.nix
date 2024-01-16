@@ -5,12 +5,14 @@
     {
         info title
         info underline
-        info " " distro
+        info " " distro
         info " " kernel
         info " " packages
         info " " de
         info " " wm
-        info "󰍛 " memory
+        info " " cpu
+        info "󰢮 " gpu
+        info " " memory
         info "󰔟 " uptime
         info cols
     }

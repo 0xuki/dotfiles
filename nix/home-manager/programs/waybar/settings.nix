@@ -120,7 +120,7 @@
         on-click= "pamixer -t";
     };
     "custom/launcher"= {
-        format= "";
+        format= " ";
         "on-click" = "pkill rofi || ~/.config/rofi/launcher.sh"; 
         tooltip= "false";
     };
