@@ -3,14 +3,14 @@ let
   custom = {
     font = "JetBrainsMono Nerd Font";
     fontsize = "12";
-    primary_accent = "7ebae4";
+    primary_accent = "c0caf5";
     secondary_accent= "c0caf5";
     tertiary_accent = "c0caf5";
     background = "3b4252";
     opacity = "0.98";
     cursor = "Numix-Cursor";
     palette = rec {
-      primary_accent_hex = "80A0C0";
+      primary_accent_hex = "c0caf5";
       secondary_accent_hex = "c0caf5";
       tertiary_accent_hex = "c0caf5";
       primary_background_hex = "3b4252";

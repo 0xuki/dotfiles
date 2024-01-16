@@ -2,7 +2,7 @@
     custom ? {
         font = "JetBrainsMono Nerd Font";
         fontsize = "12";
-        primary_accent = "7ebae4";
+        primary_accent = "c0caf5";
         secondary_accent = "c0caf5";
         tertiary_accent = "c0caf5";
         background = "3b4252";
