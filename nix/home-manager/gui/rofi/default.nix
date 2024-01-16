@@ -1,25 +1,14 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.rofi = {
     enable = true;
-    #    package = pkgs.rofi.override {
-    #      plugins = with pkgs; [
-    #        rofi-calc
-    #        rofi-emoji
-    #        rofi-power-menu
-    #      ];
-    #    };
-    #    font = "Hack Nerd Font 11";
+    package = pkgs.rofi-wayland;
   };
-  home.file.".config/rofi/colors.rasi".text = ''
-    * {
-      background:     #222436FF;
-      background-alt: #1b1d2bFF;
-      foreground:     #C8d3f5FF;
-      selected:       #82aaffFF;
-      active:         #444a73FF;
-      urgent:         #ff757fFF;
-    }
-  '';
-  home.file.".config/rofi/launcher.rasi".source = ./launcher.rasi;
-  home.file.".config/rofi/power-menu.rasi".source = ./power-menu.rasi;
+  home.file = {
+    ".config/rofi/off.sh".source = ./off.sh;
+    ".config/rofi/launcher.sh".source = ./launcher.sh;
+    ".config/rofi/launcher_theme.rasi".source = ./launcher_theme.rasi;
+    ".config/rofi/powermenu.sh".source = ./powermenu.sh;
+    ".config/rofi/powermenu_theme.rasi".source = ./powermenu_theme.rasi;
+  };
 }

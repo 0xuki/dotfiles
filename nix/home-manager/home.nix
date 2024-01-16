@@ -8,9 +8,11 @@ in
   imports = [
     ./programs/default.nix
     ./gui/default.nix
-    ./desktop/default.nix
-    #./gui/polybar/default.nix
-    ./themes/default.nix
+    #./desktop/default.nix
+    ./wm/hyprland/default.nix
+    #./wm/sway/default.nix
+    ./shell
+    ./terminals
   ];
 
   programs.home-manager.enable = true;
@@ -45,5 +47,9 @@ in
     xclip
     dconf
   ];
+  programs.mako = {
+    enable = true;
+    defaultTimeout = 4000;
+  };
 }
 
