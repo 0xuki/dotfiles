@@ -12,9 +12,10 @@
     ./lazygit/default.nix
     ./music/default.nix
     ./neofetch/default.nix
-    ./waybar/hyprland_waybar.nix
+    ./waybar/default.nix
     ./imgview
     ./firefox
+    ./mako
   ];
 }
 

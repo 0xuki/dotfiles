@@ -121,8 +121,7 @@
     };
     "custom/launcher"= {
         format= "";
-        "on-click" = "pkill rofi || ~/.config/rofi/launcher.sh";
-        on-click-right= "pkill wofi || wallpaper-picker"; 
+        "on-click" = "pkill rofi || ~/.config/rofi/launcher.sh"; 
         tooltip= "false";
     };
   };
