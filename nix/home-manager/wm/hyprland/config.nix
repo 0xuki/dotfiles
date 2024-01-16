@@ -23,7 +23,7 @@ let
   '';
 in
 {
-  imports = [ ../../programs/waybar/hyprland_waybar.nix ];
+  imports = [ ../../programs/waybar/default.nix ];
   wayland.windowManager.hyprland = {
     extraConfig = ''
       $mainMod = ALT
