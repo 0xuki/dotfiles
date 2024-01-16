@@ -1,6 +1,0 @@
-home.file = {
-  "wallpaper.png" = {
-    target = "Wallpaper/wallpaper.png"; # ~/Wallpaper/wallpaper.pngに配置
-    source = ./wallpaper.png; # 配置するファイル
-  };
-};
