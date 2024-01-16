@@ -13,6 +13,8 @@
     ./music/default.nix
     ./neofetch/default.nix
     ./waybar/hyprland_waybar.nix
+    ./imgview
+    ./firefox
   ];
 }
 
