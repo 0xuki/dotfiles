@@ -158,15 +158,15 @@ in
       #---------#
       # plugins #
       #---------#
-      bind = ALT,tab,hycov:toggleoverview
-      plugin {
-          hycov {
-            overview_gappo = 24 # gas width from screen
-            overview_gappi = 18 # gas width from clients
-            hotarea_size = 10   # hotarea size in bottom left,10x10
-            enable_hotarea = 1  # move cursor to bottom-left can toggle overview
-          }
-      }
+      #bind = ALT,tab,hycov:toggleoverview
+      #plugin {
+          #hycov {
+            #overview_gappo = 24 # gas width from screen
+            #overview_gappi = 18 # gas width from clients
+            #hotarea_size = 10   # hotarea size in bottom left,10x10
+            #enable_hotarea = 1  # move cursor to bottom-left can toggle overview
+          #}
+      #}
 
       bind = $mainMod, Return, exec, kitty
       bind = $mainMod SHIFT, Return, exec, kitty --class="termfloat"

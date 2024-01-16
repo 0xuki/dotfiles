@@ -4,9 +4,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true; 
-    plugins = [
-      inputs.hycov.packages.${pkgs.system}.hycov
-    ];
+    #plugins = [
+      #inputs.hycov.packages.${pkgs.system}.hycov
+    #];
     systemd.enable = true;
   };
 

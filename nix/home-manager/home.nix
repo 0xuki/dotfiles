@@ -47,5 +47,9 @@ in
     xclip
     dconf
   ];
+  programs.mako = {
+    enable = true;
+    defaultTimeout = 4000;
+  };
 }
 
