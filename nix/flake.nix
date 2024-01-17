@@ -18,7 +18,7 @@
       homeConfigurations = {
         myHome = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = import inputs.nixpkgs {
-            inherit (inputs.nixpkgs) system;
+            inherit system;
             overlays = [
               (import inputs.rust-overlay)
             ];
