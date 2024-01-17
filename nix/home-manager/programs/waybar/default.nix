@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 let 
   custom = {
     font = "JetBrainsMono Nerd Font";
@@ -27,10 +27,11 @@ let
       opacity = "1";
     };
   };
+  sharedScripts = import ./share_scripts.nix { inherit pkgs; };
 in
 {
   _module.args = { inherit custom; };
   imports =  [ (import ./waybar.nix)   ]
-          ++ [ (import ./settings.nix) ]
+          ++ [ (import ./settings.nix { inherit sharedScripts pkgs; }) ]
           ++ [ (import ./style.nix)    ];
 }

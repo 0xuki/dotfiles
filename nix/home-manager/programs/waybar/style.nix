@@ -24,7 +24,8 @@
     }
 
     window#waybar {
-        background: none;
+        background: rgba(59, 66, 82, 0.7);
+        border: 1px solid #3b4252; 
     }
 
     #workspaces {
@@ -117,13 +118,22 @@
         font-weight: bold;
         font-size: 16px;
     }
+
+    #custom-wallpaper {
+        background: #${custom.palette.tertiary_background_hex};
+        color: #${custom.secondary_accent};
+        padding: 5px 10px;
+        margin: 5px 0px 5px 5px;
+        border-radius: 10px;
+    }
+
     #custom-launcher {
         color: #${custom.secondary_accent};
         background: #${custom.palette.tertiary_background_hex};
         border-radius: 0px 0px 40px 0px;
         margin: 0px;
         padding: 0px 30px 0px 10px;
-        font-size: 28px;
+        font-size: 27px;
     }
 
     #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {

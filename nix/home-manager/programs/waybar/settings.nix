@@ -1,3 +1,6 @@
+#let
+  #sharedScripts = import ./share_scripts.nix { inherit pkgs; };
+#in
 { 
     custom ? {
         font = "JetBrainsMono Nerd Font";
@@ -9,6 +12,8 @@
         opacity = ".85";
         cursor = "Numix-Cursor";
     },
+    pkgs,
+    sharedScripts,
     ... 
 }:
 {
@@ -21,7 +26,8 @@
     margin-left= 0;
     margin-right= 0;
     modules-left= [
-        "custom/launcher" 
+        "custom/launcher"
+        "custom/wallpaper"
         "custom/playerctl#backward" 
         "custom/playerctl#play" 
         "custom/playerctl#foward" 
@@ -118,6 +124,13 @@
         };
         scroll-step= 5;
         on-click= "pamixer -t";
+    };
+    "custom/wallpaper" = {
+      "format" = " ";
+      "tooltip" = "Change Wallpaper";
+      "on-click" = "${sharedScripts.wallpaper_random}/bin/wallpaper_random";
+      "on-click-middle" = "${sharedScripts.default_wall}/bin/default_wall";
+      "on-click-right" = "killall dynamic_wallpaper || ${sharedScripts.dynamic_wallpaper}/bin/dynamic_wallpaper &";
     };
     "custom/launcher"= {
         format= " ";
