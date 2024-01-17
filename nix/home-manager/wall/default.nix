@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 let
-  wallpaperPath = "/home/az/Pictures/wallpaper/wallpaper2.png";
+  wallpaperPath = "/home/yuki/Pictures/wallpaper/wallpaper2.png";
 in
 {
   systemd.user.services = {

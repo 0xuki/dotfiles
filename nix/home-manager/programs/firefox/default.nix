@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let 
-  bg = "/home/az/Pictures/wallpaper/wallpaper2.png";
-  logo = "/home/az/Pictures/wallpaper/logo.png";
-  homepage = "/home/az/temp/homepage.html";
+  bg = "/home/yuki/Pictures/wallpaper/wallpaper2.png";
+  logo = "/home/yuki/Pictures/wallpaper/logo.png";
+  homepage = "/home/yuki/temp/homepage.html";
 in
 {
   home = {

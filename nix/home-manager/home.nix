@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  username = "az";
+  username = "yuki";
   homeDirectory = "/home/${username}";
   stateVersion = "23.11";
 in

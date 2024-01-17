@@ -1,6 +1,6 @@
 { pkgs, user, ... }:
 let
-  user = "az";
+  user = "yuki";
 in
 {
   programs = {

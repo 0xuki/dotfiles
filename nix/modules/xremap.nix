@@ -5,7 +5,7 @@
   ];
 
   services.xremap = {
-    userName = "az";
+    userName = "yuki";
     serviceMode = "system";
     config = {
       modmap = [ { name = "CapsLock is dead"; remap = { CapsLock = "Ctrl_L"; }; } ];

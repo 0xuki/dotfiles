@@ -69,7 +69,7 @@
     battery_display="off"
     disk_display="off"
     image_backend="kitty"
-    image_source="/home/az/Pictures/wallpaper/nixgirl.png"
+    image_source="/home/yuki/Pictures/neofetch/nixgirl.png"
     ascii_distro="auto"
     ascii_colors=(distro)
     ascii_bold="on"

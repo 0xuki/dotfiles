@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
-  users.users.az = {
+  users.users.yuki = {
     isNormalUser = true;
-    description = "az";
+    description = "yuki";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ firefox ];
     shell = pkgs.zsh;
