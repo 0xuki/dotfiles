@@ -56,6 +56,15 @@
         # white
         color7   #E5E9F0
         color15  #ECEFF4
+
+        tab_bar_style powerline
+        tab_bar_edge top
+        active_tab_foreground   #3B4252
+        active_tab_background   #E5E9F0
+        inactive_tab_foreground #E5E9F0
+        inactive_tab_background #3B4252
+        inactive_tab_font_style normal
+        tab_bar_background      #3B4252
       '';
     };
   };
