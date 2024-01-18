@@ -48,6 +48,8 @@ in
     xclip
     dconf
     ranger
+    grim
+    slurp
   ];
 }
 

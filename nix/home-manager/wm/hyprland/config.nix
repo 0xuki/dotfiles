@@ -285,6 +285,8 @@ in
       bind=,Super_L,exec, pkill rofi || ~/.config/rofi/launcher.sh
       bind=$mainMod,Super_L,exec, bash ~/.config/rofi/powermenu.sh
 
+      bind = $mainMod, Print, exec, grim -g "$(slurp)"
+
       #-----------------------------------------#
       # control volume,brightness,media players-#
       #-----------------------------------------#
