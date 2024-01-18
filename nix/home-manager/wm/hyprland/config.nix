@@ -84,8 +84,8 @@ in
       # cursor_inactive_timeout = 0
       decoration {
         rounding = 10
-        active_opacity = 1.0
-        inactive_opacity = 1.0
+        active_opacity = 0.80
+        inactive_opacity = 0.80
         fullscreen_opacity = 1.0
         drop_shadow = false
         shadow_range = 4
@@ -97,15 +97,16 @@ in
         dim_inactive = false
       # dim_strength = #0.0 ~ 1.0
         col.shadow = rgba(1a1a1aee)
-
-          blur {
-              enabled = true
-              size = 3
-              passes = 1
-              new_optimizations = true
-              xray = true
-              ignore_opacity = false
-          }
+        blur {
+            enabled = true
+            size = 6
+            passes = 3
+            new_optimizations = true
+            xray = true
+            ignore_opacity = true
+        }
+        blurls = waybar
+        blurls = lockscreen
       }
 
       # animations {
