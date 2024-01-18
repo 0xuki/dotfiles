@@ -47,6 +47,7 @@ in
     ripgrep
     xclip
     dconf
+    ranger
   ];
 }
 
