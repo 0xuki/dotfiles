@@ -70,7 +70,7 @@
 
     #cpu {
         color: #${custom.tertiary_accent};
-        border-radius: 10px 0px 0px 24px;
+        border-radius: 10px 0px 0px 10px;
         padding-left: 15px;
         padding-right: 9px;
         margin-left: 7px;
@@ -83,28 +83,28 @@
     }
     #disk {
         color: #${custom.tertiary_accent};
-        border-radius: 0px 24px 10px 0px;      
+        border-radius: 0px 10px 10px 0px;      
         padding-left: 9px;
         padding-right: 15px;
     }
 
     #tray {
         color: #${custom.tertiary_accent};
-        border-radius: 10px 24px 10px 24px;
+        border-radius: 10px 10px 10px 10px;
         padding: 0 20px;
         margin-left: 7px;
     }
 
     #pulseaudio {
         color: #${custom.tertiary_accent};
-        border-radius: 10px 0px 0px 24px;
+        border-radius: 10px 0px 0px 10px;
         padding-left: 15px;
         padding-right: 9px;
         margin-left: 7px;
     }
     #network {
         color: #${custom.tertiary_accent};
-        border-radius: 0px 24px 10px 0px;      
+        border-radius: 0px 10px 10px 0px;      
         padding-left: 9px;
         padding-right: 15px;
     }
@@ -128,7 +128,7 @@
     }
 
     #custom-launcher {
-        color: #${custom.secondary_accent};
+        color: #88C0D0;
         background: #${custom.palette.tertiary_background_hex};
         border-radius: 0px 0px 40px 0px;
         margin: 0px;
@@ -145,7 +145,7 @@
     }
     #custom-playerctl.backward {
         color: #${custom.primary_accent};
-        border-radius: 24px 0px 0px 10px;
+        border-radius: 10px 0px 0px 10px;
         padding-left: 16px;
         margin-left: 7px;
     }
@@ -155,7 +155,7 @@
     }
     #custom-playerctl.foward {
         color: #${custom.primary_accent};
-        border-radius: 0px 10px 24px 0px;
+        border-radius: 0px 10px 10px 0px;
         padding-right: 12px;
         margin-right: 7px
     }

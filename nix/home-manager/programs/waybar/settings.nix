@@ -5,9 +5,9 @@
     custom ? {
         font = "JetBrainsMono Nerd Font";
         fontsize = "12";
-        primary_accent = "c0caf5";
-        secondary_accent = "c0caf5";
-        tertiary_accent = "c0caf5";
+        primary_accent = "D8DEE9";
+        secondary_accent = "D8DEE9";
+        tertiary_accent = "D8DEE9";
         background = "3b4252";
         opacity = ".85";
         cursor = "Numix-Cursor";
