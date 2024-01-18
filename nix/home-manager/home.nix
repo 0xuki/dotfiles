@@ -48,8 +48,8 @@ in
     xclip
     dconf
     ranger
-    grim
-    slurp
+    mpv
+    killall
   ];
 }
 

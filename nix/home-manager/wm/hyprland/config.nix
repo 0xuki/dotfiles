@@ -287,6 +287,9 @@ in
 
       bind = $mainMod, Print, exec, grim -g "$(slurp)"
 
+      bind = $mainMod,Z,exec, ~/bin/screenrecord.sh 
+      bind = $mainMod,B,exec, ~/bin/screenrecord-kill.sh
+
       #-----------------------------------------#
       # control volume,brightness,media players-#
       #-----------------------------------------#

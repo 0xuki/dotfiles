@@ -16,6 +16,9 @@
     swaylock-effects
     swayidle
     pamixer
+    wf-recorder
+    slurp
+    grim
   ];
 
   systemd.user.targets.hyprland-session.Unit.Wants = [ "xdg-desktop-autostart.target" ];
@@ -32,6 +35,26 @@
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
+    };
+
+    file."bin/screenrecord.sh" = {
+      enable = true;
+      executable = true;
+      text = ''
+        #!/usr/bin/env bash
+        filename="/home/yuki/Videos/$(date +%Y-%m-%d_%H-%M-%S).mp4"
+        ${pkgs.wf-recorder}/bin/wf-recorder -g "$(${pkgs.slurp}/bin/slurp)" -t -f $filename
+        [[ -e $filename ]] && ${pkgs.libnotify}/bin/notify-send "Screenrecord" "Saved to $filename"
+      '';
+    };
+
+    file."bin/screenrecord-kill.sh" = {
+      enable = true;
+      executable = true;
+      text = ''
+        #!/usr/bin/env bash
+        killall -SIGINT wf-recorder
+      '';
     };
   };
 }
