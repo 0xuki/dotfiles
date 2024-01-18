@@ -15,7 +15,7 @@
         url_style = "dotted";
         #Close the terminal =  without confirmation;
         confirm_os_window_close = 0;
-        background_opacity = "0.95";
+        background_opacity = "1";
       };
       extraConfig = ''
         foreground            #D8DEE9
