@@ -16,7 +16,7 @@
           success_symbol = "[](#cbced3)";
           error_symbol = "[](#dd6777)";
           vicmd_symbol = "[](#ecd3a0)";
-          format = "$symbol[ ](bold #b4befe) ";
+          format = "$symbol[λ](bold #b4befe) ";
         };
         palette = "catppuccin_${flavour}";
         git_commit = { commit_hash_length = 5; };
