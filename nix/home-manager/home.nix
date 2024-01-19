@@ -50,6 +50,8 @@ in
     ranger
     mpv
     killall
+    htop
+    fzf
   ];
 }
 
