@@ -29,7 +29,13 @@
     }
 
     #workspaces {
-        background-color: transparent;
+        background: #89DCEF;
+        background: linear-gradient(45deg, #89DCEF 0%, #AEDCEF 43%, #B4BEFE 80%, #89B4FA 100%);
+        background-size: 300% 300%;
+        animation: gradient 20s ease infinite;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+        padding: 4px 4px 4px 4px;
+        border-radius: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
         margin-right: 10px;
@@ -37,30 +43,22 @@
     }
 
     #workspaces button {
-        box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px;
-        border-radius: 15px;
         margin-right: 10px;
-        padding-top: 4px;
+        padding-top: 3px;
         padding-bottom: 2px;
         padding-right: 7px;
         font-weight: bolder;
         color: #FFFFFF;
-        background: #88C0D0;
-        background: linear-gradient(45deg, #88C0D0 0%, #B4BEFE 20%, #88C0D0  100%);
-        background-size: 300% 300%;
-        animation: gradient 15s ease infinite;
+        background: transparent;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
-    }
-
+    } 
     #workspaces button.active {
-        padding-right: 20px;
-        padding-left: 20px;
-        padding-bottom: 3px;
-        background: #88C0D0;
-        background: linear-gradient(45deg, #88C0D0 0%, #B4BEFE 20%, #88C0D0 100%);
-        animation: gradient 15s ease infinite;
+        color: #FFFFFF;
     }
 
+    #workspaces button.default {
+        color: #AEDCEF;
+    }
     @keyframes gradient {
         0% {
             background-position: 0% 50%;
@@ -126,8 +124,8 @@
     }
 
     #tray {
-        background: #F5C2E7;
-        background: linear-gradient(45deg, #CA9EE6 0%, #F5C2E7 43%, #B4BEFE 80%, #89B4FA 100%);
+        background: #89DCEF;
+        background: linear-gradient(45deg, #89DCEF 0%, #AEDCEF 43%, #B4BEFE 80%, #89B4FA 100%);
         background-size: 300% 300%;
         animation: gradient 20s ease infinite;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
@@ -141,7 +139,7 @@
 
     #pulseaudio {
         background: #F5C2E7;
-        background: linear-gradient(45deg, #F5C2E7 0%, #CBA6F7 0%, #F38BA8 13%, #F3A084 26%, #FAE396 34%, #F9E2AF 49%, #A6E3A1 65%, #94E2D5 77%, #89DCEF 82%, #74C8EC 88%, #89B4FA 95%);
+        background: linear-gradient(45deg, #CA9EE6 0%, #F5C2E7 43%, #B4BEFE 80%, #89B4FA 100%);
         background-size: 300% 300%;
         animation: gradient 20s ease infinite;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
@@ -156,7 +154,7 @@
 
     #network {
         background: #F5C2E7;
-        background: linear-gradient(45deg, #F5C2E7 0%, #CBA6F7 0%, #F38BA8 13%, #F3A084 26%, #FAE396 34%, #F9E2AF 49%, #A6E3A1 65%, #94E2D5 77%, #89DCEF 82%, #74C8EC 88%, #89B4FA 95%);
+        background: linear-gradient(45deg, #CA9EE6 0%, #F5C2E7 43%, #B4BEFE 80%, #89B4FA 100%);
         background-size: 300% 300%;
         animation: gradient 20s ease infinite;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
@@ -172,7 +170,7 @@
 
     #clock {
         background: #F5C2E7;
-        background: linear-gradient(45deg, #F5C2E7 0%, #CBA6F7 0%, #F38BA8 13%, #F3A084 26%, #FAE396 34%, #F9E2AF 49%, #A6E3A1 65%, #94E2D5 77%, #89DCEF 82%, #74C8EC 88%, #89B4FA 95%);
+        background: linear-gradient(45deg, #CA9EE6 0%, #F5C2E7 43%, #B4BEFE 80%, #89B4FA 100%);
         color: #${custom.tertiary_accent};
         background-size: 300% 300%;
         animation: gradient 20s ease infinite;
@@ -185,9 +183,13 @@
     }
 
     #custom-wallpaper {
-        background: #B4BEFE;
+        background: #89DCEF;
+        background: linear-gradient(45deg, #89DCEF 0%, #AEDCEF 43%, #B4BEFE 80%, #89B4FA 100%);
+        background-size: 300% 300%;
+        animation: gradient 20s ease infinite;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
         color: #${custom.secondary_accent};
-        padding: 5px 10px;
+        padding: 10px 13px;
         margin: 5px 0px 5px 5px;
         border-radius: 10px;
     }
@@ -195,7 +197,7 @@
     #custom-launcher {
         color: #B4BEFE;
         background: #434c5e;
-        padding: 5px 10px;
+        padding: 5px 5px 5px 10px;
         margin: 5px 0px 5px 5px;
         border-radius: 10px;
         font-size: 22px;

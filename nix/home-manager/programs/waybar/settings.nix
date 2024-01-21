@@ -47,24 +47,25 @@
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt= " {:%d/%m}";
     }; 
-    "hyprland/workspaces"= {
-        active-only= false;
-        all-outputs= false;
-        disable-scroll= false;
-        on-scroll-up= "hyprctl dispatch workspace e-1";
-        on-scroll-down= "hyprctl dispatch workspace e+1";
-        format = "{name}";
-        on-click= "activate";
+    "hyprland/workspaces" = {
+        active-only = false;
+        all-outputs = true;
+        disable-scroll = true;
+        on-click = "activate";
+        format = "{icon}";
         format-icons = {
-          urgent= "";
-          active= "";
-          default = "";
-          sort-by-number= true;
+          active = "󰋘";
+          default = "󰋙";
+          empty = "󰋙";
+          persistent = "󰋙";
+          special = "󰋙";
+          urgent = "󰋙";
         };
         persistent-workspaces = {
           "*" = 10;
         };
     };
+    
     "custom/playerctl#backward"= {
         format= "󰙣 "; 
         on-click= "playerctl previous";
