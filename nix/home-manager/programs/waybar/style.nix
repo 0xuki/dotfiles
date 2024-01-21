@@ -45,8 +45,8 @@
         padding-right: 7px;
         font-weight: bolder;
         color: #FFFFFF;
-        background: #F9E2AF;
-        background: linear-gradient(45deg, #F9E2AF 0%, #F5C2E7 20%, #B4BEFE 100%);
+        background: #88C0D0;
+        background: linear-gradient(45deg, #88C0D0 0%, #B4BEFE 20%, #88C0D0  100%);
         background-size: 300% 300%;
         animation: gradient 15s ease infinite;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
@@ -56,8 +56,8 @@
         padding-right: 20px;
         padding-left: 20px;
         padding-bottom: 3px;
-        background: #F9E2AF;
-        background: linear-gradient(45deg, #F9E2AF 0%, #F5C2E7 20%, #B4BEFE 100%);
+        background: #88C0D0;
+        background: linear-gradient(45deg, #88C0D0 0%, #B4BEFE 20%, #88C0D0 100%);
         animation: gradient 15s ease infinite;
     }
 
