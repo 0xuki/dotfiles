@@ -190,7 +190,7 @@
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
         color: #${custom.secondary_accent};
         padding: 10px 13px;
-        margin: 5px 0px 5px 5px;
+        margin: 5px 5px 5px 5px;
         border-radius: 10px;
     }
 
