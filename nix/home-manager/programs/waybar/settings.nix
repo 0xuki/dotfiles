@@ -1,6 +1,3 @@
-#let
-  #sharedScripts = import ./share_scripts.nix { inherit pkgs; };
-#in
 { 
     custom ? {
         font = "JetBrainsMono Nerd Font";
@@ -49,8 +46,8 @@
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt= " {:%d/%m}";
-    };
-    "wlr/workspaces"= {
+    }; 
+    "hyprland/workspaces"= {
         active-only= false;
         all-outputs= false;
         disable-scroll= false;
@@ -58,11 +55,14 @@
         on-scroll-down= "hyprctl dispatch workspace e+1";
         format = "{name}";
         on-click= "activate";
-        format-icons= {
-            urgent= "";
-            active= "";
-            default = "";
-            sort-by-number= true;
+        format-icons = {
+          urgent= "";
+          active= "";
+          default = "";
+          sort-by-number= true;
+        };
+        persistent-workspaces = {
+          "*" = 10;
         };
     };
     "custom/playerctl#backward"= {
@@ -96,8 +96,8 @@
         interval= 2;
     };
     cpu= {
-        format= "  {usage}%";
-        format-alt= "  {avg_frequency} GHz";
+        format= " {usage}%";
+        format-alt= " {avg_frequency} GHz";
         interval= 2;
     };
     disk = {
@@ -117,7 +117,7 @@
         spacing= 8;
     };
     pulseaudio= {
-        format= "{icon} {volume}%";
+        format= "{icon}{volume}%";
         format-muted= "󰖁 ";
         format-icons= {
             default= [" "];

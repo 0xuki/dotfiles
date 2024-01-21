@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let 
   custom = {
     font = "JetBrainsMono Nerd Font";
@@ -28,6 +28,16 @@ let
     };
   };
   sharedScripts = import ./share_scripts.nix { inherit pkgs; };
+  startDynScript = pkgs.writeScript "start_dyn" ''
+    #!/usr/bin/env bash
+    ${config.home.homeDirectory}/.config/hypr/scripts/tools/dynamic &
+    while true
+    do
+        out=$(cat ${config.home.homeDirectory}/.config/hypr/store/dynamic_out.txt)
+        echo "$out" | jq --unbuffered --compact-output
+        sleep 0.5
+    done
+  '';
 in
 {
   _module.args = { inherit custom; };

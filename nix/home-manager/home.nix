@@ -52,6 +52,7 @@ in
     killall
     htop
     fzf
+    jq
   ];
 }
 
