@@ -3,10 +3,10 @@ dir="$HOME/.config/rofi"
 
 # nord
 ALPHA="#00000000"
-BG="#3B4253"
+BG="#3B425380"
 FG="#BF616A"
-SELECT="#343a46"
-ACCENT="#3B4252"
+SELECT="#343a4680"
+ACCENT="#3B425280"
 
 # overwrite colors file
 cat > $dir/colors.rasi <<- EOF
