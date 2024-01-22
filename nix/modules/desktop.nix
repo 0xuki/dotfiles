@@ -99,6 +99,7 @@ in
 
   services.xserver = {
     layout = "jp"; 
+    xkbVariant = "";
     xkbOptions = "caps:escape";
     videoDrivers = [ "nvidia" ];
   };
@@ -108,6 +109,7 @@ in
     light.enable = true;
   };
   services = {
+    flatpak.enable = true;
     dbus.packages = [ pkgs.gcr ];
     getty.autologinUser = "${user}";
     gvfs.enable = true;
