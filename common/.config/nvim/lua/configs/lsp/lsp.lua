@@ -42,6 +42,9 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach,
     settings = {
       ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy"
+        },
         completion = {
           autoimport = {
             enable = true,
