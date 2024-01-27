@@ -59,7 +59,7 @@ in
               }
 
               /* remove top tabbar */ 
-        #titlebar { visibility: collapse !important; }
+        /*#titlebar { visibility: collapse !important; }*/
 
 
               /*================== URL BAR ==================*/
