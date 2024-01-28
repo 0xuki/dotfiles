@@ -2,7 +2,7 @@
 let 
   bg = "/home/yuki/Pictures/wallpaper/wallpaper2.png";
   logo = "/home/yuki/Pictures/wallpaper/logo.png";
-  homepage = "/home/yuki/temp/homepage.html";
+  homepage = "https://root309.github.io/Bento/";
 in
 {
   home = {
@@ -23,7 +23,7 @@ in
     };
     profiles.default = {
       settings = {
-        "browser.startup.homepage" = "file://${homepage}";
+        "browser.startup.homepage" = "${homepage}";
       };
       userChrome = ''
               /*================== SIDEBAR ==================*/
