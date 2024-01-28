@@ -2,7 +2,7 @@
 let 
   bg = "/home/yuki/Pictures/wallpaper/wallpaper2.png";
   logo = "/home/yuki/Pictures/wallpaper/logo.png";
-  homepage = "https://root309.github.io/Bento/";
+  homepage = "https://root309.github.io/tea-green/";
 in
 {
   home = {
