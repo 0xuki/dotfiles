@@ -53,6 +53,7 @@ in
     htop
     fzf
     jq
+    gtop
   ];
 }
 
