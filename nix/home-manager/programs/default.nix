@@ -16,6 +16,7 @@
     ./imgview
     ./firefox
     ./mako
+    ./vscode
   ];
 }
 
