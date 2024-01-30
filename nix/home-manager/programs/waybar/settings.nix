@@ -28,6 +28,7 @@
         "custom/playerctl#backward" 
         "custom/playerctl#play" 
         "custom/playerctl#foward" 
+        "custom/nowplaying"
     ];
     modules-center= [
         "hyprland/workspaces"
@@ -65,7 +66,10 @@
           "*" = 10;
         };
     };
-    
+    "custom/nowplaying"= {
+        return-type= "json";
+        exec= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"; 
+    };
     "custom/playerctl#backward"= {
         format= "󰙣 "; 
         on-click= "playerctl previous";

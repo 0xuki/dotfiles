@@ -124,10 +124,8 @@
     }
 
     #tray {
-        background: #89DCEF;
-        background: linear-gradient(45deg, #89DCEF 0%, #AEDCEF 43%, #B4BEFE 80%, #89B4FA 100%);
-        background-size: 300% 300%;
-        animation: gradient 20s ease infinite;
+        background-image: url('/home/yuki/Pictures/ui2.png');
+        background-size: cover;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
         color: #${custom.tertiary_accent};
         border-radius: 10px 10px 10px 10px;
@@ -135,6 +133,7 @@
         font-weight: bold;
         margin: 5px 0px;
         margin-left: 7px;
+        
     }
 
     #pulseaudio {
@@ -196,7 +195,8 @@
 
     #custom-launcher {
         color: #B4BEFE;
-        background: #434c5e;
+        background-image: url('/home/yuki/Pictures/GFB.jpeg');
+        background-size: cover;
         padding: 5px 5px 5px 10px;
         margin: 5px 0px 5px 5px;
         border-radius: 10px;
