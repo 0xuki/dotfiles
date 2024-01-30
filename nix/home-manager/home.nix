@@ -54,6 +54,7 @@ in
     fzf
     jq
     gtop
+    gnumake
   ];
 }
 
