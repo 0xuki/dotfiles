@@ -55,6 +55,7 @@ in
     jq
     gtop
     gnumake
+    gimp
   ];
 }
 
