@@ -14,9 +14,8 @@ if status then
 else
 	print("Telescope not found")
 end
--- "jj"でインサートモードからノーマルモードに戻る
 map("i","jj", "<Esc>")
--- 全選択
+
 map("n", "<leader>a", "ggVG")
 -- NeoTree
 --map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
@@ -30,21 +29,16 @@ map('n', '<leader>o', ":NvimTreeFocus<CR>")
 map("n", "<Tab>", ":bnext<CR>")
 
 map("n", "<S-Tab>", ":bprev<CR>")
--- インデントの動作設定
+-- indent manager
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
--- VisualModeのインデントの動作設定
-map('v', '<Tab>', '>')        -- 選択範囲を右にシフト
-map('v', '<S-Tab>', '<')      -- 選択範囲を左にシフト
--- クリップボードにコピー＆ペーストのキー設定
-map("v", "<C-c>", '"+y')  -- Visual modeでCtrl+cを押すと外部のクリップボードにコピー
-map("n", "<C-v>", '"+p')  -- Normal modeでCtrl+vを押すと外部のクリップボードからペースト
-map("i", "<C-v>", '"+p')  -- Insert modeでCtrl+vを押すと外部のクリップボードからペースト
-map("v", "<C-x>", '"+x')  -- ビジュアルモードでの切り取り
+-- indent
+map('v', '<Tab>', '>')        -- right
+map('v', '<S-Tab>', '<')      -- left
 
 vim.opt.guicursor = ""
 
