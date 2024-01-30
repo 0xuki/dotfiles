@@ -1,47 +1,81 @@
-local custom_horizon = require'lualine.themes.horizon'
+local clrs = require("catppuccin.palettes").get_palette()
+
+local custom = require'lualine.themes.horizon'
 
 -- NORMAL mode setting
-custom_horizon.normal.a.bg = '#5E81AC' -- 背景色
-custom_horizon.normal.a.fg = '#ECEFF4' -- 文字色
+custom.normal.a.bg = clrs.lavender -- 背景色
+custom.normal.a.fg = clrs.crust -- 文字色
 
 -- INSERT mode setting
-custom_horizon.insert.a.bg = '#88C0D0' -- 背景色
-custom_horizon.insert.a.fg = '#272746' -- 文字色
+custom.insert.a.bg = clrs.lavender -- 背景色
+custom.insert.a.fg = clrs.crust -- 文字色
 
 -- COMMAND mode setting
-custom_horizon.command.a.bg = '#81A1C1' -- 背景色
-custom_horizon.command.a.fg = '#ECEFF4' -- 文字色
+custom.command.a.bg = clrs.lavender -- 背景色
+custom.command.a.fg = clrs.crust -- 文字色
+
+
+-- V-LINE mode setting
+custom.visual.a.bg = clrs.lavender -- 背景色
+custom.visual.a.fg = clrs.crust -- 文字色
 
 -- Git Branch
-custom_horizon.normal.b.bg = '#3B4252' -- 背景色
-custom_horizon.normal.b.fg = '#5E81AC' -- 文字色
-custom_horizon.insert.b.bg = '#3B4252' -- 背景色
-custom_horizon.insert.b.fg = '#88C0D0' -- 文字色
-custom_horizon.visual.b.bg = '#3B4252' -- 背景色
-custom_horizon.visual.b.fg = '#F43F5E' -- 文字色
-custom_horizon.replace.b.bg = '#3B4252' -- 背景色
-custom_horizon.replace.b.fg = '#F43F5E' -- 文字色
-custom_horizon.command.b.bg = '#3B4252' -- 背景色
-custom_horizon.command.b.fg = '#81A1C1' -- 文字色
-custom_horizon.inactive.b.bg = '#3B4252' -- 背景色
-custom_horizon.inactive.b.fg = '#F43F5E' -- 文字色
+custom.normal.b.bg = clrs.rosewater -- 背景色
+custom.normal.b.fg = clrs.crust -- 文字色
+custom.insert.b.bg = clrs.rosewater -- 背景色
+custom.insert.b.fg = clrs.crust -- 文字色
+custom.visual.b.bg = clrs.rosewater -- 背景色
+custom.visual.b.fg = clrs.crust -- 文字色
+custom.replace.b.bg = clrs.rosewater -- 背景色
+custom.replace.b.fg = clrs.crust -- 文字色
+custom.command.b.bg = clrs.rosewater -- 背景色
+custom.command.b.fg = clrs.crust -- 文字色
+custom.inactive.b.bg = clrs.rosewater -- 背景色
+custom.inactive.b.fg = clrs.crust -- 文字色
 
 -- Setting the filename section in NORMAL mode
-custom_horizon.normal.c.bg = '#2E3440' -- bg
-custom_horizon.normal.c.fg = '#D8DEE9' -- fg
+custom.normal.c = { bg = clrs.crust, fg = clrs.text }
+-- Encoding, Fileformat, Filetype 設定
+custom.normal.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
+-- Progress, Location
+custom.normal.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
+custom.normal.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
+
+
 
 -- Setting the filename section in INSERT mode
-custom_horizon.insert.c.bg = '#2E3440' -- bg
-custom_horizon.insert.c.fg = '#D8DEE9' -- fg
+custom.insert.c = { bg = clrs.crust, fg = clrs.text }
+-- Encoding, Fileformat, Filetype 設定
+custom.insert.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
+-- Progress, Location
+custom.insert.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
+custom.insert.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
+
+
 
 -- Setting the filename section in COMMAND mode
-custom_horizon.command.c.bg = '#2E3440' -- bg
-custom_horizon.command.c.fg = '#D8DEE9' -- fg
+custom.command.c = { bg = clrs.crust, fg = clrs.text }
+-- Encoding, Fileformat, Filetype 設定
+custom.command.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
+-- Progress, Location
+custom.command.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
+custom.command.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
+
+
+
+-- Setting the filename section in VISUAL mode
+custom.visual.c = { bg = clrs.crust, fg = clrs.text }
+-- Encoding, Fileformat, Filetype 設定
+custom.visual.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
+-- Progress, Location
+custom.visual.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
+custom.visual.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
+
 
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = custom_horizon,
+        theme = custom,
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {},

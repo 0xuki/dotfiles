@@ -50,9 +50,10 @@ require'configs.appearance.transparent'
 require'configs.appearance.colorizer'
 require'configs.appearance.indent'
 require'configs.appearance.noice'
+require'configs.appearance.notify'
 
 -- Theme
-require'configs.appearance.theme.nord'
+require'configs.appearance.themes.catppuccin'
 
 -- Navigation
 require'configs.navigation.nvim-tree'

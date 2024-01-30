@@ -1,7 +1,6 @@
 vim.cmd[[
-let g:lightline#nord#disable_bold_style = 1
 let g:lightline = {
-\ 'colorscheme': 'nord',
+\ 'colorscheme': 'catppuccin',
 \ 'active': {
 \ 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'relativepath', 'modified' ] ]
 \ },
