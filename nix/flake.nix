@@ -10,7 +10,6 @@
         inherit system;
         modules = [
           ./configuration.nix
-          # Add other NixOS configuration modules here
         ];
         specialArgs = { inherit inputs; };
       };

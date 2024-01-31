@@ -68,6 +68,7 @@
     };
     "custom/nowplaying"= {
         return-type= "json";
+        max-length= 64;
         exec= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"; 
     };
     "custom/playerctl#backward"= {
