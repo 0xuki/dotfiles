@@ -45,7 +45,7 @@
         {
             "backgroundImage": "D:\\GAeZ1k4aUAAKTgD.jpg",
             "backgroundImageOpacity": 0.1,
-            "colorScheme": "Nord",
+            "colorScheme": "Catppuccin Frapp\u00e9",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
@@ -76,18 +76,6 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{68c2be5b-bbf5-5ec5-a683-fce2dd118710}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{2f0f7195-70c5-51e4-b0a4-98cbe7c34b20}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "commandline": "C:\\Windows\\System32\\cmd.exe /k \"C:\\Program Files\\nodejs\\nodevars.bat\"",
