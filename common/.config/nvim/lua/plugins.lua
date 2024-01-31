@@ -44,12 +44,14 @@ return {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { 'neovim/nvim-lspconfig' },
+    { "saadparwaiz1/cmp_luasnip" },
     { 'onsails/lspkind-nvim' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/nvim-cmp' },
     { 'nvim-lua/plenary.nvim' },
     { 'hrsh7th/nvim-compe' },
+    { "hrsh7th/cmp-path" },
 
     -- Treesitter and Related Plugins
     { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
