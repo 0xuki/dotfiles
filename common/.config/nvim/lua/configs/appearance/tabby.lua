@@ -1,5 +1,3 @@
-vim.o.showtabline = 2
-
 local C = require('catppuccin.palettes').get_palette()
 
 local theme = {
