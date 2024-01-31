@@ -47,3 +47,10 @@ function open_zsh()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>z', ':lua open_zsh()<CR>', { noremap = true, silent = true })
+
+map("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "New tab" })
+map("n", "<leader>tml", "<cmd>+tabmove<cr>", { desc = "Move next tab" })
+map("n", "<leader>tmh", "<cmd>-tabmove<cr>", { desc = "Move prev tab" })
+map("n", "<leader>tr", ":TabRename ", { desc = "Rename tab" })
+map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
+map("n", "<leader>te", "<cmd>tab sb %<CR>", { desc = "Open buffer in new tab" })
