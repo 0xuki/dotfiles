@@ -6,6 +6,9 @@ return {
     { 'akinsho/bufferline.nvim' },
     { 'goolord/alpha-nvim' },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    { "itchyny/lightline.vim", lazy = false },
+    { 'mengelbrecht/lightline-bufferline', lazy = false },
+ 
 
     -- Fuzzy Finder and File Explorer
     { 'junegunn/fzf' },
@@ -90,8 +93,11 @@ return {
     },
 
     -- Other Utilities
-    { "github/copilot.vim", lazy = false },
-    { "itchyny/lightline.vim", lazy = false },
-    { 'mengelbrecht/lightline-bufferline', lazy = false },
+    { "github/copilot.vim", lazy = false }, 
+    -- comment
+    { "numToStr/Comment.nvim", lazy = false },
+    -- comment tsx supporter
+    { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = false },
+
 }
 
