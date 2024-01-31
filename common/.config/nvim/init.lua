@@ -35,6 +35,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         end
     end
 })
+vim.o.termguicolors = true
 
 -- LSP
 require'configs.lsp.lsp'
@@ -44,8 +45,11 @@ require'configs.lsp.treesitter'
 
 -- Appearance
 require'configs.appearance.alpha'
-require'configs.appearance.lightline'
-require'configs.appearance.lualine'
+--require'configs.appearance.lightline'
+--require'configs.appearance.lualine'
+local feline_config = require'configs.appearance.feline'
+feline_config.setup()
+require'configs.appearance.tabby'
 require'configs.appearance.transparent'
 require'configs.appearance.colorizer'
 require'configs.appearance.indent'

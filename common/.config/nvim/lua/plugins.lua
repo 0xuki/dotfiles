@@ -1,14 +1,19 @@
 return {
     -- UI Enhancements
     { 'MunifTanjim/nui.nvim' },
-    { 'hoob3rt/lualine.nvim' },
+    --{ 'hoob3rt/lualine.nvim' },
     { 'xiyaowong/transparent.nvim' },
-    { 'akinsho/bufferline.nvim' },
+    --{ 'akinsho/bufferline.nvim' },
     { 'goolord/alpha-nvim' },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    { "itchyny/lightline.vim", lazy = false },
-    { 'mengelbrecht/lightline-bufferline', lazy = false },
- 
+    --{ "itchyny/lightline.vim", lazy = false },
+    --{ 'mengelbrecht/lightline-bufferline', lazy = false },
+    { 'feline-nvim/feline.nvim' },
+    {
+      'nanozuki/tabby.nvim',
+      event = 'VimEnter',
+      dependencies = 'nvim-tree/nvim-web-devicons',
+    },
 
     -- Fuzzy Finder and File Explorer
     { 'junegunn/fzf' },

@@ -6,7 +6,7 @@ vim.opt.fileencoding = "utf-8"
 vim.wo.number = true
 
 vim.o.showtabline = 2
-
+vim.opt.sessionoptions = 'curdir,folds,globals,help,tabpages,terminal,winsize'
 vim.opt.cursorline = true
 vim.cmd [[highlight CursorLine guibg=#4C566A]]
 
