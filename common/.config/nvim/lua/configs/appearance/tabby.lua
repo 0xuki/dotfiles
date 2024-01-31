@@ -1,11 +1,13 @@
+vim.o.showtabline = 2
+
 local C = require('catppuccin.palettes').get_palette()
 
 local theme = {
-  fill = { fg = C.text, bg = C.crust },
+  fill = { fg = C.crust, bg = "NONE" },
   head = { fg = C.crust, bg = C.red },
   current_tab = { fg = C.crust, bg = C.lavender },
-  tab = { fg = C.text, bg = C.crust },
-  win = { fg = C.text, bg = C.crust },
+  tab = { fg = C.crust, bg = C.red },
+  win = { fg = C.crust, bg = C.red },
   tail = { fg = C.crust, bg = C.rosewater },
 }
 
