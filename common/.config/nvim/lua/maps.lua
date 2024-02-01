@@ -2,24 +2,9 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-local status, telescope = pcall(require, "telescope.builtin")
-if status then
-	-- Telescope
-	map("n", "<leader>ff", telescope.find_files)
-	map("n", "<leader>fg", telescope.live_grep)
-	map("n", "<leader>fb", telescope.buffers)
-	map("n", "<leader>fh", telescope.help_tags)
-	map("n", "<leader>fs", telescope.git_status)
-	map("n", "<leader>fc", telescope.git_commits)
-else
-	print("Telescope not found")
-end
 map("i","jj", "<Esc>")
 
 map("n", "<leader>a", "ggVG")
--- NeoTree
---map("n", "<leader>e", "<CMD>Neotree toggle<CR>")
---map("n", "<leader>o", "<CMD>Neotree focus<CR>")
 map('n', '<leader>e', ":NvimTreeToggle<CR>")
 map('n', '<leader>o', ":NvimTreeFocus<CR>")
 -- buffer line
@@ -42,15 +27,35 @@ map('v', '<S-Tab>', '<')      -- left
 
 vim.opt.guicursor = ""
 
-function open_zsh()
-  vim.api.nvim_command('vsplit term://zsh')
-end
 
-vim.api.nvim_set_keymap('n', '<leader>z', ':lua open_zsh()<CR>', { noremap = true, silent = true })
+-- find
+map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>")
+map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>")
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>")
+map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
+-- git
+map("n", "<leader>cm", "<cmd>Telescope git_commits<CR>")
+map("n", "<leader>gt", "<cmd>Telescope git_status<CR>")
+-- pick hidden term
+map("n", "<leader>pt", "<cmd>Telescope terms<CR>")
+-- theme switcher
+map("n", "<leader>th", "<cmd>Telescope themes<CR>")
+-- 
+map("n", "<leader>ma", "<cmd>Telescope marks<CR>")
 
-map("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "New tab" })
-map("n", "<leader>tml", "<cmd>+tabmove<cr>", { desc = "Move next tab" })
-map("n", "<leader>tmh", "<cmd>-tabmove<cr>", { desc = "Move prev tab" })
-map("n", "<leader>tr", ":TabRename ", { desc = "Rename tab" })
-map("n", "<leader>tc", "<cmd>tabclose<CR>", { desc = "Close tab" })
-map("n", "<leader>te", "<cmd>tab sb %<CR>", { desc = "Open buffer in new tab" })
+
+-- nvterm
+-- toggle in terminal mode
+map("t", "<A-i>", function() require("nvterm.terminal").toggle("float") end)
+map("t", "<A-h>", function() require("nvterm.terminal").toggle("horizontal") end)
+map("t", "<A-v>", function() require("nvterm.terminal").toggle("vertical") end)
+-- toggle in normal mode
+map("n", "<A-i>", function() require("nvterm.terminal").toggle("float") end)
+map("n", "<A-h>", function() require("nvterm.terminal").toggle("horizontal") end)
+map("n", "<A-v>", function() require("nvterm.terminal").toggle("vertical") end)
+map("n", "<leader>h", function() require("nvterm.terminal").toggle("horizontal") end)
+map("n", "<leader>v", function() require("nvterm.terminal").toggle("vertical") end)
+
