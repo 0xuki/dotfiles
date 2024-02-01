@@ -187,7 +187,7 @@ require('lualine').setup {
         end,
       },
     },
-    lualine_x = { "encoding" },
+    lualine_x = { "encoding", "fileformat" },
     lualine_y = { search_result, 'filetype' },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },
