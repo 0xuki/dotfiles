@@ -59,12 +59,12 @@
 
         tab_bar_style powerline
         tab_bar_edge top
-        active_tab_foreground   #272746
-        active_tab_background   #B4BEFE
-        inactive_tab_foreground #E5E9F0
-        inactive_tab_background #3B4252
+        active_tab_foreground   #2d303e
+        active_tab_background   #c6d0f5
+        inactive_tab_foreground #d8dee9
+        inactive_tab_background #373844
         inactive_tab_font_style normal
-        tab_bar_background      #3B4252
+        tab_bar_background      NONE
       '';
     };
   };
