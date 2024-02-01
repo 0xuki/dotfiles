@@ -7,6 +7,8 @@ vim.wo.number = true
 
 vim.o.showtabline = 2
 
+vim.o.laststatus=3
+
 vim.opt.cursorline = true
 vim.cmd [[highlight CursorLine guibg=#4C566A]]
 
