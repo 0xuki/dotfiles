@@ -1,103 +1,198 @@
-local clrs = require("catppuccin.palettes").get_palette()
+local C = require("catppuccin.palettes").get_palette()
+require('gitsigns').setup()
 
-local custom = require'lualine.themes.horizon'
+local colors = {
+  red = C.red,
+  grey = C.surface0,
+  black = C.mantle,
+  white = C.text,
+  light_green = C.green,
+  orange = C.peach,
+  green = C.spring_green,
+}
 
--- NORMAL mode setting
-custom.normal.a.bg = clrs.lavender -- 背景色
-custom.normal.a.fg = clrs.crust -- 文字色
+local theme = {
+  normal = {
+    a = { fg = "#2d303e", bg = C.lavender },
+    b = { fg = "#d8dee9", bg = "#373844" },
+    c = { fg = "#d8dee9", bg = "#2d303e" },
+    y = { fg = "#2d303e", bg = C.rosewater },
+    z = { fg = "#d8dee9", bg = C.red },
+  },
+  insert = {
+    a = { fg = "#2d303e", bg = C.blue },
+    b = { fg = "#d8dee9", bg = "#373844" },
+    c = { fg = "#d8dee9", bg = "#2d303e" },
+    y = { fg = "#2d303e", bg = C.rosewater },
+    z = { fg = "#d8dee9", bg = C.red },
+  },
+  visual = {
+    a = { fg = "#2d303e", bg = C.red },
+    b = { fg = "#d8dee9", bg = "#373844" },
+    c = { fg = "#d8dee9", bg = "#2d303e" },
+    y = { fg = "#2d303e", bg = C.rosewater },
+    z = { fg = "#d8dee9", bg = C.red },
+  },
+  replace = {
+    a = { fg = "#2d303e", bg = C.red },
+    b = { fg = "#d8dee9", bg = "#373844" },
+    c = { fg = "#d8dee9", bg = "#2d303e" },
+    y = { fg = "#2d303e", bg = C.rosewater },
+    z = { fg = "#d8dee9", bg = C.red },
+  },
+  command = {
+    a = { fg = "#2d303e", bg = C.teal },
+    b = { fg = "#d8dee9", bg = "#373844" },
+    c = { fg = "#d8dee9", bg = "#2d303e" },
+    y = { fg = "#2d303e", bg = C.rosewater },
+    z = { fg = "#d8dee9", bg = C.red },
+  },
+}
 
--- INSERT mode setting
-custom.insert.a.bg = clrs.lavender -- 背景色
-custom.insert.a.fg = clrs.crust -- 文字色
+local empty = require('lualine.component'):extend()
+function empty:draw(default_highlight)
+  self.status = ''
+  self.applied_separator = ''
+  self:apply_highlights(default_highlight)
+  self:apply_section_separators()
+  return self.status
+end
 
--- COMMAND mode setting
-custom.command.a.bg = clrs.lavender -- 背景色
-custom.command.a.fg = clrs.crust -- 文字色
+-- Put proper separators and gaps between components in sections
+local function process_sections(sections)
+  for name, section in pairs(sections) do
+    local left = name:sub(9, 10) < 'x'
+    for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
+      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = "#2d303e" } })
+    end
+    for id, comp in ipairs(section) do
+      if type(comp) ~= 'table' then
+        comp = { comp }
+        section[id] = comp
+      end
+      comp.separator = left and { right = "" } or { left = '' }
+    end
+  end
+  return sections
+end
+
+local function search_result()
+  if vim.v.hlsearch == 0 then
+    return ''
+  end
+  local last_search = vim.fn.getreg('/')
+  if not last_search or last_search == '' then
+    return ''
+  end
+  local searchcount = vim.fn.searchcount { maxcount = 9999 }
+  return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
+end
+
+local function modified()
+  if vim.bo.modified then
+    return '+'
+  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
+    return '-'
+  end
+  return ''
+end
+
+local function mode_icon()
+  return ''
+end
+
+local function mode_info()
+  local icon = mode_icon()
+  local mode_name = require('lualine.utils.mode').get_mode()
+  return icon .. ' ' .. mode_name
+end
 
 
--- V-LINE mode setting
-custom.visual.a.bg = clrs.lavender -- 背景色
-custom.visual.a.fg = clrs.crust -- 文字色
+local function file_icon()
+  local filename = vim.fn.expand('%:t')
+  local extension = vim.fn.expand('%:e')
+  local icon, icon_color = require('nvim-web-devicons').get_icon_color(filename, extension)
+  if icon == nil then
+    icon = "󰈙"
+    icon_color = '#d8dee9'
+  end
+  return icon .. ' ' .. filename
+end
 
--- Git Branch
-custom.normal.b.bg = clrs.rosewater -- 背景色
-custom.normal.b.fg = clrs.crust -- 文字色
-custom.insert.b.bg = clrs.rosewater -- 背景色
-custom.insert.b.fg = clrs.crust -- 文字色
-custom.visual.b.bg = clrs.rosewater -- 背景色
-custom.visual.b.fg = clrs.crust -- 文字色
-custom.replace.b.bg = clrs.rosewater -- 背景色
-custom.replace.b.fg = clrs.crust -- 文字色
-custom.command.b.bg = clrs.rosewater -- 背景色
-custom.command.b.fg = clrs.crust -- 文字色
-custom.inactive.b.bg = clrs.rosewater -- 背景色
-custom.inactive.b.fg = clrs.crust -- 文字色
 
--- Setting the filename section in NORMAL mode
-custom.normal.c = { bg = clrs.crust, fg = clrs.text }
--- Encoding, Fileformat, Filetype 設定
-custom.normal.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
--- Progress, Location
-custom.normal.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
-custom.normal.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
+local function github_branch()
+  local icon = ''
+  local branch_name = vim.fn.system("git branch --show-current 2> /dev/null"):gsub("\n", "")
+  if branch_name == "" then
+    branch_name = "No branch"
+  end
+  return icon .. ' ' .. branch_name
+end
 
 
 
--- Setting the filename section in INSERT mode
-custom.insert.c = { bg = clrs.crust, fg = clrs.text }
--- Encoding, Fileformat, Filetype 設定
-custom.insert.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
--- Progress, Location
-custom.insert.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
-custom.insert.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
-
-
-
--- Setting the filename section in COMMAND mode
-custom.command.c = { bg = clrs.crust, fg = clrs.text }
--- Encoding, Fileformat, Filetype 設定
-custom.command.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
--- Progress, Location
-custom.command.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
-custom.command.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
-
-
-
--- Setting the filename section in VISUAL mode
-custom.visual.c = { bg = clrs.crust, fg = clrs.text }
--- Encoding, Fileformat, Filetype 設定
-custom.visual.x = { bg = clrs.crust, fg = clrs.text } -- encodingセクション
--- Progress, Location
-custom.visual.y = { bg = clrs.red, fg = clrs.crust } -- progressセクション
-custom.visual.z = { bg = clrs.rosewater, fg = clrs.crust } -- locationセクション
-
+-- local function custom_diff()
+--   local gitsigns = vim.b.gitsigns_status_dict
+--   if not gitsigns then return '' end
+--
+--   local added, modified, removed = gitsigns.added or 0, gitsigns.changed or 0, gitsigns.removed or 0
+--   return string.format(
+--     ' %d  %d  %d',
+--     added, modified, removed
+--   )
+-- end
 
 require('lualine').setup {
-    options = {
-        icons_enabled = true,
-        theme = custom,
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
-        disabled_filetypes = {},
-        always_divide_middle = true,
-        globalstatus = false,
+  options = {
+    icons_enabled = true,
+    theme = theme,
+    component_separators = '',
+    section_separators = { left = '', right = '' },
+  },
+  sections = process_sections {
+    lualine_a = { mode_info },
+    lualine_b = { file_icon },
+    lualine_c = {
+      github_branch,
+      "diff",
+      {
+        'diagnostics',
+        source = { 'nvim' },
+        sections = { 'error' },
+        diagnostics_color = { error = { bg = colors.red, fg = colors.white } },
+      },
+      {
+        'diagnostics',
+        source = { 'nvim' },
+        sections = { 'warn' },
+        diagnostics_color = { warn = { bg = colors.orange, fg = colors.white } },
+      },
+      { modified, color = { bg = colors.red } },
+      {
+        '%w',
+        cond = function()
+          return vim.wo.previewwindow
+        end,
+      },
+      {
+        '%r',
+        cond = function()
+          return vim.bo.readonly
+        end,
+      },
+      {
+        '%q',
+        cond = function()
+          return vim.bo.buftype == 'quickfix'
+        end,
+      },
     },
-    sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
-        lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
-        lualine_y = {},
-        lualine_z = {}
-    },
-    tabline = {},
-    extensions = {}
+    lualine_x = { "encoding" },
+    lualine_y = { search_result, 'filetype' },
+    lualine_z = { '%l:%c', '%p%%/%L' },
+  },
+  inactive_sections = {
+    lualine_b = { '%f %y %m' },
+    lualine_x = {},
+  },
 }

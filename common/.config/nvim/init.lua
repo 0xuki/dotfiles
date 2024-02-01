@@ -46,9 +46,9 @@ require'configs.lsp.treesitter'
 -- Appearance
 require'configs.appearance.alpha'
 --require'configs.appearance.lightline'
---require'configs.appearance.lualine'
-local feline_config = require'configs.appearance.feline'
-feline_config.setup()
+require'configs.appearance.lualine'
+--local feline_config = require'configs.appearance.feline'
+--feline_config.setup()
 --require'configs.appearance.tabby'
 require'configs.appearance.bufferline'
 require'configs.appearance.transparent'

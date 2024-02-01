@@ -1,14 +1,26 @@
 return {
     -- UI Enhancements
     { 'MunifTanjim/nui.nvim' },
-    --{ 'hoob3rt/lualine.nvim' },
+    { 
+      'hoob3rt/lualine.nvim',
+      dependencies = {
+        "lewis6991/gitsigns.nvim"
+      }
+    },
     { 'xiyaowong/transparent.nvim' },
     { 'akinsho/bufferline.nvim' },
     { 'goolord/alpha-nvim' },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     --{ "itchyny/lightline.vim", lazy = false },
     --{ 'mengelbrecht/lightline-bufferline', lazy = false },
-    { 'feline-nvim/feline.nvim' },
+    -- {
+    --     "feline-nvim/feline.nvim",
+    --     dependencies = {
+    --         "nvim-tree/nvim-web-devicons",
+    --         "lewis6991/gitsigns.nvim"
+    --     }
+    -- },
+    --{ "rebelot/heirline.nvim" },
     -- {
     --   'nanozuki/tabby.nvim',
     --   event = 'VimEnter',
