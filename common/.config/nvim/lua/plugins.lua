@@ -11,21 +11,6 @@ return {
     { 'akinsho/bufferline.nvim' },
     { 'goolord/alpha-nvim' },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    --{ "itchyny/lightline.vim", lazy = false },
-    --{ 'mengelbrecht/lightline-bufferline', lazy = false },
-    -- {
-    --     "feline-nvim/feline.nvim",
-    --     dependencies = {
-    --         "nvim-tree/nvim-web-devicons",
-    --         "lewis6991/gitsigns.nvim"
-    --     }
-    -- },
-    --{ "rebelot/heirline.nvim" },
-    -- {
-    --   'nanozuki/tabby.nvim',
-    --   event = 'VimEnter',
-    --   dependencies = 'nvim-tree/nvim-web-devicons',
-    -- },
     {
       "NvChad/nvterm",
       config = function()
