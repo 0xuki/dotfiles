@@ -98,7 +98,7 @@ local function modified()
 end
 
 local function mode_icon()
-  return ''
+  return ''
 end
 
 local function mode_info()
@@ -141,6 +141,10 @@ end
 --     added, modified, removed
 --   )
 -- end
+
+local function nixos_fileformat()
+  return ' NixOS'
+end
 
 require('lualine').setup {
   options = {
@@ -187,7 +191,7 @@ require('lualine').setup {
         end,
       },
     },
-    lualine_x = { "encoding", "fileformat" },
+    lualine_x = { "encoding", nixos_fileformat },
     lualine_y = { search_result, 'filetype' },
     lualine_z = { '%l:%c', '%p%%/%L' },
   },
