@@ -56,6 +56,8 @@ require'configs.appearance.colorizer'
 require'configs.appearance.indent'
 require'configs.appearance.noice'
 require'configs.appearance.notify'
+require'configs.appearance.nvterm'
+
 
 -- Theme
 require'configs.appearance.themes.catppuccin'

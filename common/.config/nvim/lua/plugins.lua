@@ -14,6 +14,12 @@ return {
     --   event = 'VimEnter',
     --   dependencies = 'nvim-tree/nvim-web-devicons',
     -- },
+    {
+      "NvChad/nvterm",
+      config = function()
+        require("nvterm").setup()
+      end,
+    },  
 
     -- Fuzzy Finder and File Explorer
     { 'junegunn/fzf' },
