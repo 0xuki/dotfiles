@@ -129,8 +129,6 @@ local function github_branch()
   return icon .. ' ' .. branch_name
 end
 
-
-
 -- local function custom_diff()
 --   local gitsigns = vim.b.gitsigns_status_dict
 --   if not gitsigns then return '' end
@@ -144,6 +142,13 @@ end
 
 local function nixos_fileformat()
   return ' NixOS'
+end
+
+
+local function fixed_width_line_col()
+  local line = vim.fn.line('.')
+  local col = vim.fn.col('.')
+  return string.format('%3d:%-3d', line, col)
 end
 
 require('lualine').setup {
@@ -193,7 +198,7 @@ require('lualine').setup {
     },
     lualine_x = { "encoding", nixos_fileformat },
     lualine_y = { search_result, 'filetype' },
-    lualine_z = { '%l:%c', '%p%%/%L' },
+    lualine_z = { fixed_width_line_col },
   },
   inactive_sections = {
     lualine_b = { '%f %y %m' },
