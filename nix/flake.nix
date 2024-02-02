@@ -26,7 +26,7 @@
           extraSpecialArgs = { inherit inputs; };
 
           modules = [
-            ./home-manager/home.nix
+            ./home/home.nix
           ];
         };
       };
