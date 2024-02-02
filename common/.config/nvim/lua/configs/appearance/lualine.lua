@@ -119,16 +119,6 @@ local function file_icon()
   return icon .. ' ' .. filename
 end
 
-
-local function github_branch()
-  local icon = ''
-  local branch_name = vim.fn.system("git branch --show-current 2> /dev/null"):gsub("\n", "")
-  if branch_name == "" then
-    branch_name = "No branch"
-  end
-  return icon .. ' ' .. branch_name
-end
-
 -- local function custom_diff()
 --   local gitsigns = vim.b.gitsigns_status_dict
 --   if not gitsigns then return '' end
@@ -145,12 +135,6 @@ local function nixos_fileformat()
 end
 
 
-local function fixed_width_line_col()
-  local line = vim.fn.line('.')
-  local col = vim.fn.col('.')
-  return string.format('%3d:%-3d', line, col)
-end
-
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -162,7 +146,10 @@ require('lualine').setup {
     lualine_a = { mode_info },
     lualine_b = { file_icon },
     lualine_c = {
-      github_branch,
+      {
+        'branch',
+        icon = '',
+      },
       "diff",
       {
         'diagnostics',
@@ -198,7 +185,7 @@ require('lualine').setup {
     },
     lualine_x = { "encoding", nixos_fileformat },
     lualine_y = { search_result, 'filetype' },
-    lualine_z = { fixed_width_line_col },
+    lualine_z = { '%l:%c', '%p%%/%L' },
   },
   inactive_sections = {
     lualine_b = { '%f %y %m' },
