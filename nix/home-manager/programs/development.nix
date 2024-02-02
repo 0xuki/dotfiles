@@ -9,5 +9,6 @@
     python312
     supabase-cli
     rustup
+    go
   ];
 }
