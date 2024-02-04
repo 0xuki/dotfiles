@@ -9,5 +9,7 @@
   
   imports = [
     ./kitty
+    ./wezterm
+    ./alacritty
   ];
 }
