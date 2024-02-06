@@ -8,7 +8,7 @@
         local xcursor_theme = "macOS-BigSur"
         return {
           check_for_updates = false,
-          font_size = 14,
+          font_size = 15,
           freetype_load_flags = 'NO_HINTING',
           freetype_load_target = 'Normal',
           line_height = 1.0,
