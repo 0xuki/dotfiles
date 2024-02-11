@@ -70,6 +70,7 @@ in
       la = "eza --all --icons --classify";
       ll = "eza --long --all --git --icons";
       tree = "eza --icons --classify --tree";
+      hx = "hexdump -C";
     };
     oh-my-zsh = {
       enable = true;
