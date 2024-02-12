@@ -71,6 +71,7 @@ in
       ll = "eza --long --all --git --icons";
       tree = "eza --icons --classify --tree";
       hx = "hexdump -C";
+      vsc = "code . --enable-features=UseOzonePlatform --ozone-platform=x11";
     };
     oh-my-zsh = {
       enable = true;
