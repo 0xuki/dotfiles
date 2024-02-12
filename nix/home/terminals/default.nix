@@ -14,5 +14,6 @@
     ./kitty
     ./wezterm
     ./alacritty
+    ./tmux
   ];
 }
