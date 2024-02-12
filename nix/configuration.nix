@@ -5,7 +5,6 @@
     ./modules/fonts.nix
     ./modules/hardware.nix
     ./modules/network.nix
-    #./modules/services.nix
     ./modules/system.nix
     ./modules/time.nix
     ./modules/users.nix
