@@ -63,7 +63,8 @@ return {
     { 'nvim-lua/plenary.nvim' },
     { 'hrsh7th/nvim-compe' },
     { "hrsh7th/cmp-path" },
-
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-cmdline" },
     -- Treesitter and Related Plugins
     { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
     { 'windwp/nvim-ts-autotag' },
