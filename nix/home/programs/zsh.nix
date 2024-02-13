@@ -60,6 +60,48 @@ in
        zstyle ':completion:*:exa' sort false
        zstyle ':completion:files' sort false
 
+
+
+      
+      cdg() {
+          local selected_dir=$(find . -mindepth 1 -maxdepth 1 -type d | fzf --preview 'git -C {} remote get-url origin 2> /dev/null || echo "Not a Git repository"')
+
+          # 選択されたディレクトリが空でないか確認
+          if [[ -z "$selected_dir" ]]; then
+            echo "No directory selected."
+            return
+          fi
+
+          # 現在のディレクトリが Git リポジトリかどうかを確認
+          local is_current_dir_git_repo=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+
+          # 選択されたディレクトリに移動
+          cd "$selected_dir" || return
+
+          # 移動後のディレクトリが Git リポジトリかどうかを確認
+          if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+              # 移動前のディレクトリが Git リポジトリでなかった場合のみ、Git 操作を行う
+              if [[ -z "$is_current_dir_git_repo" ]]; then
+                  echo "This is a Git repository. Fetching updates..."
+                  git fetch
+
+                  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+                  if ! git diff --quiet "$current_branch" "origin/$current_branch"; then
+                      echo "There are changes available from the remote branch."
+                      read -p "Do you want to pull the changes? (Yes/No) " answer
+                      if [[ "$answer" =~ ^[Yy]es$ ]]; then
+                          git pull
+                      fi
+                  else
+                      echo "Your branch is up to date with the remote branch."
+                  fi
+              fi
+          else
+              echo "Moved to $selected_dir (Not a Git repository)"
+          fi
+      }
+
+
     '';
     shellAliases = {
       cat = "bat";
