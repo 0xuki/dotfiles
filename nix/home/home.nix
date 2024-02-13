@@ -56,6 +56,7 @@ in
     gtop
     gnumake
     gimp
+    zlib
   ];
 }
 
