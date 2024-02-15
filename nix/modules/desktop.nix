@@ -93,6 +93,7 @@ in
       grim
       slurp
       linux-wifi-hotspot
+      xdg-utils
     ];
     #variables.NIXOS_OZONE_WL = "1";
   };
