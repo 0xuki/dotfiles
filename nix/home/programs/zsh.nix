@@ -114,6 +114,7 @@ in
       tree = "eza --icons --classify --tree";
       hx = "hexdump -C";
       vsc = "code . --enable-features=UseOzonePlatform --ozone-platform=x11";
+      gqlgen = "$HOME/go/bin/gqlgen";
     };
     oh-my-zsh = {
       enable = true;
