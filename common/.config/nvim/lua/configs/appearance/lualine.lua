@@ -140,7 +140,7 @@ require('lualine').setup {
     icons_enabled = true,
     theme = theme,
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
   },
   sections = process_sections {
     lualine_a = { mode_info },
@@ -190,5 +190,15 @@ require('lualine').setup {
   inactive_sections = {
     lualine_b = { '%f %y %m' },
     lualine_x = {},
+  },
+  tabline = {
+    lualine_a = {
+      {
+        "buffers",
+        separator = { left = "", right = "" },
+        right_padding = 2,
+        symbols = { alternate_file = "" },
+      },
+    },
   },
 }
