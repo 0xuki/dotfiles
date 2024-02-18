@@ -10,5 +10,6 @@
     supabase-cli
     rustup
     go
+    zig
   ];
 }
