@@ -11,5 +11,6 @@
     rustup
     go
     zig
+    yarn
   ];
 }
