@@ -8,7 +8,23 @@ return {
       }
     },
     { 'xiyaowong/transparent.nvim' },
-    { 'akinsho/bufferline.nvim' },
+    { 
+      "akinsho/bufferline.nvim",
+      event = "VeryLazy",
+      opts = {
+        options = {
+          indicator = { style = "none" },
+          separator_style = { "", "" },
+          offsets = {
+            {
+                filetype = "NvimTree",
+                text = "Explorer",
+                text_align = "center",
+            },
+          },
+        },
+      }, 
+    },
     { 'goolord/alpha-nvim' },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {

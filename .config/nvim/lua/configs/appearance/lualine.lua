@@ -192,13 +192,13 @@ require('lualine').setup {
     lualine_x = {},
   },
   tabline = {
-    lualine_a = {
-      {
-        "buffers",
-        separator = { left = "", right = "" },
-        right_padding = 2,
-        symbols = { alternate_file = "" },
-      },
-    },
+    -- lualine_a = {
+    --   {
+    --     "buffers",
+    --     separator = { left = "", right = "" },
+    --     right_padding = 2,
+    --     symbols = { alternate_file = "" },
+    --   },
+    -- },
   },
 }
