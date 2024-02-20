@@ -1,8 +1,10 @@
 { pkgs, ... }:
+let
+  config = import ./config.nix { inherit pkgs; };
+in
 {
-  home = {
-    packages = with pkgs; [
-      lazygit
-    ];
+  home.packages = [ pkgs.lazygit ];
+  home.file = {
+    ".config/lazygit/config.yml".text = config.lazygit;
   };
 }
