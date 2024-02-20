@@ -14,9 +14,17 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
+      name = "Catppuccin-Latte-Compact-Lavender-light";
+      package = pkgs.catppuccin-gtk.override {
+        accents = ["lavender"];
+        size = "compact";
+        variant = "latte";
+      };
     };
+    # theme = {
+    #   name = "Nordic";
+    #   package = pkgs.nordic;
+    # };
     cursorTheme = {
       name = "Catppuccin-Frappe-Dark";
     };
