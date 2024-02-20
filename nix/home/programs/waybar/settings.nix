@@ -55,12 +55,12 @@
         on-click = "activate";
         format = "{icon}";
         format-icons = {
-          active = "󰋘";
-          default = "󰋙";
-          empty = "󰋙";
-          persistent = "󰋙";
-          special = "󰋙";
-          urgent = "󰋙";
+          active = "";
+          default = "";
+          empty = "";
+          persistent = "";
+          special = "";
+          urgent = "";
         };
         persistent-workspaces = {
           "*" = 10;
@@ -71,12 +71,12 @@
         max-length= 64;
         exec= "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F"; 
     };
-    "custom/playerctl#backward"= {
-        format= "󰙣 "; 
-        on-click= "playerctl previous";
-        on-scroll-up = "playerctl volume .05+";
-        on-scroll-down = "playerctl volume .05-";
-    };
+    # "custom/playerctl#backward"= {
+    #     format= "󰙣 "; 
+    #     on-click= "playerctl previous";
+    #     on-scroll-up = "playerctl volume .05+";
+    #     on-scroll-down = "playerctl volume .05-";
+    # };
     "custom/playerctl#play"= {
         format= "{icon}";
         return-type= "json";
@@ -90,12 +90,12 @@
             Stopped = "<span> </span>";
         };
     };
-    "custom/playerctl#foward"= {
-        format= "󰙡 ";
-        on-click= "playerctl next";
-        on-scroll-up = "playerctl volume .05+";
-        on-scroll-down = "playerctl volume .05-";
-    };
+    # "custom/playerctl#foward"= {
+    #     format= "󰙡 ";
+    #     on-click= "playerctl next";
+    #     on-scroll-up = "playerctl volume .05+";
+    #     on-scroll-down = "playerctl volume .05-";
+    # };
     memory= {
         format= " {}%";
         format-alt= " {used} GiB"; # 󰟜 

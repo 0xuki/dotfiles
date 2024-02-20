@@ -57,6 +57,7 @@ in
     gnumake
     gimp
     zlib
+    playerctl
   ];
 }
 

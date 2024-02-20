@@ -58,7 +58,7 @@ in
         gaps_in = 3
         gaps_out = 5
         border_size = 3
-        col.active_border = rgb(81a1c1)
+        col.active_border = rgb(FFCBD0)
         col.inactive_border = rgba(595959aa)
 
         layout = dwindle # master|dwindle 
