@@ -1,1 +1,1 @@
-![20240221_04h08m31s_grim](https://github.com/root309/dotfiles/assets/118520076/982436ed-6334-4c48-a82e-334c52d72f87)
+![20240221_05h06m07s_grim](https://github.com/root309/dotfiles/assets/118520076/8ee58192-3963-4185-b36b-347d1f2f33de)
