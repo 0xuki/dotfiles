@@ -17,7 +17,7 @@
     ./firefox
     ./mako
     ./vscode
-    ./dolphin
+    ./ranger
   ];
 }
 

@@ -47,7 +47,6 @@ in
     ripgrep
     xclip
     dconf
-    ranger
     mpv
     killall
     htop
