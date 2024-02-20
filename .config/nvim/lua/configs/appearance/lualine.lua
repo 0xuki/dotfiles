@@ -1,4 +1,4 @@
-local C = require("catppuccin.palettes").get_palette()
+local C = require("catppuccin.palettes").get_palette "mocha"
 require('gitsigns').setup()
 
 local colors = {
@@ -10,42 +10,42 @@ local colors = {
   orange = C.peach,
   green = C.spring_green,
 }
-
+--- catppuccin color palette https://github.com/catppuccin/catppuccin
 local theme = {
   normal = {
-    a = { fg = "#2d303e", bg = C.lavender },
-    b = { fg = "#d8dee9", bg = "#373844" },
-    c = { fg = "#d8dee9", bg = "#2d303e" },
-    y = { fg = "#2d303e", bg = C.rosewater },
-    z = { fg = "#d8dee9", bg = C.red },
+    a = { fg = "#dce0e8", bg = "#7287fd" },
+    b = { fg = "#7c7f93", bg = "#eff1f5" },
+    c = { fg = "#7c7f93", bg = "#eff1f5" },
+    y = { fg = "#dce0e8", bg = "#e64553" },
+    z = { fg = "#dce0e8", bg = "#dd7878" },
   },
   insert = {
-    a = { fg = "#2d303e", bg = C.blue },
-    b = { fg = "#d8dee9", bg = "#373844" },
-    c = { fg = "#d8dee9", bg = "#2d303e" },
-    y = { fg = "#2d303e", bg = C.rosewater },
-    z = { fg = "#d8dee9", bg = C.red },
+    a = { fg = "#dce0e8", bg = "#7287fd" },
+    b = { fg = "#7c7f93", bg = "#eff1f5" },
+    c = { fg = "#7c7f93", bg = "#eff1f5" },
+    y = { fg = "#dce0e8", bg = "#e64553" },
+    z = { fg = "#dce0e8", bg = "#dd7878" },
   },
   visual = {
-    a = { fg = "#2d303e", bg = C.red },
-    b = { fg = "#d8dee9", bg = "#373844" },
-    c = { fg = "#d8dee9", bg = "#2d303e" },
-    y = { fg = "#2d303e", bg = C.rosewater },
-    z = { fg = "#d8dee9", bg = C.red },
+    a = { fg = "#dce0e8", bg = "#7287fd" },
+    b = { fg = "#7c7f93", bg = "#eff1f5" },
+    c = { fg = "#7c7f93", bg = "#eff1f5" },
+    y = { fg = "#dce0e8", bg = "#e64553" },
+    z = { fg = "#dce0e8", bg = "#dd7878" },
   },
   replace = {
-    a = { fg = "#2d303e", bg = C.red },
-    b = { fg = "#d8dee9", bg = "#373844" },
-    c = { fg = "#d8dee9", bg = "#2d303e" },
-    y = { fg = "#2d303e", bg = C.rosewater },
-    z = { fg = "#d8dee9", bg = C.red },
+    a = { fg = "#dce0e8", bg = "#7287fd" },
+    b = { fg = "#7c7f93", bg = "#eff1f5" },
+    c = { fg = "#7c7f93", bg = "#eff1f5" },
+    y = { fg = "#dce0e8", bg = "#e64553" },
+    z = { fg = "#dce0e8", bg = "#dd7878" },
   },
   command = {
-    a = { fg = "#2d303e", bg = C.teal },
-    b = { fg = "#d8dee9", bg = "#373844" },
-    c = { fg = "#d8dee9", bg = "#2d303e" },
-    y = { fg = "#2d303e", bg = C.rosewater },
-    z = { fg = "#d8dee9", bg = C.red },
+    a = { fg = "#dce0e8", bg = "#7287fd" },
+    b = { fg = "#7c7f93", bg = "#eff1f5" },
+    c = { fg = "#7c7f93", bg = "#eff1f5" },
+    y = { fg = "#dce0e8", bg = "#e64553" },
+    z = { fg = "#dce0e8", bg = "#dd7878" },
   },
 }
 
@@ -59,22 +59,22 @@ function empty:draw(default_highlight)
 end
 
 -- Put proper separators and gaps between components in sections
-local function process_sections(sections)
-  for name, section in pairs(sections) do
-    local left = name:sub(9, 10) < 'x'
-    for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
-      table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = "#2d303e" } })
-    end
-    for id, comp in ipairs(section) do
-      if type(comp) ~= 'table' then
-        comp = { comp }
-        section[id] = comp
-      end
-      comp.separator = left and { right = "" } or { left = '' }
-    end
-  end
-  return sections
-end
+-- local function process_sections(sections)
+--   for name, section in pairs(sections) do
+--     local left = name:sub(9, 10) < 'x'
+--     for pos = 1, name ~= 'lualine_z' and #section or #section - 1 do
+--       table.insert(section, pos * 2, { empty, color = { fg = colors.white, bg = "#2d303e" } })
+--     end
+--     for id, comp in ipairs(section) do
+--       if type(comp) ~= 'table' then
+--         comp = { comp }
+--         section[id] = comp
+--       end
+--       comp.separator = left and { right = "" } or { left = '' }
+--     end
+--   end
+--   return sections
+-- end
 
 local function search_result()
   if vim.v.hlsearch == 0 then
@@ -140,9 +140,9 @@ require('lualine').setup {
     icons_enabled = true,
     theme = theme,
     component_separators = '',
-    section_separators = { left = '', right = '' },
+    section_separators = { left = ' ', right = '' },
   },
-  sections = process_sections {
+  sections = {
     lualine_a = { mode_info },
     lualine_b = { file_icon },
     lualine_c = {

@@ -10,7 +10,7 @@ vim.o.showtabline = 2
 vim.o.laststatus=3
 
 vim.opt.cursorline = true
-vim.cmd [[highlight CursorLine guibg=#4C566A]]
+vim.cmd [[highlight CursorLine guibg=#eff1f5]]
 
 -- WSL環境をチェックする関数
 local function is_wsl()

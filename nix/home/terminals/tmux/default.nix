@@ -64,6 +64,7 @@ let
       set -g @plugin 'tmux-plugins/tmux-continuum'
       #set -g @plugin "arcticicestudio/nord-tmux"
       set -g @plugin 'catppuccin/tmux'
+      set -g @catppuccin_flavour 'latte' 
       # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
       run '~/.tmux/plugins/tpm/tpm'
     '';
