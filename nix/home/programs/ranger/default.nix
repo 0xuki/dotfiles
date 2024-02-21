@@ -1,10 +1,10 @@
 { pkgs, ... }:
-let
-  config = import ./config.nix { inherit pkgs; };
-in
 {
-  home.packages = [ pkgs.ranger ];
+  home.packages = [ 
+    pkgs.ranger 
+    pkgs.ueberzug
+  ];
   home.file = {
-    ".config/ranger/rc.conf".text = config.ranger;
+    ".config/ranger/rc.conf".source = ./rc.conf;
   };
 }
