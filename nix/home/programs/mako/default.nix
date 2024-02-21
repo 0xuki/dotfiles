@@ -8,10 +8,10 @@
       defaultTimeout = 5000;
       borderSize = 2;
       borderRadius = 5;
-      backgroundColor = "#1e1e2e";
-      borderColor = "#b4befe";
+      backgroundColor = "#eff1f580";
+      borderColor = "#FFCBD0";
       progressColor = "over #313244";
-      textColor = "#cdd6f4";
+      textColor = "#7c7f93";
       icons = true;
       actions = true;
       extraConfig = ''
