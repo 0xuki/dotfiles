@@ -109,7 +109,7 @@ in
 
     '';
     shellAliases = {
-      cat = "bat";
+      cat = "bat --theme=ansi";
       grep = "rg";
       g = "git";
       gs = "git status";
@@ -120,6 +120,7 @@ in
       hx = "hexdump -C";
       vsc = "code . --enable-features=UseOzonePlatform --ozone-platform=x11";
       gqlgen = "$HOME/go/bin/gqlgen";
+      sc=''silicon -o output.png --from-clipboard --language zig --font "JetBrainsMono Nerd Font" --theme "gruvbox-dark" --to-clipboard'';
     };
     oh-my-zsh = {
       enable = true;
