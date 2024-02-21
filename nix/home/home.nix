@@ -57,6 +57,7 @@ in
     gimp
     zlib
     playerctl
+    silicon
   ];
 }
 
