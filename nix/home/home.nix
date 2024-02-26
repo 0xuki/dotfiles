@@ -59,6 +59,7 @@ in
     playerctl
     silicon
     unzip
+    vim
   ];
 }
 

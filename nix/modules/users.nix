@@ -14,9 +14,9 @@
 
   programs.neovim = {
     enable = true;
-    defaultEditor = true; # $EDITOR=nvimに設定
-    viAlias = true;
-    vimAlias = true;
+    #defaultEditor = true; # $EDITOR=nvimに設定
+    #viAlias = true;
+    #vimAlias = true;
   };
 
   programs.starship = {
