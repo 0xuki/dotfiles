@@ -58,6 +58,7 @@ in
     zlib
     playerctl
     silicon
+    unzip
   ];
 }
 
