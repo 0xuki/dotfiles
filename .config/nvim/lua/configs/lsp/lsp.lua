@@ -21,7 +21,19 @@ require("mason").setup({
 
 -- setup mason_lspconfig
 mason_lspconfig.setup({
-  ensure_installed = { "rust_analyzer", "lua_ls" }, -- LSP Server to install
+  ensure_installed = { 
+    'rust_analyzer', 
+    'lua_ls', 
+    'tsserver', 
+    'eslint', 
+    'gopls', 
+    'pylyzer',
+    'elixirls',
+    'omnisharp',
+    'cssls',
+    'denols',
+
+  }, -- LSP Server to install
 })
  
 local on_attach = function(client, bufnr)
@@ -36,7 +48,19 @@ local on_attach = function(client, bufnr)
 end
 
 -- LSP Server Config
-local servers = { 'rust_analyzer', 'lua_ls' }
+local servers = { 
+  'rust_analyzer', 
+  'lua_ls', 
+  'tsserver', 
+  'eslint', 
+  'gopls', 
+  'pylyzer',
+  'elixirls',
+  'omnisharp',
+  'cssls',
+  'denols',
+}
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup({
     on_attach = on_attach,
@@ -51,9 +75,90 @@ for _, lsp in ipairs(servers) do
           },
         },
       },
-      Lua = {
-        diagnostics = { globals = { 'vim' } },
-      }
+      ["lua_ls"] = {
+        {
+          checkThirdParty = false,
+        },
+        completion = {
+          workspaceWord = true,
+          callSnippet = "Both",
+        },
+        misc = {
+          parameters = {
+            -- "--log-level=trace",
+          },
+        },
+        hint = {
+          enable = true,
+          setType = false,
+          paramType = true,
+          paramName = "Disable",
+          semicolon = "Disable",
+          arrayIndex = "Disable",
+        },
+        doc = {
+          privateName = { "^_" },
+        },
+        type = {
+          castNumberToInteger = true,
+        },
+        diagnostics = {
+          disable = { "incomplete-signature-doc", "trailing-space" },
+          -- enable = false,
+          groupSeverity = {
+            strong = "Warning",
+            strict = "Warning",
+          },
+          groupFileStatus = {
+            ["ambiguity"] = "Opened",
+            ["await"] = "Opened",
+            ["codestyle"] = "None",
+            ["duplicate"] = "Opened",
+            ["global"] = "Opened",
+            ["luadoc"] = "Opened",
+            ["redefined"] = "Opened",
+            ["strict"] = "Opened",
+            ["strong"] = "Opened",
+            ["type-check"] = "Opened",
+            ["unbalanced"] = "Opened",
+            ["unused"] = "Opened",
+          },
+          unusedLocalExclude = { "_*" },
+        },
+        format = {
+          enable = false,
+          defaultConfig = {
+            indent_style = "space",
+            indent_size = "2",
+            continuation_indent_size = "2",
+          },
+        },
+      },
+
+      ["tsserver"] = {
+        typescript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "literal",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = false,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+        javascript = {
+          inlayHints = {
+            includeInlayParameterNameHints = "all",
+            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        }, 
+      },
     }
   })
 end
