@@ -32,7 +32,7 @@ mason_lspconfig.setup({
     'omnisharp',
     'cssls',
     'denols',
-
+    'clangd',
   }, -- LSP Server to install
 })
  
@@ -59,6 +59,7 @@ local servers = {
   'omnisharp',
   'cssls',
   'denols',
+  'clangd',
 }
 
 for _, lsp in ipairs(servers) do

@@ -1,7 +1,34 @@
 local treesitter = require'nvim-treesitter.configs'
 
 treesitter.setup {
-  ensure_installed = {"rust", "typescript", "tsx", "javascript", "css", "c_sharp", "lua", "haskell", "python", "c", "html", "html", "markdown", "markdown_inline", "scala", "sql", "vim", "zig", "nix", "latex", "json", "go", "elixir", "dockerfile", "cpp", "astro"},
+  ensure_installed = {
+    "rust", 
+    "typescript", 
+    "tsx", 
+    "javascript", 
+    "css", 
+    "c_sharp", 
+    "lua", 
+    "haskell", 
+    "python", 
+    "c", 
+    "html", 
+    "html", 
+    "markdown", 
+    "markdown_inline", 
+    "scala", 
+    "sql", 
+    "vim", 
+    "zig", 
+    "nix", 
+    "latex", 
+    "json", 
+    "go", 
+    "elixir", 
+    "dockerfile", 
+    "cpp", 
+    "astro",
+  },
 
   highlight = {
     enable = true,
