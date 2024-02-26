@@ -71,6 +71,7 @@ require'configs.navigation.nvim-tree'
 -- Utilities
 require'configs.utils.autotag'
 require"configs.utils.comment"
+require'configs.utils.neocord'
 
 -- Keymappings
 vim.g.mapleader = " "

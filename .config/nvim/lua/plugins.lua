@@ -124,5 +124,6 @@ return {
     -- comment tsx supporter
     { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = false },
 
+    { 'IogaMaster/neocord', event = "VeryLazy" }, 
 }
 
