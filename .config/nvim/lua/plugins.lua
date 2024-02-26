@@ -124,6 +124,10 @@ return {
     -- comment tsx supporter
     { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = false },
 
-    { 'IogaMaster/neocord', event = "VeryLazy" }, 
+    { 'IogaMaster/neocord', event = "VeryLazy", 
+      config = {
+        logo = 'https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp', -- Main image display (either "neovim" or "file")
+      },
+    }, 
 }
 

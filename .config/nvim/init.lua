@@ -57,7 +57,7 @@ require'configs.appearance.indent'
 require'configs.appearance.noice'
 require'configs.appearance.notify'
 require'configs.appearance.nvterm'
-
+require'configs.appearance.telescope'
 
 -- Theme
 require'configs.appearance.themes.catppuccin'
@@ -71,7 +71,6 @@ require'configs.navigation.nvim-tree'
 -- Utilities
 require'configs.utils.autotag'
 require"configs.utils.comment"
-require'configs.utils.neocord'
 
 -- Keymappings
 vim.g.mapleader = " "
