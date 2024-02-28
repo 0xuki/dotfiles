@@ -22,50 +22,50 @@ in
       zstyle ':completion:*' sort false
       zstyle ':completion:complete:*:options' sort false
       zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
-       zstyle ':completion:*' special-dirs true
-       zstyle ':completion:*' rehash true
+      zstyle ':completion:*' special-dirs true
+      zstyle ':completion:*' rehash true
 
-       zstyle ':completion:*' menu yes select # search
-       zstyle ':completion:*' list-grouped false
-       zstyle ':completion:*' list-separator '''
-       zstyle ':completion:*' group-name '''
-       zstyle ':completion:*' verbose yes
-       zstyle ':completion:*:matches' group 'yes'
-       zstyle ':completion:*:warnings' format '%F{red}%B-- No match for: %d --%b%f'
-       zstyle ':completion:*:messages' format '%d'
-       zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
-       zstyle ':completion:*:descriptions' format '[%d]'
+      zstyle ':completion:*' menu yes select # search
+      zstyle ':completion:*' list-grouped false
+      zstyle ':completion:*' list-separator '''
+      zstyle ':completion:*' group-name '''
+      zstyle ':completion:*' verbose yes
+      zstyle ':completion:*:matches' group 'yes'
+      zstyle ':completion:*:warnings' format '%F{red}%B-- No match for: %d --%b%f'
+      zstyle ':completion:*:messages' format '%d'
+      zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
+      zstyle ':completion:*:descriptions' format '[%d]'
 
-       # Fuzzy match mistyped completions.
-       zstyle ':completion:*' completer _complete _match _approximate
-       zstyle ':completion:*:match:*' original only
-       zstyle ':completion:*:approximate:*' max-errors 1 numeric
+      # Fuzzy match mistyped completions.
+      zstyle ':completion:*' completer _complete _match _approximate
+      zstyle ':completion:*:match:*' original only
+      zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
-       # Don't complete unavailable commands.
-       zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
+      # Don't complete unavailable commands.
+      zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 
-       # Array completion element sorting.
-       zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+      # Array completion element sorting.
+      zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
       export FZF_DEFAULT_OPTS=" \
       --color=bg+:#ccd0da,bg:#eff1f5,spinner:#dc8a78,hl:#d20f39 \
       --color=fg:#4c4f69,header:#d20f39,info:#8839ef,pointer:#dc8a78 \
       --color=marker:#dc8a78,fg+:#4c4f69,prompt:#8839ef,hl+:#d20f39"
 
-       # fzf-tab
-       zstyle ':fzf-tab:complete:_zlua:*' query-string input
-       zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
-       zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
-       zstyle ':fzf-tab:complete:kill:*' popup-pad 0 3
-       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
-       zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
-       zstyle ':fzf-tab:*' switch-group ',' '.'
-       zstyle ":completion:*:git-checkout:*" sort false
-       zstyle ':completion:*' file-sort modification
-       zstyle ':completion:*:exa' sort false
-       zstyle ':completion:files' sort false
-
-
+      # fzf-tab
+      zstyle ':fzf-tab:complete:_zlua:*' query-string input
+      zstyle ':fzf-tab:complete:kill:argument-rest' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+      zstyle ':fzf-tab:complete:kill:argument-rest' fzf-flags '--preview-window=down:3:wrap'
+      zstyle ':fzf-tab:complete:kill:*' popup-pad 0 3
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+      zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+      zstyle ':fzf-tab:*' switch-group ',' '.'
+      zstyle ':fzf-tab:*' fzf-preview 'cat $realpath'
+      zstyle ":completion:*:git-checkout:*" sort false
+      zstyle ':completion:*' file-sort modification
+      zstyle ':completion:*:exa' sort false
+      zstyle ':completion:files' sort false
+      
 
       
       cdg() {
