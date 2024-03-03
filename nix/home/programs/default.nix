@@ -15,7 +15,8 @@
     ./waybar/default.nix
     ./imgview
     ./firefox
-    ./mako
+    #./mako
+    ./dunst
     ./vscode
     ./ranger
   ];
