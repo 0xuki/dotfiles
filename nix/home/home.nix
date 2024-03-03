@@ -60,6 +60,7 @@ in
     silicon
     unzip
     vim
+    ventoy
   ];
 }
 
