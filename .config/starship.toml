@@ -1,0 +1,44 @@
+scan_timeout = 10
+add_newline = false
+line_break = { disabled = false }
+right_format = "$time"
+character = { success_symbol = "[](#cbced3)", error_symbol = "[](#dd6777)", vicmd_symbol = "[](#ecd3a0)", format = "$symbol[λ](bold #b4befe) " }
+
+git_commit = { commit_hash_length = 5 }
+
+[custom.lua]
+symbol = "[](blue) "
+[custom.python]
+symbol = "[](blue) "
+[custom.nix_shell]
+symbol = "[](blue) "
+[custom.rust]
+symbol = "[](red) "
+[custom.dart]
+symbol = "[](blue) "
+[nodejs]
+version_format = "v$raw(blue)"
+[package]
+symbol = "📦"
+
+[username]
+show_always = false
+style_user = "bold bg:none fg:#7aa2f7"
+[hostname]
+disabled = true
+ssh_only = false
+style = "bold bg:none fg:#CDD6F4"
+
+[directory]
+read_only = " "
+truncation_length = 3
+truncation_symbol = "./"
+style = "bold bg:none fg:#b4befe"
+
+[time]
+disabled = true
+use_12hr = true
+time_range = "-"
+time_format = "%R"
+utc_time_offset = "local"
+style = "bold #393939"
