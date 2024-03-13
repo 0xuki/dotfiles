@@ -124,7 +124,14 @@ return {
     -- comment tsx supporter
     { 'JoosepAlviste/nvim-ts-context-commentstring', lazy = false },
 
-    { 'IogaMaster/neocord', event = "VeryLazy", 
+    {
+      "smjonas/inc-rename.nvim",
+      config = function()
+        require("inc_rename").setup()
+      end,
+    },
+
+    { 'IogaMaster/neocord', event = "VeryLazy",
       config = {
         logo = 'https://raw.githubusercontent.com/IogaMaster/neovim/main/.github/assets/nixvim-dark.webp', -- Main image display (either "neovim" or "file")
       },

@@ -2,6 +2,8 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
+map("n", "<leader>rn", ":IncRename ")
+
 map("i","jj", "<Esc>")
 
 map("n", "<leader>a", "ggVG")
