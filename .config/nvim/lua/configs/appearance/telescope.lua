@@ -1,3 +1,5 @@
+local actions = require("telescope.actions")
+
 require('telescope').setup {
   defaults = {
     prompt_prefix = '   ',
@@ -27,12 +29,29 @@ require('telescope').setup {
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
     -- Keymaps
     mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      },
       n = {
         ['d'] = require('telescope.actions').delete_buffer,
       },
     },
   },
+  extensions = {
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+        },
+        ["n"] = {
+        },
+      },
+    },
+  },
 }
+
+require("telescope").load_extension "file_browser"
 
 -- Theming
 local colors = require('catppuccin.palettes').get_palette()
@@ -49,4 +68,4 @@ local TelescopeColor = {
   TelescopePromptTitle = { bg = colors.red, fg = colors.mantle },
   TelescopeResultsTitle = { fg = colors.mantle },
   TelescopePreviewTitle = { bg = colors.green, fg = colors.mantle },
-} 
+}
