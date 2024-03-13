@@ -30,23 +30,24 @@ require('telescope').setup {
     -- Keymaps
     mappings = {
       i = {
-        ["<esc>"] = actions.close,
+        ["qq"] = actions.close,
       },
       n = {
+        ["q"] = actions.close,
         ['d'] = require('telescope.actions').delete_buffer,
       },
     },
   },
   extensions = {
     file_browser = {
-      theme = "ivy",
-      hijack_netrw = true,
-      mappings = {
-        ["i"] = {
-        },
-        ["n"] = {
-        },
-      },
+      grouped = true,
+      previewer = false,
+      initial_browser = "tree",
+      -- searching activates a `telescope.find_files` like finder
+      -- you can use this to enter directories and remove ( move, copy) files to
+      -- selected dir (or selected dir of file) etc.
+      auto_depth = true,
+      depth = 1,
     },
   },
 }
