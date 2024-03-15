@@ -12,6 +12,8 @@ vim.o.laststatus=3
 vim.opt.cursorline = true
 vim.cmd [[highlight CursorLine guibg=#eff1f5]]
 
+vim.o.undofile = true
+
 -- WSL環境をチェックする関数
 local function is_wsl()
   local output = vim.fn.systemlist("uname -r")
