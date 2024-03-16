@@ -77,7 +77,7 @@ function max_history_len() {
     return 0
 }
 
-HISTFILE="$ZDOTDIR/.zsh_history"
+HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000
 SAVEHIST=100000
 
@@ -100,3 +100,5 @@ alias hx="hexdump -C"
 alias cat="bat --theme=Catppuccin-latte"
 
 eval "$(starship init zsh)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
