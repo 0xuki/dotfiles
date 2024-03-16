@@ -1,50 +1,47 @@
 return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
-    opts = {
-        options = {
-            indicator = { style = "none" },
-            separator_style = { "", "" },
-            offsets = {
-                {
-                    filetype = "NvimTree",
-                    text = "Explorer",
-                    text_align = "center",
-                },
-            },
-        },
-    },
     config = function()
         local status, bufferline = pcall(require, "bufferline")
         if (not status) then return end
 
         require'bufferline'.setup{
             options = {
+                indicator = { style = "none" },
+                separator_style = { "", "" },
+                offsets = {
+                    {
+                        filetype = "NvimTree",
+                        text = "Explorer",
+                        text_align = "center",
+                    },
+                },
+
                 buffer_close_icon= "×",
                 modified_icon = "●",
-                -- クローズアイコンをクリックしたときのコマンド
+                -- close icon
                 close_command = "bdelete! %d",
 
-                -- 右クリックしたときのコマンド
+                -- right mouse command
                 right_mouse_command = "bdelete! %d",
 
-                -- 左クリックしたときのコマンド
+                -- left mouse command
                 left_mouse_command = "buffer %d",
 
-                -- 中央クリックしたときのコマンド
+                -- middle mouse command
                 middle_mouse_command = nil,
 
-                -- LSPプロバイダからの診断を表示するか "nvim_lsp", "coc"....
+                -- LSP diagnostics
                 diagnostics = "nvim_lsp",
 
-                -- 診断の表示方法カスタマイズ
+                -- diagnostics indicator
                 diagnostics_indicator = function(count, level, diagnostics_dict, context)
                 return "("..count..")"
                 end,
-                -- 各バッファにクローズアイコンを表示するか
+                -- close icon
                 show_buffer_close_icons = true,
 
-                -- バッファラインの右端にクローズアイコンを表示するか
+                -- close icon
                 show_close_icon = true,
 
                 always_show_bufferline = true,
