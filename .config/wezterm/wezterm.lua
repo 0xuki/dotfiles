@@ -9,10 +9,12 @@ return {
   freetype_load_target = 'Normal',
   line_height = 1.0,
   font = wezterm.font_with_fallback {
-  { family = 'JetBrains Mono Nerd Font', weight = 'Medium', italic = false },
+    { family = 'JetBrains Mono Nerd Font', weight = 'Medium', italic = false },
+    { family = "Cica", assume_emoji_presentation = true },
     'Noto Color Emoji',
     'Noto Sans CJK JP',
   },
+
   adjust_window_size_when_changing_font_size = false,
   animation_fps = 1,
   default_cursor_style = "SteadyBlock",
