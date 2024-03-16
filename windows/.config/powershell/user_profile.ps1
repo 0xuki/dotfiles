@@ -30,13 +30,14 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 Set-Alias vim nvim
 Set-Alias ll ls
 Set-Alias g git
+function GitStatus { git status }
+Set-Alias gs GitStatus
 Set-Alias grep findstr
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
-Set-Alias gb 'C:\Developments\GitNavi\target\debug\GitNavi.exe'
 Set-Alias wz 'C:\Program Files\WezTerm\wezterm-gui.exe'
 Set-Alias -Name komostart -Value Start-Komorebic
-Set-Alias chrome 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe'
+
 
 # Utilities
 function which ($command) {
