@@ -92,6 +92,7 @@ setopt hist_fcntl_lock
 
 alias g="git"
 alias gs="git status"
+alias gc="gitmoji -c"
 alias ls="eza --icons --classify"
 alias la="eza --all --icons --classify"
 alias ll="eza --long --all --git --icons"
