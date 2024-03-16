@@ -43,9 +43,9 @@
     {
         "defaults": 
         {
-            "backgroundImage": "D:\\GAeZ1k4aUAAKTgD.jpg",
+            "backgroundImage": "D:\\GAeZ1k4aUAAKTgD.jp",
             "backgroundImageOpacity": 0.1,
-            "colorScheme": "Catppuccin Frapp\u00e9",
+            "colorScheme": "Catppuccin Latte",
             "font": 
             {
                 "face": "JetBrainsMono Nerd Font",
@@ -54,7 +54,7 @@
             },
             "opacity": 100,
             "padding": "8",
-            "startingDirectory": "C:\\Developments",
+            "startingDirectory": "C:\\",
             "useAcrylic": true
         },
         "list": 
