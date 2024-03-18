@@ -33,7 +33,7 @@ vim.opt.guicursor = ""
 -- find
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>")
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>")
+map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 map("n", "<leader>fv", "<cmd>Telescope buffers<CR>")
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>")
