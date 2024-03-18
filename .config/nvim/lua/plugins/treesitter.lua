@@ -32,6 +32,7 @@ return {
             "dockerfile",
             "cpp",
             "astro",
+            "php",
           },
 
           highlight = {
