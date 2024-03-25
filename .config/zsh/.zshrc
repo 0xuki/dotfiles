@@ -99,6 +99,7 @@ alias ll="eza --long --all --git --icons"
 alias tree="eza --icons --classify --tree"
 alias hx="hexdump -C"
 alias cat="bat --theme=Catppuccin-latte"
+alias dashboard="/home/yuki/.config/eww/dashboard/launch_dashboard"
 
 eval "$(starship init zsh)"
 
