@@ -24,18 +24,19 @@ return {
             local mason_lspconfig = require('mason-lspconfig')
             -- setup mason_lspconfig
             mason_lspconfig.setup({
-              ensure_installed = { 
-                'rust_analyzer', 
-                'lua_ls', 
-                'tsserver', 
-                'eslint', 
-                'gopls', 
+              ensure_installed = {
+                'rust_analyzer',
+                'lua_ls',
+                'tsserver',
+                'eslint',
+                'gopls',
                 --'pylyzer',
                 'elixirls',
                 'omnisharp',
                 'cssls',
                 'denols',
                 'clangd',
+                'phpactor',
               }, -- LSP Server to install
             })
         end,
@@ -67,6 +68,7 @@ return {
               'cssls',
               'denols',
               'clangd',
+              'phpactor',
             }
 
             for _, lsp in ipairs(servers) do
