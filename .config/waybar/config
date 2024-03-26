@@ -122,7 +122,7 @@
     },
     "cpu": {
         "interval": 2,
-        "format": "{load}% ",
+        "format": "{load}% 󰍛",
         "on-click-right":"gnome-system-monitor",
         "on-click":"nwg-drawer -ovl"
         
@@ -131,7 +131,7 @@
     },
     "memory": {
         "interval":2,
-        "format": "{}% 󰍛",
+        "format": "{}% ",
         "on-click":"GDK_BACKEND=x11 nemo",
         "on-click-right":"clipman pick -t rofi"
     },
