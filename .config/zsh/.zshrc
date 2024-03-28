@@ -104,3 +104,14 @@ alias dashboard="/home/yuki/.config/eww/dashboard/launch_dashboard"
 eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/home/yuki/.bun/_bun" ] && source "/home/yuki/.bun/_bun"
+
+# pnpm
+export PNPM_HOME="/home/yuki/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
