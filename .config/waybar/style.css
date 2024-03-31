@@ -4,8 +4,7 @@
 }
 
 window#waybar {
-    background: #89DCEF;
-    background: linear-gradient(45deg, rgba(239, 241, 245, 0.0) 1%, rgba(174, 220, 239, 0.0) 43%, rgba(180, 190, 254, 0.0) 80%, rgba(137, 180, 250, 0.0) 100%);
+    background: rgba(0,0,0,0);
 }
 
 #custom-notification {
