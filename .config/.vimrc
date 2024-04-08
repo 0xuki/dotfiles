@@ -1,37 +1,83 @@
+set encoding=utf-8
 set nocompatible
 
-if !isdirectory(expand('~/.vim/bundle/Vundle.vim'))
-	execute '!git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim'
+const s:dpp_base = '~/.cache/dpp/'
+
+const s:dpp_src = '~/.cache/dpp/repos/github.com/Shougo/dpp.vim'
+const s:denops_src = '~/.cache/dpp/repos/github.com/vim-denops/denops.vim'
+
+execute 'set runtimepath^=' .. s:dpp_src
+
+execute 'set runtimepath^=' .. '~/.cache/dpp/repos/github.com/Shougo/dpp.vim'
+execute 'set runtimepath^=' .. '~/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git'
+execute 'set runtimepath^=' .. '~/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer'
+execute 'set runtimepath^=' .. '~/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml'
+execute 'set runtimepath^=' .. '~/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy'
+
+
+if s:dpp_base->dpp#min#load_state() 
+  execute 'set runtimepath^=' .. s:denops_src
+
+  autocmd User DenopsReady
+  \ echo "denops ready"
+
+  autocmd User DenopsReady
+  \ call dpp#make_state(s:dpp_base, '~/.vim/dpp.ts')
 endif
 
+execute 'set runtimepath^=' .. s:denops_src
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
-Plugin 'inkarkat/vim-ingo-library'
-Plugin 'inkarkat/vim-IndentConsistencyCop'
-Plugin 'itchyny/landscape.vim'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tokorom/vim-review'
-Plugin 'lervag/vimtex'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'ntk148v/vim-horizon'
-Plugin 'flrnprz/plastic.vim'
-Plugin 'nightsense/snow'
-Plugin 'tpope/vim-surround'
-Plugin 'cohama/lexima.vim'
-Plugin 'posva/vim-vue'
-call vundle#end()
-filetype plugin indent on
+if has('syntax')
+  syntax on
+endif
+
+filetype indent plugin on
+
+command! DppInstall :call s:dpp_install('install')
+command! DppUpdate :call s:dpp_install('update')
+command! DppMakeState :call dpp#make_state(s:dpp_base, '~/.vim/dpp.ts')
 
 
-" include config
-runtime ale.vim
-runtime cmd.vim
-runtime general.vim
-runtime keymapping.vim
-"IndentConsistencyCop
+function! s:dpp_install(cmd) abort
+	if denops#server#status() == "running"
+		call dpp#async_ext_action('installer', a:cmd)
+	else
+		echo "denops is not started"
+	endif
+
+endfunction
+
+command! -nargs=1 Ddu call s:ddu_command(<f-args>)
+function! s:ddu_command(args) abort
+  echo a:args
+  call ddu#start(#{ sources: [#{ name: a:args }] })
+endfunction
+
+set backspace=indent,eol,start
+set hlsearch
+set incsearch
+set ignorecase
+set laststatus=2
+set noshowmode
+set formatoptions-=r
+set formatoptions-=o
+
+set completeopt=menuone,noinsert
+
+set autoindent
+
+const mapleader = " "
+
+nnoremap <silent> <C-[> <cmd>nohlsearch<CR>
+
+nnoremap <C-f> <cmd>close<CR>
+
+inoremap jj <ESC>
+
+set clipboard=unnamedplus
+set autoindent
+set statusline=─
+set fillchars+=stl:─,stlnc:─,vert:│,eob:\\x20
+set laststatus=0
+
+

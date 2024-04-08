@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+on_event = ['InsertEnter']
+
+[[plugins]]
+repo = 'skanehira/denops-translate.vim'
+on_cmd = ['Translate', 'Translate!']
+
+[[plugins]]
+repo = 'skanehira/denops-translate.vim'
+on_cmd = ['Translate', 'Translate!']
+
+[[plugins]]
+repo = "jasonccox/vim-wayland-clipboard"
+on_event = ['BufRead', 'CursorHold']
+
+[[plugins]]
+repo = "miyakogi/seiya.vim"
+on_event = ["ColorSchemePre", 'BufReadPre', 'CursorHold']
+hook_source = """
+let g:seiya_auto_enable=1
+"""
+
+[[plugins]]
+repo = 'luochen1990/rainbow'
+on_event = ['BufRead', 'CursorHold']
+hook_source = '''
+let g:rainbow_active = 1 
+'''
