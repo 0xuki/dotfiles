@@ -1,3 +1,4 @@
+export LANG=en_US.UTF-8
 . "$HOME/.cargo/env"
 export STARSHIP_CONFIG=/home/yuki/.config/starship.toml
 export GTK_THEME=Catppuccin-Latte-Standard-Lavender-Light
