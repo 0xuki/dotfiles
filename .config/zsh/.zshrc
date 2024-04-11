@@ -107,6 +107,7 @@ alias tree="eza --icons --classify --tree"
 alias hx="hexdump -C"
 alias cat="bat --theme=Catppuccin-latte"
 alias dashboard="/home/yuki/.config/eww/dashboard/launch_dashboard"
+alias clip="xclip -selection clipboard"
 
 eval "$(starship init zsh)"
 
