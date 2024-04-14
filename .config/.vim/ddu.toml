@@ -1,0 +1,110 @@
+[[plugins]]
+repo = "Shougo/ddu.vim"
+depends = "denops.vim"
+on_func = ["ddu#start"]
+on_map = { n = "<Plug>(ddu" }
+
+[[plugins]]
+repo = "Shougo/ddu-ui-ff"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Shougo/ddu-source-file_rec"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "shun/ddu-source-rg"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "kuuote/ddu-source-mr"
+on_source = "ddu.vim"
+depends = ["mr.vim"]
+
+[[plugins]]
+repo = "lambdalisue/mr.vim"
+on_func = ["mr#mru#list", "mr#mrr#list", "mr#mrw#list"]
+
+[[plugins]]
+repo = "shun/ddu-source-buffer"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "liquidz/ddu-source-custom-list"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "matsui54/ddu-source-file_external"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "uga-rosa/ddu-source-lsp"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Shougo/ddu-filter-converter_display_word"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Shougo/ddu-filter-matcher_substring"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "yuki-yano/ddu-filter-fzf"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Shougo/ddu-kind-file"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Omochice/ddu-source-anyjump"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Omochice/ddu-source-redmine"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = "Shougo/ddu-source-action"
+on_source = "ddu.vim"
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-column-filename'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = "4513ECHO/ddu-source-ghq"
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = "Shougo/ddu-source-line"
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = "4513ECHO/ddu-source-source"
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-register'
+
+[[plugins]]
+repo = 'Milly/ddu-filter-kensaku'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-kind-word'
+
+[[plugins]]
+repo = 'kyoh86/ddu-source-command'
+on_source = 'ddu.vim'
+
+

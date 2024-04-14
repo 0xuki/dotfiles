@@ -44,14 +44,8 @@ function! s:dpp_install(cmd) abort
 	else
 		echo "denops is not started"
 	endif
-
 endfunction
 
-" command! -nargs=1 Ddu call s:ddu_command(<f-args>)
-" function! s:ddu_command(args) abort
-"   echo a:args
-"   call ddu#start(#{ sources: [#{ name: a:args }] })
-" endfunction
 
 
 
@@ -63,76 +57,180 @@ endfunction
 
 
 
-call ddc#custom#patch_global('ui', 'pum')
+let g:ddc_config_dir = expand('~/.vim/')
 
-call ddc#custom#patch_global('sources', [
-\  'vim-lsp',
-\  'around',
-\  'vsnip',
-\  'file',
-\])
-
-
-call ddc#custom#patch_global('sourceOptions', #{
-    \   vim-lsp: #{
-    \     matchers: ['matcher_head'],
-    \     mark: 'lsp',
-    \   },
-    \ })
-
-
-call ddc#custom#patch_global('sourceOptions', {
-\  '_': {
-\    'matchers': [ 'matcher_fuzzy' ],
-\    'sorters': [ 'sorter_fuzzy' ],
-\    'converters': [ 'converter_fuzzy' ],
-\  },
-\  'around': { 'mark': 'around' },
-\  'path': { 'mark': 'P' },
-\  'file': {
-\    'mark': 'F',
-\    'isVolatile': v:true,
-\    'forceCompletionPattern': '\S/\S*',
-\  },
-\  'vsnip': { 'mark': 'vsnip' },
-\})
-
-
-call ddc#custom#patch_filetype([ 'ps1', 'dosbatch', 'autohotkey', 'registry' ], {
-\   'sourceOptions': {
-\     'file': {
-\       'forceCompletionPattern': '\S\\\S*',
-\     },
-\   },
-\   'sourceParams': {
-\     'file': {
-\       'mode': 'win32',
-\     },
-\   },
-\ })
-
-
-call ddc#custom#patch_global('sourceParams', {
-\  'path': {
-\     'cmd': [ 'fd', '--max-depth', '5' ],
-\   },
-\ })
+call ddc#custom#load_config(g:ddc_config_dir . 'ddc.ts')
 
 call ddc#enable()
 
 
+let g:ddu_config_dir = expand('~/.vim/')
+
+call ddu#custom#load_config(g:ddu_config_dir . 'ddu.ts')
+
+call ddu#start({})
 
 
-" inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+
+
+
+" call ddu#custom#patch_global({
+" \   'ui': 'ff',
+" \   'sources': [
+" \     {
+" \       'name': 'file_rec',
+" \       'params': {
+" \         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
+" \       }
+" \     }
+" \   ],
+" \   'sourceOptions': {
+" \     '_': {
+" \       'matchers': ['matcher_substring'],
+" \     },
+" \   },
+" \   'filterParams': {
+" \     'matcher_substring': {
+" \       'highlightMatched': 'Title',
+" \     },
+" \   },
+" \   'kindOptions': {
+" \     'file': {
+" \       'defaultAction': 'open',
+" \     },
+" \   },
+" \   'uiParams': {
+" \     'ff': {
+" \       'startFilter': v:true,
+" \       'prompt': '> ',
+" \       'split': 'floating',
+" \     }
+" \   },
+" \ })
+"
+" call ddu#custom#patch_local('grep', {
+" \   'sourceParams' : {
+" \     'rg' : {
+" \       'args': ['--column', '--no-heading', '--color', 'never'],
+" \     },
+" \   },
+" \   'uiParams': {
+" \     'ff': {
+" \       'startFilter': v:false,
+" \     }
+" \   },
+" \ })
+"
+
+autocmd FileType ddu-ff call s:ddu_my_settings()
+function! s:ddu_my_settings() abort
+  nnoremap <buffer><silent> <CR>
+    \ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>
+
+  nnoremap <buffer><silent> <Space>
+    \ <Cmd>call ddu#ui#ff#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>
+
+  nnoremap <buffer><silent> a
+    \ <Cmd>call ddu#ui#ff#do_action('openFilterWindow')<CR>
+
+  nnoremap <buffer><silent> p
+    \ <Cmd>call ddu#ui#ff#do_action('preview')<CR>
+
+  nnoremap <buffer><silent> <Esc>
+    \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
+endfunction
+
+autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
+function! s:ddu_filter_my_settings() abort
+  inoremap <buffer><silent> <CR>
+    \ <Esc><Cmd>close<CR>
+
+  inoremap <buffer><silent> <Esc>
+    \ <Esc><Cmd>close<CR>
+
+  nnoremap <buffer><silent> <CR>
+    \ <Cmd>close<CR>
+
+  nnoremap <buffer><silent> <Esc>
+    \ <Cmd>close<CR>
+endfunction
+
+nmap <silent> ;f <Cmd>call ddu#start({})<CR>
+nmap <silent> ;g <Cmd>call ddu#start({
+\   'name': 'grep',
+\   'sources':[
+\     {'name': 'rg', 'params': {'input': expand('<cword>')}}
+\   ],
+\ })<CR>
+
+
+" call ddc#custom#patch_global('ui', 'pum')
+"
+" call ddc#custom#patch_global('sources', [
+" \  'vim-lsp',
+" \  'around',
+" \  'vsnip',
+" \  'file',
+" \])
+"
+"
+" call ddc#custom#patch_global('sourceOptions', #{
+"     \   vim-lsp: #{
+"     \     matchers: ['matcher_head'],
+"     \     mark: 'lsp',
+"     \   },
+"     \ })
+"
+"
+" call ddc#custom#patch_global('sourceOptions', {
+" \  '_': {
+" \    'matchers': [ 'matcher_fuzzy' ],
+" \    'sorters': [ 'sorter_fuzzy' ],
+" \    'converters': [ 'converter_fuzzy' ],
+" \  },
+" \  'around': { 'mark': 'around' },
+" \  'path': { 'mark': 'P' },
+" \  'file': {
+" \    'mark': 'F',
+" \    'isVolatile': v:true,
+" \    'forceCompletionPattern': '\S/\S*',
+" \  },
+" \  'vsnip': { 'mark': 'vsnip' },
+" \})
+"
+"
+" call ddc#custom#patch_filetype([ 'ps1', 'dosbatch', 'autohotkey', 'registry' ], {
+" \   'sourceOptions': {
+" \     'file': {
+" \       'forceCompletionPattern': '\S\\\S*',
+" \     },
+" \   },
+" \   'sourceParams': {
+" \     'file': {
+" \       'mode': 'win32',
+" \     },
+" \   },
+" \ })
+"
+"
+" call ddc#custom#patch_global('sourceParams', {
+" \  'path': {
+" \     'cmd': [ 'fd', '--max-depth', '5' ],
+" \   },
+" \ })
+"
+" call ddc#enable()
+"
+"
+"
+"
+
 inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <CR>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
-" inoremap <expr> <TAB>
-" 	\ pumvisible() ? '<C-n>' :
-" 	\ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-" 	\ '<TAB>' : ddc#map#manual_complete()
+
 
 
 
@@ -156,8 +254,6 @@ set backspace=indent,eol,start
 set hlsearch
 set incsearch
 set ignorecase
-set laststatus=3
-set noshowmode
 set formatoptions-=r
 set formatoptions-=o
 set tabstop=2
@@ -171,9 +267,6 @@ set completeopt=menuone,noinsert
 
 set clipboard=unnamedplus
 set autoindent
-set statusline=─
-set fillchars+=stl:─,stlnc:─,vert:│,eob:\\x20
-
 set undofile
 set termguicolors
 set number
@@ -332,3 +425,12 @@ let g:ale_fixers = {
       \ 'lua': ['stylua'],
       \ }
 
+
+
+
+
+
+
+
+
+"set laststatus=2
