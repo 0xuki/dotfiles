@@ -1,0 +1,15 @@
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_event = ['BufRead', 'CursorHold']
+
+
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+on_source = 'vim-lsp'
+
+[[plugins]]
+repo = 'dense-analysis/ale'
+on_event = ['BufRead', 'CursorHold']
+
+
