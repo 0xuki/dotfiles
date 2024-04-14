@@ -27,3 +27,13 @@ on_event = ['BufRead', 'CursorHold']
 hook_source = '''
 let g:rainbow_active = 1 
 '''
+
+[[plugins]]
+repo = 'catppuccin/vim'
+on_event = ['BufRead', 'CursorHold']
+hook_source = '''
+colorscheme catppuccin_latte
+'''
+
+
+
