@@ -35,5 +35,9 @@ hook_source = '''
 colorscheme catppuccin_latte
 '''
 
+[[plugins]]
+repo = 'tpope/vim-commentary'
+on_event = ['BufRead', 'CursorHold']
+
 
 
