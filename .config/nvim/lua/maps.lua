@@ -24,8 +24,8 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 -- indent
-map('v', '<Tab>', '>')        -- right
-map('v', '<S-Tab>', '<')      -- left
+map('v', '<Tab>', '>gv')        -- right
+map('v', '<S-Tab>', '<gv')      -- left
 
 vim.opt.guicursor = ""
 
