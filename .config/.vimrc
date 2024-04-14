@@ -57,10 +57,13 @@ set backspace=indent,eol,start
 set hlsearch
 set incsearch
 set ignorecase
-set laststatus=2
+set laststatus=3
 set noshowmode
 set formatoptions-=r
 set formatoptions-=o
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 set completeopt=menuone,noinsert
 
@@ -73,11 +76,17 @@ nnoremap <silent> <C-[> <cmd>nohlsearch<CR>
 nnoremap <C-f> <cmd>close<CR>
 
 inoremap jj <ESC>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <silent> <leader>a ggVG
 
 set clipboard=unnamedplus
 set autoindent
 set statusline=─
 set fillchars+=stl:─,stlnc:─,vert:│,eob:\\x20
 set laststatus=0
+set undofile
+set termguicolors
+
 
 
