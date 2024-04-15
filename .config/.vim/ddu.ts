@@ -19,6 +19,7 @@ export class Config extends BaseConfig {
       sourceOptions: {
         _: {
           matchers: ['matcher_substring'],
+          columns: ['icon_filename'],
         },
       },
       filterParams: {
@@ -45,12 +46,44 @@ export class Config extends BaseConfig {
           previewFloating: false,
           previewSplit: "vertical",
           previewFloatingBorder: "none",
-          previewWidth: Math.floor(columns * 0.56),  // 0.8 * 0.7
+          previewWidth: Math.floor(columns * 0.56),  
           previewHeight: Math.floor(columns * 0.12),
           autoAction: {
             name: "preview",
           },
         },
+      },
+    });
+
+    // Filer specific settings
+    denops.call('ddu#custom#patch_local', 'filer', {
+      ui: "filer",
+      sources: [{
+        name: "file",
+        params: {},
+      }],
+      sourceOptions: {
+        _: {
+          columns: ["icon_filename"],
+        },
+      },
+      kindOptions: {
+        file: {
+          defaultAction: "open",
+        },
+      },
+      uiParams: {
+        filer: {
+          // winWidth: 25,
+          split: "vertical",
+          // splitDirection: "topleft",
+          winWidth: 25,
+          //split: "floating", 
+          splitDirection: "topleft",
+          displayTree: true, 
+          previewVertical: true, 
+          previewWidth: 80, 
+        }
       },
     });
   }

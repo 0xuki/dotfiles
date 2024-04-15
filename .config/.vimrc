@@ -122,6 +122,8 @@ call ddu#start({})
 " \ })
 "
 
+
+"=======================ddu-ui-ff==========================
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
   nnoremap <buffer><silent> <CR>
@@ -140,6 +142,8 @@ function! s:ddu_my_settings() abort
     \ <Cmd>call ddu#ui#ff#do_action('quit')<CR>
 endfunction
 
+
+"=====================ddu-filter============================
 autocmd FileType ddu-ff-filter call s:ddu_filter_my_settings()
 function! s:ddu_filter_my_settings() abort
   inoremap <buffer><silent> <CR>
@@ -153,6 +157,7 @@ function! s:ddu_filter_my_settings() abort
 
   nnoremap <buffer><silent> <Esc>
     \ <Cmd>close<CR>
+  
 endfunction
 
 nmap <silent> ;f <Cmd>call ddu#start({})<CR>
@@ -162,6 +167,73 @@ nmap <silent> ;g <Cmd>call ddu#start({
 \     {'name': 'rg', 'params': {'input': expand('<cword>')}}
 \   ],
 \ })<CR>
+
+
+
+
+"========================ddu-filer============================
+autocmd VimEnter * nnoremap <Leader>e :call ddu#start({'name': 'filer'})<CR>
+"nnoremap <Leader>e :call ddu#start({'name': 'filer'})<CR>
+
+autocmd TabEnter,CursorHold,FocusGained <buffer>
+	\ call ddu#ui#do_action('checkItems')
+
+autocmd FileType ddu-filer call s:ddu_filer_my_settings()
+function! s:ddu_filer_my_settings() abort
+  nnoremap <buffer><silent><expr> l
+    \ ddu#ui#get_item()->get('isTree', v:false) ?
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'narrow'})<CR>" :
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'open', 'params': {}})<CR>"
+
+  nnoremap <buffer><silent><expr> <CR>
+    \ ddu#ui#get_item()->get('isTree', v:false) ?
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'narrow'})<CR>" :
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'open', 'params': {}})<CR>"
+
+  "split
+  nnoremap <buffer><silent><expr> <Space>
+    \ ddu#ui#get_item()->get('isTree', v:false) ?
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'narrow'})<CR>" :
+    \ "<Cmd>call ddu#ui#do_action('itemAction', {'name': 'open', 'params': {'command': 'split'}})<CR>"
+
+  nnoremap <buffer><silent> <Esc>
+    \ <Cmd>call ddu#ui#do_action('quit')<CR>
+
+  nnoremap <buffer><silent> q
+    \ <Cmd>call ddu#ui#do_action('quit')<CR>
+
+  nnoremap <buffer><silent> <Leader>f
+    \ <Cmd>call ddu#ui#do_action('quit')<CR>
+
+  "一個上のディレクトリに移動
+  nnoremap <buffer><silent> -
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'narrow', 'params': {'path': '..'}})<CR>
+
+  nnoremap <buffer><silent> c
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'copy'})<CR>
+
+  nnoremap <buffer><silent> p
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'paste'})<CR>
+
+  nnoremap <buffer><silent> D
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'delete'})<CR>
+
+  nnoremap <buffer><silent> r
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'rename'})<CR>
+
+  nnoremap <buffer><silent> m
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'move'})<CR>
+
+  nnoremap <buffer><silent> N
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'newFile'})<CR>
+
+  nnoremap <buffer><silent> mk
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'newDirectory'})<CR>
+
+  nnoremap <buffer><silent> yy
+    \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'yank'})<CR>
+endfunction
+
 
 
 " call ddc#custom#patch_global('ui', 'pum')

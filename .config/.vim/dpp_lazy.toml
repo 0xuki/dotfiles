@@ -39,5 +39,9 @@ colorscheme catppuccin_latte
 repo = 'tpope/vim-commentary'
 on_event = ['BufRead', 'CursorHold']
 
+[[plugins]]
+repo = 'lambdalisue/kensaku.vim'
+on_event = ['BufRead', 'CursorHold']
+
 
 
