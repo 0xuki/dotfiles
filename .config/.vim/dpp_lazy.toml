@@ -43,5 +43,8 @@ on_event = ['BufRead', 'CursorHold']
 repo = 'lambdalisue/kensaku.vim'
 on_event = ['BufRead', 'CursorHold']
 
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+on_event = ['BufRead', 'CursorHold']
 
 
