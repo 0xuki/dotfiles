@@ -108,6 +108,9 @@ alias hx="hexdump -C"
 alias cat="bat --theme=Catppuccin-latte"
 alias dashboard="/home/yuki/.config/eww/dashboard/launch_dashboard"
 alias clip="xclip -selection clipboard"
+function acl() {
+    g++ "$1" -std=c++20 -I /home/yuki/ac-library -o a
+}
 
 eval "$(starship init zsh)"
 
