@@ -16,7 +16,7 @@ window#waybar {
     padding-left: 10px;
     background-size: 300% 300%;
     font-weight: bolder;
-    color: 	#7287fd;
+    color: 	#dd7878;
     border: none;
     border-bottom: 6px solid #d6cdcd;
     border-radius: 15px;
@@ -43,7 +43,7 @@ window#waybar {
     padding-left: 10px;
     background-size: 300% 300%;
     font-weight: bolder;
-    color: 	#7287fd;
+    color: 	#dd7878;
     border: none;
     border-bottom: 6px solid #d6cdcd;
     border-radius: 15px;
@@ -51,7 +51,7 @@ window#waybar {
 
 #workspaces button.active{
     box-shadow: rgba(0, 0, 0, 0.5) 0px -3px 5px 5px;
-    background-color: rgb(114,135,253);
+    background-color: #dd7878;
     padding-bottom: 1px;
     padding-top: 1px;
     margin-right: 8px;
@@ -61,7 +61,7 @@ window#waybar {
     font-weight: bolder;
     color: 	#fff ;
     border: none;
-    border-bottom: 6px solid rgb(114, 135, 223);
+    border-bottom: 6px solid #E67171;
     border-radius: 15px;
 }
 
@@ -98,7 +98,7 @@ window#waybar {
     padding-right: 10px;
     padding-left: 10px;
     font-weight: bolder;
-    color: 	#7287fd ;
+    color: 	#dd7878;
     border: none;
     border-bottom: 6px solid rgb(98, 97, 99);
     border-radius: 15px;
@@ -268,7 +268,7 @@ window#waybar {
     margin-left: 1px;
     margin-right: 3px;
     min-width: 50px;
-    color: #7287fd;
+    color: #dd7878;
     background-size: 300% 300%;
     /* animation: gradient 20s ease infinite; */
     font-size: 20px;
@@ -287,7 +287,7 @@ window#waybar {
     padding-top: 3px;
     padding-bottom: 3px;
     min-width: 70px;
-    color: #7287fd;
+    color: #dd7878;
     background: #fff;
     margin-right: 10px;
     border: none;
@@ -298,7 +298,7 @@ window#waybar {
 #battery {
     box-shadow: rgba(0, 0, 0, 0.5) 0px -6px 3px 1px;
     background-color: #fff;
-    color:#7287fd;
+    color:#dd7878;
     font-weight: bolder;
     font-size: 20px;
     padding-top: 3px;
@@ -345,7 +345,7 @@ label:focus {
     /* animation: gradient 20s ease infinite; */
     /* text-shadow: 0 10 5px rgba(0, 0, 0, 0.8); */
     /* background-color: #b4befe; */
-    color: 	#7287fd;
+    color: 	#dd7878;
     font-weight: bolder;
     border: none;
     border-bottom: 7px solid rgb(214, 205, 205);
@@ -362,7 +362,7 @@ label:focus {
     padding-bottom: 3px;
     min-width: 60px;
     background-color: #fff;
-    color: 	#7287fd;
+    color: 	#dd7878;
     font-weight: bolder;
     border: none;
     border-bottom: 7px solid #d6cdcd;
@@ -384,7 +384,7 @@ label:focus {
     margin-left: 1px;
     padding-top: 3px;
     padding-bottom: 3px;
-    color: #7287fd;
+    color: #dd7878;
     min-width: 40px;
     background-color: #fff;
     border: none;
@@ -457,7 +457,7 @@ label:focus {
     padding-bottom: 3px;
     min-width: 40px;
     background-color: #fff;
-    color: #7287fd;
+    color: #dd7878;
     border: none;
     border-bottom: 7px solid #d6cdcd;
     border-radius: 15px;
@@ -497,7 +497,7 @@ label:focus {
     padding-top: 3px;
     padding-bottom: 3px;
     background-color: #fff;
-    color:#7287fd;
+    color:#dd7878;
 }
 #temperature.critical {
     box-shadow: rgba(0, 0, 0, 0.5) 0px -6px 3px 1px;
@@ -506,7 +506,7 @@ label:focus {
     padding-top: 3px;
     padding-bottom: 3px;
     background-color: #fff;
-    color:#7287fd;
+    color:#dd7878;
     border: none;
     border-bottom: 7px solid #d6cdcd;
     border-radius: 15px;
