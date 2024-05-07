@@ -15,8 +15,6 @@ vim.cmd [[highlight CursorLine guibg=#eff1f5]]
 vim.o.undofile = true
 vim.o.termguicolors = true
 
-vim.o.completeopt = 'menuone,noinsert,noselect'
-vim.api.nvim_set_hl(0, 'CmpItemKind', { link = 'CmpItemMenuDefault' })
 vim.g.rustfmt_autosave = 1
 
 -- WSL環境をチェックする関数

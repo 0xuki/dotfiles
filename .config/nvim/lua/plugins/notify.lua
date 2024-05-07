@@ -4,7 +4,7 @@ return {
   config = function()
     vim.notify = require("notify")
     require("notify").setup({
-      background_colour = "#282c34"
+      background_colour = "#EFF1F5"
     })
   end,
 }
