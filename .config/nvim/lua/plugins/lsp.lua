@@ -105,8 +105,8 @@ return {
                 'omnisharp',
                 'cssls',
                 'denols',
-                'clangd',
-                'phpactor',
+                'clangd', 
+                'zls',
               }, -- LSP Server to install
             })
         end,
@@ -138,7 +138,7 @@ return {
               'cssls',
               'denols',
               'clangd',
-              'phpactor',
+              'zls',
             }
 
             for _, lsp in ipairs(servers) do
