@@ -33,6 +33,7 @@ return {
             "cpp",
             "astro",
             "php",
+            "gleam",
           },
 
           highlight = {
