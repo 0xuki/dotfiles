@@ -66,7 +66,7 @@ return {
               },
               size = {
                 width = 60,  -- 幅を60に設定
-                height = 10,  -- 高さを10に設定
+                height = 1,  -- 高さを10に設定
               },
               border = {
                 padding = { 0, 1 },  -- ボーダーの内側のパディングを設定
