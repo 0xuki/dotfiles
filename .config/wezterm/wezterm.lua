@@ -30,7 +30,7 @@ return {
   xcursor_size = xcursor_size,
   window_decorations = "RESIZE",
   hide_tab_bar_if_only_one_tab = true,
-  window_background_opacity = 0.8,
+  window_background_opacity = 0.7,
   scrollback_lines = 8000,
   warn_about_missing_glyphs = false,
   window_padding = {
