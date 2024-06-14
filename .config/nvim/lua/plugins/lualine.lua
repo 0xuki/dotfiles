@@ -136,8 +136,8 @@ return {
         --   )
         -- end
 
-        local function nixos_fileformat()
-          return ' NixOS'
+        local function unix_fileformat()
+          return ' Unix'
         end
 
 
@@ -189,7 +189,7 @@ return {
                 end,
               },
             },
-            lualine_x = { "encoding", nixos_fileformat },
+            lualine_x = { "encoding", unix_fileformat },
             lualine_y = { search_result, 'filetype' },
             lualine_z = { '%l:%c', '%p%%/%L' },
           },
