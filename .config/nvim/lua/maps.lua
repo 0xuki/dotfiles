@@ -2,7 +2,15 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-map("n", "<leader>rn", ":IncRename ")
+--map("n", "<leader>rn", ":IncRename ")
+
+function ReplaceAll()
+    local old_text = vim.fn.input('Enter the text to replace: ')
+    local new_text = vim.fn.input('Enter the replacement text: ')
+    vim.cmd('%s/' .. old_text .. '/' .. new_text .. '/gc')
+end
+
+vim.api.nvim_set_keymap('n', '<leader>rn', ':lua ReplaceAll()<CR>', {noremap = true, silent = true})
 
 map("i","jj", "<Esc>")
 
