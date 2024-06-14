@@ -28,7 +28,7 @@ return {
               },
               filter_options = {},  -- フィルターオプションの設定
               win_options = {
-                winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",  -- ウィンドウのハイライト設定
+                --winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",  -- ウィンドウのハイライト設定
               },
               position = {
                 row = "42%",  -- 垂直位置を画面の42%に設定
