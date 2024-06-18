@@ -50,9 +50,9 @@ return {
             enable = true,
           },
           -- nvim-ts-autotag
-          autotag = {
-            enable = true,
-          },
+          -- autotag = {
+          --   enable = true,
+          -- },
         }
     end,
 }

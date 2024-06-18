@@ -35,9 +35,9 @@ vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold =
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#82AAFF", bg = "NONE", bold = true })
 vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#C792EA", bg = "NONE", italic = true })
 
-vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#EED8DA", bg = "NONE" })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#EED8DA", bg = "NONE" })
-vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#EED8DA", bg = "NONE" })
+vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#82AAFF", bg = "NONE" })
+vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#82AAFF", bg = "NONE" })
+vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#82AAFF", bg = "NONE" })
 
 vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#1e66f5", bg = "NONE" })
 vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#1e66f5", bg = "NONE" })
@@ -115,6 +115,27 @@ return {
         'neovim/nvim-lspconfig',
         config = function()
             local nvim_lsp = require('lspconfig')
+            
+            -- カーソルがホバリングしたときにエラーメッセージを表示
+            vim.o.updatetime = 250
+            vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })]]
+
+            -- エラーメッセージをステータスラインの上に表示
+            vim.diagnostic.config({
+                virtual_text = false, -- 行内のバーチャルテキストを無効化
+                signs = true,
+                update_in_insert = false,
+                severity_sort = true,
+                float = {
+                    focusable = false,
+                    style = "minimal",
+                    border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
+            })
+
             local on_attach = function(client, bufnr)
               local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
               -- keymapping
@@ -123,6 +144,9 @@ return {
               buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', {})
               buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {})
               buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {})
+
+                buf_set_keymap('n', 'gn', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+                buf_set_keymap('n', 'gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
             end
 
             -- LSP Server Config
@@ -155,10 +179,8 @@ return {
                       },
                     },
                   },
-                  ["lua_ls"] = {
-                    {
-                      checkThirdParty = false,
-                    },
+                  ["lua_ls"] = { 
+                    checkThirdParty = false,
                     completion = {
                       workspaceWord = true,
                       callSnippet = "Both",
@@ -379,5 +401,42 @@ return {
     { 'onsails/lspkind-nvim' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
+    {
+      "folke/trouble.nvim",
+      opts = {}, -- for default options, refer to the configuration section for custom setup.
+      cmd = "Trouble",
+      keys = {
+        {
+          "<leader>xx",
+          "<cmd>Trouble diagnostics toggle<cr>",
+          desc = "Diagnostics (Trouble)",
+        },
+        {
+          "<leader>xX",
+          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+          desc = "Buffer Diagnostics (Trouble)",
+        },
+        {
+          "<leader>cs",
+          "<cmd>Trouble symbols toggle focus=false<cr>",
+          desc = "Symbols (Trouble)",
+        },
+        {
+          "<leader>cl",
+          "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+          desc = "LSP Definitions / references / ... (Trouble)",
+        },
+        {
+          "<leader>xL",
+          "<cmd>Trouble loclist toggle<cr>",
+          desc = "Location List (Trouble)",
+        },
+        {
+          "<leader>xQ",
+          "<cmd>Trouble qflist toggle<cr>",
+          desc = "Quickfix List (Trouble)",
+        },
+      },
+    },
 }
 
