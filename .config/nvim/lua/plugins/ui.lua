@@ -30,6 +30,14 @@ return {
 
 			require("telescope").setup({
 				defaults = {
+                    file_ignore_patterns = {
+                      "node_modules",
+                      ".cache",
+                      ".git",
+                      "*.svg",
+                      "*.png",
+                      "*.jpg",
+                    },
 					prompt_prefix = "   ",
 					selection_caret = "  ",
 					initial_mode = "normal",
@@ -66,6 +74,11 @@ return {
 						},
 					},
 				},
+                pickers = {
+                    find_files = {
+                        find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--glob', '!*.svg' },
+                    },
+                },
 				extensions = {
 					file_browser = {
 						grouped = true,
