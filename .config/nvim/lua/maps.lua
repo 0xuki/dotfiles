@@ -37,7 +37,27 @@ map("v", "<S-Tab>", "<gv") -- left
 
 vim.opt.guicursor = ""
 
--- find
+
+-- trouble.nvim(LSP)
+-- LSPの診断情報表示/非表示切り替え
+map("n", "<leader>lL", "<cmd>Trouble diagnostics toggle<CR>", { desc = "Diagnostics (Trouble)" })
+
+-- 現在のバッファに関連する診断情報のみをトグルする
+map("n", "<leader>ll", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buffer Diagnostics (Trouble)" })
+
+-- シンボルリストの表示/非表示を切り替える。フォーカスは移動しない。
+map("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<CR>", { desc = "Symbols (Trouble)" })
+
+-- LSPの定義や参照などを表示する。ウィンドウは右側に配置。
+map("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<CR>", { desc = "LSP Definitions / references / ... (Trouble)" })
+
+-- ロケーションリストを表示/非表示を切り替える
+map("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location List (Trouble)" })
+
+-- クイックフィックスリストを表示/非表示を切り替える
+map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Trouble)" })
+
+-- Telescope
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>")
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
