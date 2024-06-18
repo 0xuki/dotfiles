@@ -5,18 +5,18 @@ end
 --map("n", "<leader>rn", ":IncRename ")
 
 function ReplaceAll()
-    local old_text = vim.fn.input('Enter the text to replace: ')
-    local new_text = vim.fn.input('Enter the replacement text: ')
-    vim.cmd('%s/' .. old_text .. '/' .. new_text .. '/gc')
+	local old_text = vim.fn.input("Enter the text to replace: ")
+	local new_text = vim.fn.input("Enter the replacement text: ")
+	vim.cmd("%s/" .. old_text .. "/" .. new_text .. "/gc")
 end
 
-vim.api.nvim_set_keymap('n', '<leader>rn', ':lua ReplaceAll()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>rn", ":lua ReplaceAll()<CR>", { noremap = true, silent = true })
 
-map("i","jj", "<Esc>")
+map("i", "jj", "<Esc>")
 
 map("n", "<leader>a", "ggVG")
-map('n', '<leader>e', ":NvimTreeToggle<CR>")
-map('n', '<leader>o', ":NvimTreeFocus<CR>")
+map("n", "<leader>e", ":NvimTreeToggle<CR>")
+map("n", "<leader>o", ":NvimTreeFocus<CR>")
 -- buffer line
 --map("n", "<Tab>", "<CMD>BufferLineCycleNext<CR>")
 --map("n", "<S-Tab>", "<CMD>BufferLineCyclePrev<CR>")
@@ -32,11 +32,10 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 -- indent
-map('v', '<Tab>', '>gv')        -- right
-map('v', '<S-Tab>', '<gv')      -- left
+map("v", "<Tab>", ">gv") -- right
+map("v", "<S-Tab>", "<gv") -- left
 
 vim.opt.guicursor = ""
-
 
 -- find
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
@@ -53,20 +52,35 @@ map("n", "<leader>gt", "<cmd>Telescope git_status<CR>")
 map("n", "<leader>pt", "<cmd>Telescope terms<CR>")
 -- theme switcher
 map("n", "<leader>th", "<cmd>Telescope themes<CR>")
--- 
+--
 map("n", "<leader>ma", "<cmd>Telescope marks<CR>")
 -- file browser
-map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true } )
+map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true })
 
 -- nvterm
 -- toggle in terminal mode
-map("t", "<A-i>", function() require("nvterm.terminal").toggle("float") end)
-map("t", "<A-h>", function() require("nvterm.terminal").toggle("horizontal") end)
-map("t", "<A-v>", function() require("nvterm.terminal").toggle("vertical") end)
+map("t", "<A-i>", function()
+	require("nvterm.terminal").toggle("float")
+end)
+map("t", "<A-h>", function()
+	require("nvterm.terminal").toggle("horizontal")
+end)
+map("t", "<A-v>", function()
+	require("nvterm.terminal").toggle("vertical")
+end)
 -- toggle in normal mode
-map("n", "<A-i>", function() require("nvterm.terminal").toggle("float") end)
-map("n", "<A-h>", function() require("nvterm.terminal").toggle("horizontal") end)
-map("n", "<A-v>", function() require("nvterm.terminal").toggle("vertical") end)
-map("n", "<leader>h", function() require("nvterm.terminal").toggle("horizontal") end)
-map("n", "<leader>v", function() require("nvterm.terminal").toggle("vertical") end)
-
+map("n", "<A-i>", function()
+	require("nvterm.terminal").toggle("float")
+end)
+map("n", "<A-h>", function()
+	require("nvterm.terminal").toggle("horizontal")
+end)
+map("n", "<A-v>", function()
+	require("nvterm.terminal").toggle("vertical")
+end)
+map("n", "<leader>h", function()
+	require("nvterm.terminal").toggle("horizontal")
+end)
+map("n", "<leader>v", function()
+	require("nvterm.terminal").toggle("vertical")
+end)
