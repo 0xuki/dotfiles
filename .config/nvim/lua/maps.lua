@@ -58,10 +58,10 @@ map("n", "<leader>xL", "<cmd>Trouble loclist toggle<CR>", { desc = "Location Lis
 map("n", "<leader>xQ", "<cmd>Trouble qflist toggle<CR>", { desc = "Quickfix List (Trouble)" })
 
 -- Telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
+map("n", "<leader>ff", "<cmd>Telescope find_files hidden=true follow=true<CR>")
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>")
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
-map("n", "<leader>fv", "<cmd>Telescope buffers<CR>")
+map("n", "<leader>fg", "<cmd>Telescope live_grep hidden=true follow=true<CR>")
+map("n", "<leader>fv", "<cmd>Telescope buffers hidden=true follow=true<CR>")
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
 map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>")
 map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>")
@@ -75,7 +75,7 @@ map("n", "<leader>th", "<cmd>Telescope themes<CR>")
 --
 map("n", "<leader>ma", "<cmd>Telescope marks<CR>")
 -- file browser
-map("n", "<leader>fb", "<cmd>Telescope file_browser<CR>", { noremap = true })
+map("n", "<leader>fb", "<cmd>Telescope file_browser hidden=true follow=true<CR>", { noremap = true })
 
 -- nvterm
 -- toggle in terminal mode
