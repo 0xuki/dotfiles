@@ -19,6 +19,9 @@
     ./dunst
     ./vscode
     ./ranger
+    ./rofi
+    ./apps.nix
+    ./browser.nix
   ];
 }
 

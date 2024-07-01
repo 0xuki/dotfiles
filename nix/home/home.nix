@@ -6,8 +6,7 @@ let
 in
 {
   imports = [
-    ./programs/default.nix
-    ./gui/default.nix
+    ./programs/default.nix 
     #./wm/xmonad/default.nix
     ./wm/hyprland/default.nix
     #./wm/sway/default.nix
