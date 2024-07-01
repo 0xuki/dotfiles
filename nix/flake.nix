@@ -1,5 +1,5 @@
 {
-  description = "root309 NixOS Configuration";
+  description = "NixOS Configuration";
 
   outputs = inputs @ { self, ... }:
     let

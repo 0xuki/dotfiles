@@ -8,7 +8,7 @@ in
   imports = [
     ./programs/default.nix
     ./gui/default.nix
-    #./desktop/default.nix
+    #./wm/xmonad/default.nix
     ./wm/hyprland/default.nix
     #./wm/sway/default.nix
     ./shell
@@ -30,10 +30,10 @@ in
 
   nixpkgs.config.allowUnfree = true;
   
-  # GHCの設定
+  # ghc config
   nixpkgs.config.packageOverrides = pkgs: {
     ghc = pkgs.ghc.withPackages (ps: with ps; [
-      # Haskellパッケージ
+      # Haskell packages
       utf8-string
     ]);
   };
